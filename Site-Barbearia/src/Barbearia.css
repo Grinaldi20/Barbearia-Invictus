@@ -1,0 +1,299 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 130px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin-bottom: -1.31rem;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+   padding-left: 16rem;
+   padding-right: 20rem;
+}
+
+.header li {
+  margin-left: 30px; 
+  font-family: "Arial";
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header li:hover{
+  color: #C9A14A;
+  transition: color 0.3s ease;
+    transform: scale(1.1);
+   transition: 0.5s ;
+}
+
+.Inicio {
+   margin-left: 35px; 
+  font-family: "Arial";
+  font-size: 18px;
+  cursor: pointer;
+  color: #C9A14A;
+  
+}
+
+.header img{
+  width: 180px;
+  height: 180px;
+}
+
+.header img:hover{
+   transform: scale(1.1);
+   transition: 0.5s ;
+}
+
+.header button{
+  border-radius: 10px;
+  width: 6rem;
+  height: 2.2rem;
+  font-family: "Arial";
+  font-size: 15px;
+  background-color:#C9A14A;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 550;
+  box-shadow: rgb(233, 233, 233) 0px 0px 2px 0px;
+}
+
+.header button:hover{
+  background-color: #e9b649;
+  transition: color 0.5s ease;
+  transform: scale(1.1);
+   transition: 0.3s ;
+   box-shadow: rgb(233, 233, 233) 0px 0px 2px 0px;
+}
+
+
+/* Seção do Inicio */
+
+.InicioSection {
+  
+  justify-content: center;
+  width: 100%;
+  height: 700px;
+  margin-bottom: -1.32rem;
+  background-image: url('/fundoInicio.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+   display: flex;
+}
+
+.InicioSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; 
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1.4),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}
+
+.Titulo {
+  margin-top: 3rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.Titulo .Invictus{
+  color: white;
+  font-family: "Arial";
+  font-size: 100px;
+  margin-bottom: -2rem;
+}
+
+.Titulo .Barbearia{
+  color: #C9A14A;
+  font-family: "Arial";
+  font-size: 27px;
+  margin-bottom: 1rem;
+}
+
+.Titulo .FraseInicio{
+  font-family: "Arial", cursive, sans-serif;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 4rem;
+}
+
+.Titulo .ButtonInicio{
+   border-radius: 10px;
+  width: 16rem;
+  height: 4.5rem;
+  font-family: "Arial";
+  font-size: 20px;
+  background-color:#C9A14A;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: rgb(233, 233, 233) 0px 0px 2px 0px;
+}
+
+.Titulo .ButtonInicio:hover{
+background-color: #e9b649;
+  transition: color 0.5s ease;
+  transform: scale(1.1);
+   transition: 0.3s ;
+   box-shadow: rgb(233, 233, 233) 0px 0px 2px 0px;
+}
+
+.TextCoroa {
+  display: flex;
+}
+
+.TextCoroa img{
+  width: 30px;
+  height: 30px;
+  margin-top: 0.7rem;
+}
+
+/* Seção do Cortes */
+
+.CortesSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 700px;
+  background-color: rgb(0, 0, 0);
+  margin-bottom: -1.31rem;
+ text-align: center;
+}
+
+.CortesTitulo {
+  color: white;
+  font-size: 36px;
+  font-family: "Arial";
+  margin-top: 1.5rem;
+}
+
+.CortesImg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px;
+}
+
+.CortesImg img {
+  width: 300px;
+  height: 275px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.CortesImg img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgb(218, 168, 62) 1px 1px 10px 1px;
+}
+
+
+
+/* imagem */
+.item img {
+  width: 285px;
+  height: 260px;
+  object-fit: cover;
+  transition: 0.4s ease;
+  margin-bottom: -0.5rem;
+}
+
+/* overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0)
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
+
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+/* texto */
+.overlay h3 {
+  color: white;
+  margin: 0;
+  font-size: 18px;
+}
+
+.overlay p {
+  color: #C9A14A;
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+/* hover */
+.item:hover .overlay {
+  opacity: 1;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+/* Seção do Preços */
+
+.PrecosSection {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 700px;
+  background-color: rgb(90, 90, 90);
+  margin-bottom: -1.39rem;
+}
+
+/* Seção de Contato */
+
+.ContatoSection {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 700px;
+  background-color: rgb(90, 90, 90);
+}
+
+
