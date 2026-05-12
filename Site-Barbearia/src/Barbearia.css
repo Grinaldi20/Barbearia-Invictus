@@ -4,7 +4,7 @@
   height: 130px;
   background-color: rgb(0, 0, 0);
   color: white;
-  margin-bottom: -1.31rem;
+  margin-bottom: -1.31rem; 
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
@@ -111,6 +111,20 @@
   );
   pointer-events: none;
 }
+.InicioSection::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}
 
 .Titulo {
   margin-top: 3rem;
@@ -139,6 +153,7 @@
   font-size: 18px;
   color: white;
   margin-bottom: 4rem;
+  font-weight: 400;
 }
 
 .Titulo .ButtonInicio{
@@ -177,11 +192,10 @@ background-color: #e9b649;
 
 .CortesSection {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 700px;
+  height: 900px;
   background-color: rgb(0, 0, 0);
   margin-bottom: -1.31rem;
  text-align: center;
@@ -191,7 +205,9 @@ background-color: #e9b649;
   color: white;
   font-size: 36px;
   font-family: "Arial";
-  margin-top: 1.5rem;
+  font-weight: 400;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .CortesImg {
@@ -201,8 +217,8 @@ background-color: #e9b649;
 }
 
 .CortesImg img {
-  width: 300px;
-  height: 275px;
+  width: 500px;
+  height: 350px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -223,8 +239,8 @@ background-color: #e9b649;
 
 /* imagem */
 .item img {
-  width: 285px;
-  height: 260px;
+  width: 350px;
+  height: 300px;
   object-fit: cover;
   transition: 0.4s ease;
   margin-bottom: -0.5rem;
@@ -279,21 +295,122 @@ background-color: #e9b649;
 
 .PrecosSection {
   align-items: center;
+  display:flex ;
+  flex-direction: column;
+  width: 100%;
+  height: 850px;
+  background-color: #0a0a0a;
+  margin-bottom: -1.39rem;
+}
+
+.PrecosSection h1{
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.Serviços{
+  color: #C9A14A;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.Card{
+width: 290px;
+height: 590px;
+border: solid 2px #C9A14A;
+border-radius: 16px;
+transition: 0.3s;
+text-align: center;
+}
+
+.Card:hover{
+  width: 320px;
+  height: 620px;
+  transition: 0.3s;
+}
+
+.Card h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.Card img{
+  width: 85px;
+  height: 85px;
+  margin-top: 0.5rem;
+}
+
+.Linha{
+    width: 80%;
+    height: 1px;
+    background-color: #C9A14A;
+    margin: 20px auto;
+    position: relative;
+    opacity: 70%;
+    margin-top: -1.5rem;
+}
+
+.Linha::after{
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: #C9A14A;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.Cards{
+  display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 50px;
+}
+
+
+
+/* Seção do Sobre */
+
+.SobreSection {
+align-items: center;
+  display:flex ;
+  flex-direction: column;
   width: 100%;
   height: 700px;
-  background-color: rgb(90, 90, 90);
+  background-color: #000000;
   margin-bottom: -1.39rem;
+}
+
+.SobreSection h1{
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
 }
 
 /* Seção de Contato */
 
 .ContatoSection {
-  align-items: center;
-  justify-content: center;
+align-items: center;
+  display:flex ;
+  flex-direction: column;
   width: 100%;
   height: 700px;
-  background-color: rgb(90, 90, 90);
+  background-color: #0a0a0a;
+  margin-bottom: -1.39rem;
+}
+
+.ContatoSection h1{
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
 }
 
 

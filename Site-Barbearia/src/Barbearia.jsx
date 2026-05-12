@@ -58,7 +58,7 @@ function App() {
     <img src={Corte} alt="Corte" />
     <div className="overlay">
       <h3>Degradê</h3>
-      <p>R$ 30</p>
+    
     </div>
   </div>
 
@@ -66,7 +66,7 @@ function App() {
     <img src={Corte2} alt="Corte2" />
     <div className="overlay">
       <h3>Social</h3>
-      <p>R$ 25</p>
+  
     </div>
   </div>
 
@@ -74,7 +74,7 @@ function App() {
     <img src={Corte3} alt="Corte3" />
     <div className="overlay">
       <h3>Undercut</h3>
-      <p>R$ 20</p>
+   
     </div>
   </div>
 
@@ -82,7 +82,7 @@ function App() {
     <img src={Corte4} alt="Corte4" />
     <div className="overlay">
       <h3>Caipira</h3>
-      <p>R$ 20</p>
+  
     </div>
   </div>
 
@@ -90,7 +90,7 @@ function App() {
     <img src={Corte5} alt="Corte5" />
     <div className="overlay">
       <h3>Modelo</h3>
-      <p>R$ 30</p>
+
     </div>
   </div>
 
@@ -98,7 +98,7 @@ function App() {
     <img src={Corte6} alt="Corte6" />
     <div className="overlay">
       <h3>Curto</h3>
-      <p>R$ 15</p>
+     
     </div>
   </div>
 
@@ -109,12 +109,45 @@ function App() {
 
 
 <section className="PrecosSection">
-  <h1>Preços</h1>
+  <h1>NOSSOS <strong className="Serviços">SERVIÇOS</strong></h1>
+
+<div  className="Cards">
+ <div className="Card">
+  <img src="/tesoura.png" alt="Tesoura" />
+  <h1>CORTE</h1>
+  <div className="Linha"></div>
+
+</div>
+
+  <div className="Card">
+    <img src="/olho.png" alt="Tesoura" />
+<h1>CORTE / <br></br> SOBRANCELHA</h1>
+<div className="Linha"></div>
+  </div>
+
+  <div className="Card">
+    <img src="/barba.png" alt="Tesoura" />
+<h1>CORTE / <br></br> BARBA</h1>
+<div className="Linha"></div>
+  </div>
+
+  <div className="Card">
+    <img src="/tesoura.png" alt="Tesoura" />
+    <img src="/barba.png" alt="Tesoura" />
+<h1>COMBO <br></br> PREMIUM</h1>
+<div className="Linha"></div>
+
+  </div>
+</div>
+
 </section>
 
+<section className="SobreSection">
+  <h1>SOBRE</h1>
+</section>
 
 <section className="ContatoSection">
-  <h1>Contato</h1>
+  <h1>CONTATO</h1>
 </section>
 
     </main>
