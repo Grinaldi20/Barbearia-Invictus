@@ -124,8 +124,11 @@ function App() {
 <div  className="Cards">
  <div className="Card">
   <img src="/tesoura.png" alt="Tesoura" />
-  <h1>CORTE</h1>
+  <h1 className="Cortetext">CORTE</h1>
   <div className="Linha"></div>
+  <h3>  Degradê, social ou freestyle
+      com acabamento profissional.</h3>
+  <h4>⏱ 30 - 40 min</h4>
 
 </div>
 
@@ -133,12 +136,18 @@ function App() {
     <img src="/olho.png" alt="Tesoura" />
 <h1>CORTE / <br></br> SOBRANCELHA</h1>
 <div className="Linha"></div>
+ <h3> Corte moderno + design de
+   <br></br>   sobrancelha alinhado.</h3>
+  <h4>⏱ 40 - 50 min</h4>
   </div>
 
   <div className="Card">
     <img src="/barba.png" alt="Tesoura" />
 <h1>CORTE / <br></br> BARBA</h1>
 <div className="Linha"></div>
+ <h3>Corte + barba alinhada
+    com <br></br> acabamento profissional.</h3>
+ <h4>⏱ 60 - 70 min</h4>
   </div>
 
   <div className="Card">
@@ -146,6 +155,9 @@ function App() {
     <img src="/barba.png" alt="Tesoura" />
 <h1>COMBO <br></br> PREMIUM</h1>
 <div className="Linha"></div>
+ <h3> Experiência completa com
+      corte, <br></br> barba e sobrancelha.</h3>
+ <h4>⏱ 80 - 90 min</h4>
 
   </div>
 </div>
