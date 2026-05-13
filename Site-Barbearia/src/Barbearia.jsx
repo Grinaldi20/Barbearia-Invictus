@@ -50,60 +50,70 @@ function App() {
 
 
 <section className="CortesSection">
-  <h1 className="CortesTitulo">CORTES</h1>
 
-<div className="CortesImg">
-  
- <div className="item">
-    <img src={Corte} alt="Corte" />
-    <div className="overlay">
-      <h3>Degradê</h3>
-    
+  <h1 className="CortesTitulo">
+    NOSSOS <span>CORTES</span>
+  </h1>
+<div className="Linha2"></div>
+  <p className="SubtituloCortes">
+    Estilo, personalidade e acabamento premium.
+  </p>
+
+  <div className="CortesImg">
+
+    <div className="item">
+      <img src={Corte} alt="Corte" />
+      <div className="overlay">
+        <h3>High Fade</h3>
+        <p>Fade • Classico</p>
+      </div>
     </div>
+
+    <div className="item">
+      <img src={Corte2} alt="Corte2" />
+      <div className="overlay">
+        <h3>Two Block</h3>
+        <p>Elegante • Diferencial</p>
+      </div>
+    </div>
+
+    <div className="item">
+      <img src={Corte3} alt="Corte3" />
+      <div className="overlay">
+        <h3>Dread Fade</h3>
+        <p>Estiloso • Premium</p>
+      </div>
+    </div>
+
+    <div className="item">
+      <img src={Corte4} alt="Corte4" />
+      <div className="overlay">
+        <h3>Buzz Cute</h3>
+        <p>Simples • Moderno</p>
+      </div>
+    </div>
+
+    <div className="item">
+      <img src={Corte5} alt="Corte5" />
+      <div className="overlay">
+        <h3>Low fade</h3>
+        <p>Visual • Moderno</p>
+      </div>
+    </div>
+
+    <div className="item">
+      <img src={Corte6} alt="Corte6" />
+      <div className="overlay">
+        <h3>Mullet</h3>
+        <p>Clean • Casual</p>
+      </div>
+    </div>
+
   </div>
 
-  <div className="item">
-    <img src={Corte2} alt="Corte2" />
-    <div className="overlay">
-      <h3>Social</h3>
-  
-    </div>
-  </div>
-
- <div className="item">
-    <img src={Corte3} alt="Corte3" />
-    <div className="overlay">
-      <h3>Undercut</h3>
-   
-    </div>
-  </div>
-
-   <div className="item">
-    <img src={Corte4} alt="Corte4" />
-    <div className="overlay">
-      <h3>Caipira</h3>
-  
-    </div>
-  </div>
-
-   <div className="item">
-    <img src={Corte5} alt="Corte5" />
-    <div className="overlay">
-      <h3>Modelo</h3>
-
-    </div>
-  </div>
-
-   <div className="item">
-    <img src={Corte6} alt="Corte6" />
-    <div className="overlay">
-      <h3>Curto</h3>
-     
-    </div>
-  </div>
-
-  
-</div>
+  <button className="BotaoCortes">
+    VER MAIS ESTILOS
+  </button>
 
 </section>
 
