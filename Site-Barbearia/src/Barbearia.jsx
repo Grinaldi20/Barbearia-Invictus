@@ -123,42 +123,79 @@ function App() {
 
 <div  className="Cards">
  <div className="Card">
-  <img src="/tesoura.png" alt="Tesoura" />
-  <h1 className="Cortetext">CORTE</h1>
+  <img className="imgCard2" src="/tesoura.png" alt="Tesoura" />
+  <h2 className="Cortetext">CORTE</h2>
   <div className="Linha"></div>
   <h3>  Degradê, social ou freestyle
       com acabamento profissional.</h3>
-  <h4>⏱ 30 - 40 min</h4>
+  <h4><strong>⏱</strong> 30 - 40 min</h4>
+  <div className="Linha"></div>
+   <h3 className="CardPrecos"> R$<strong className="CardPrecos2">35</strong>,00</h3>
+   <ul>
+  <li> <img src="/correto.png" alt="Icon" />Acabamento na Navalha</li>
+  <li> <img src="/correto.png" alt="Icon" />Toalha Quente</li>
+  <li> <img src="/correto.png" alt="Icon" />Pomada Inclusa</li>
+ </ul>
 
+<button className="BotaoCard2"> Agendar </button>
 </div>
 
   <div className="Card">
     <img src="/olho.png" alt="Tesoura" />
-<h1>CORTE / <br></br> SOBRANCELHA</h1>
+<h2>CORTE / <br></br> SOBRANCELHA</h2>
 <div className="Linha"></div>
  <h3> Corte moderno + design de
    <br></br>   sobrancelha alinhado.</h3>
-  <h4>⏱ 40 - 50 min</h4>
+  <h4><strong>⏱</strong> 40 - 50 min</h4>
+  <div className="Linha"></div>
+   <h3 className="CardPrecos"> R$<strong className="CardPrecos2">45</strong>,00</h3>
+   <ul>
+ <li> <img src="/correto.png" alt="Icon" />Acabamento na Navalha</li>
+  <li> <img src="/correto.png" alt="Icon" />Toalha Quente</li>
+  <li> <img src="/correto.png" alt="Icon" />Pomada Inclusa</li>
+  <li> <img src="/correto.png" alt="Icon" />Design da Sobrancelha</li>
+ </ul>
+
+ <button className="BotaoCard">Agendar</button>
   </div>
 
   <div className="Card">
     <img src="/barba.png" alt="Tesoura" />
-<h1>CORTE / <br></br> BARBA</h1>
+<h2>CORTE / <br></br> BARBA</h2>
 <div className="Linha"></div>
  <h3>Corte + barba alinhada
     com <br></br> acabamento profissional.</h3>
- <h4>⏱ 60 - 70 min</h4>
+ <h4> <strong>⏱</strong> 60 - 70 min</h4>
+ <div className="Linha"></div>
+  <h3 className="CardPrecos"> R$<strong className="CardPrecos2" >55</strong>,00</h3>
+  <ul>
+  <li> <img src="/correto.png" alt="Icon" />Toalha Quente</li>
+  <li> <img src="/correto.png" alt="Icon" />Pomada Inclusa</li>
+  <li> <img src="/correto.png" alt="Icon" />Barba na Navalha</li>
+  <li> <img src="/correto.png" alt="Icon" />Design da Barba</li>
+ </ul>
+
+ <button className="BotaoCard">Agendar</button>
   </div>
 
   <div className="Card">
     <img src="/tesoura.png" alt="Tesoura" />
     <img src="/barba.png" alt="Tesoura" />
-<h1>COMBO <br></br> PREMIUM</h1>
+<h2>COMBO <br></br> PREMIUM</h2>
 <div className="Linha"></div>
  <h3> Experiência completa com
       corte, <br></br> barba e sobrancelha.</h3>
- <h4>⏱ 80 - 90 min</h4>
+ <h4><strong>⏱</strong> 80 - 90 min</h4>
+ <div className="Linha"></div>
+ <h3 className="CardPrecos"> R$<strong className="CardPrecos2">65</strong>,00</h3>
+ <ul>
+  <li> <img src="/correto.png" alt="Icon" />Corte + Barba + Sobrancelha</li>
+  <li> <img src="/correto.png" alt="Icon" />Acabamento na Navalha</li>
+  <li> <img src="/correto.png" alt="Icon" />Toalha Quente</li>
+  <li> <img src="/correto.png" alt="Icon" />Pomada Inclusa</li>
+ </ul>
 
+<button className="BotaoCard">Agendar</button>
   </div>
 </div>
 
