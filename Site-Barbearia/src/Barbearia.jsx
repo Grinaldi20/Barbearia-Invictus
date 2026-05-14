@@ -202,7 +202,8 @@ function App() {
 </section>
 
 <section className="SobreSection">
-  <h1>SOBRE</h1>
+    <img className="CoroaSobre" src="/coroa.png" alt="Coroa" />
+  <h1><strong>S</strong>OBRE</h1>
 </section>
 
 <section className="ContatoSection">
