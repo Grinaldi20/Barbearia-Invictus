@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Barbearia.css'
+import Salao from './assets/Salao.png';
 import logo from './assets/logo.png';
 import Corte from './assets/Cortes/Corte.png';
 import Corte2 from './assets/Cortes/Corte2.png';
@@ -54,10 +55,10 @@ function App() {
   <h1 className="CortesTitulo">
     NOSSOS <span>CORTES</span>
   </h1>
-<div className="Linha2"></div>
-  <p className="SubtituloCortes">
+  <h2 className="SubtituloCortes">
     Estilo, personalidade e acabamento premium.
-  </p>
+  </h2>
+<div className="Linha2"></div>
 
   <div className="CortesImg">
 
@@ -120,6 +121,10 @@ function App() {
 
 <section className="PrecosSection">
   <h1>NOSSOS <strong className="Serviços">SERVIÇOS</strong></h1>
+  <h2 className="SubtituloPrecos">
+    Estilo por um preço que vale a experiência.
+  </h2>
+  <div className="Linha2"></div>
 
 <div  className="Cards">
  <div className="Card">
@@ -202,8 +207,35 @@ function App() {
 </section>
 
 <section className="SobreSection">
-    <img className="CoroaSobre" src="/coroa.png" alt="Coroa" />
+    <img className="Icon" src="/coroa.png" alt="Coroa" />
   <h1><strong>S</strong>OBRE</h1>
+  <h2 className="SubtituloSobre">Mais que uma barbearia, uma experiência</h2>
+  <div className="Linha2"></div>
+
+<div className="ContainerSobre">
+   <img src={Salao} alt="Salão" />
+
+<div className="TextosSobre">
+<h3 className="NossaSobre">Nossa História</h3>
+
+<h3 className="TraSobre">TRADIÇÃO, ESTILO E 
+  <br></br> 
+<strong>ATITUDE</strong>
+</h3>
+
+<p className="ParaSobre">Mais do que uma barbearia, criamos um espaço pensado para quem valoriza estilo, 
+cuidado e experiência. Nossa missão começou com a ideia de transformar cada atendimento
+em um momento único, unindo tradição, modernidade e atenção aos detalhes.</p>
+
+<p className="ParaSobre">Aqui, cada corte e cada barba são feitos com dedicação, técnica e personalidade,
+porque acreditamos que confiança também faz parte do visual. Desde o primeiro cliente,
+buscamos oferecer um ambiente confortável, sofisticado e feito para você sair se sentindo
+na sua melhor versão.</p>
+</div>
+</div>
+
+<div className="QuantSobre"></div>
+
 </section>
 
 <section className="ContatoSection">
