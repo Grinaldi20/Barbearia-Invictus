@@ -628,6 +628,14 @@ text-align: center;
 color: #C9A14A;
 }
 
+.SobreSection .SubtituloSobre{
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight:normal;
+  margin-bottom: 2rem;
+}
+
 .SobreSection .Icon{
   padding-top: 25px;
   width: 35px;
@@ -635,13 +643,6 @@ color: #C9A14A;
  margin-bottom: -2rem;
 }
 
-.SobreSection .SubtituloSobre{
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight:normal;
-  margin-bottom: 2rem;
-}
 
 .ContainerSobre{
   width: 85%;
@@ -783,8 +784,6 @@ padding-right: 1.5rem;
 
 
 
-
-
 /* Seção de Contato */
 
 .ContatoSection {
@@ -802,6 +801,31 @@ align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 36px;
   font-weight: 400;
+  margin-bottom: -0.5rem;
 }
 
+.ContatoSection h1 strong{
+color: #C9A14A;
+padding-right: 10px;
+}
 
+.ContatoSection .SubtituloContato{
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.ContatoSection .Icon{
+  padding-top: 15px;
+  width: 38px;
+  height: 36px;
+  margin-top: 11px;
+  padding-left: 5px;
+}
+
+.TextIcon{
+  display: flex;
+
+}

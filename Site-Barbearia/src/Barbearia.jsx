@@ -258,12 +258,15 @@ na sua melhor versão.</p>
 </section>
 
 <section className="ContatoSection">
-  <h1>CONTATO</h1>
+  <div className="TextIcon">
+
+  <h1><strong>FALE</strong>CONOSCO</h1>
+  </div>
+  <h2 className="SubtituloContato">Entre em contato com a nossa equipe de profissionais.</h2>
+  <div className="Linha2"></div>
 </section>
 
     </main>
-
-
 
 
     <footer>
