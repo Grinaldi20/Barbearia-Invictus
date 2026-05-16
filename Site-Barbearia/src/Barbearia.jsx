@@ -10,16 +10,11 @@ import Corte5 from './assets/Cortes/Corte5.png';
 import Corte6 from './assets/Cortes/Corte6.png';
 
 function App() {
- 
-
   return (
     <>
     <header className="header">
       <img src={logo} alt="Barbearia" />
       <nav>
-
-
-
  
         <ul>
           <li className="Inicio">INICIO</li>
@@ -29,10 +24,9 @@ function App() {
           <li>CONTATO</li>
         </ul>
 
-<button>AGENDAR</button>
+         <button>AGENDAR</button>
 
-        </nav>
-        
+        </nav> 
     </header>
 
     <main>
