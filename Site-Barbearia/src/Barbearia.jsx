@@ -264,6 +264,87 @@ na sua melhor versão.</p>
   </div>
   <h2 className="SubtituloContato">Entre em contato com a nossa equipe de profissionais.</h2>
   <div className="Linha2"></div>
+
+  <div className="ContatoContent">
+
+  <form className="FormContato">
+    <div className="JuntoIcon">
+    <img className="FormIconTop" src="/Calendario.png" alt="Calendário" />
+    <h2>AGENDAR UM HORARIO</h2>
+    </div>
+
+
+<div className="InputLado">
+  <div className="TextInputTop">
+    <label>Nome Completo</label>
+    <input type="text" placeholder="Digite seu nome" required></input>
+</div>
+<div className="TextInputTop">
+    <label>E-mail</label>
+     <input type="email" placeholder="Digite seu email" required></input>
+     </div>
+</div>
+<div className="InputLado">
+  <div className="TextInputTop">
+     <label>WhatsApp</label>
+      <input type="tel" placeholder="(00) 00000-0000" required></input>
+</div>
+<div className="TextInputTop">
+      <label>Serviço</label>
+       <input type="text" placeholder="Escolha o serviço" required></input>
+       </div>
+</div>
+       <label>Dia desejado</label>
+        <input className="DataInput" type="date" placeholder="Selecione uma Data" required></input>
+
+        <label className="Htext">Horário Desejado</label>
+         <select className="Horarios">
+<option value="" disabled selected>Horário Desejado</option>
+<option value="09:00">9:00</option>  <option value="10:00">10:00</option>
+<option value="11:00">11:00</option> <option value="12:00">12:00</option>
+<option value="14:00">14:00</option> <option value="15:00">15:00</option>
+<option value="16:00">16:00</option> <option value="17:00">17:00</option>
+<option value="18:00">18:00</option> <option value="19:00">19:00</option>
+<option value="20:00">20:00</option>
+         </select>
+         <label>Observações (Opcional)</label>
+         <textarea placeholder="Mensagem (Opcional)"></textarea>
+         <button className="BotaoContato" type="submit">Enviar Mensagem</button>
+         <h3>Seus dados estão protegidos e serão usados apenas para contato.</h3>
+  </form>
+
+  <div className="InfoContato">
+    <div className="Mapa">
+   <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.0353299141925!2d-50.52566892555306!3d-21.933193203801256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9495b7fdc89d93d5%3A0x6bd4938926a13b2a!2sInvictus%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1778969686809!5m2!1spt-BR!2sbr"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+
+<div className="RedesSociais">
+  <a href="https://wa.me/5514999999999" target="_blank">
+  <img className="Sociais" src="/whatsapp.png" alt="WhatsApp" />
+  </a>
+
+  <a href="https://instagram.com/invictusbarbearia" target="_blank">
+     <img className="Sociais"  src="/instagram.png" alt="Instagram" />
+  </a>
+
+  <a href="https://facebook.com/invictusbarbearia" target="_blank">
+    <img className="Sociais"  src="/facebook.png" alt="Facebook" />
+  </a>
+</div>
+    </div>
+
+
+
+  </div>
+
 </section>
 
     </main>
