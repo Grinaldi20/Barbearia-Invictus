@@ -298,7 +298,7 @@ na sua melhor versão.</p>
         <input className="DataInput" type="date" placeholder="Selecione uma Data" required></input>
 
         <label className="Htext">Horário Desejado</label>
-         <select className="Horarios">
+         <select className="Horários">
 <option value="" disabled selected>Horário Desejado</option>
 <option value="09:00">9:00</option>  <option value="10:00">10:00</option>
 <option value="11:00">11:00</option> <option value="12:00">12:00</option>
@@ -314,6 +314,10 @@ na sua melhor versão.</p>
   </form>
 
   <div className="InfoContato">
+    <div className="JuntoIcon2">
+     <img className="PinIcon" src="/pin.png" alt="Pin" />
+    <h3>R. Nhambiquaras, 152 - Jardim America, Tupã - SP, 17601-150</h3>
+</div>
     <div className="Mapa">
    <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.0353299141925!2d-50.52566892555306!3d-21.933193203801256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9495b7fdc89d93d5%3A0x6bd4938926a13b2a!2sInvictus%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1778969686809!5m2!1spt-BR!2sbr"
@@ -344,6 +348,30 @@ na sua melhor versão.</p>
 
 
   </div>
+
+</section>
+
+
+
+<section className="HorarioSection">
+  <div className="TextIcon">
+
+  <h1 className="TituloHorario">NOSSOS<strong>HORÁRIOS</strong></h1>
+  </div>
+  <h2 className="SubtituloHorario">Entre em contato com a nossa equipe de profissionais.</h2>
+  <div className="Linha2"></div>
+
+
+<div className="CardsHorario">
+
+  <div className="CardHorario">
+  
+  </div>
+ </div>
+
+
+
+
 
 </section>
 

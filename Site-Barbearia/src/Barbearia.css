@@ -91,7 +91,7 @@
   width: 100%;
   height: 700px;
   margin-bottom: -1.32rem;
-  background-image: url('/fundoInicio.png');
+  background-image: url('/fundoInicio2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -382,16 +382,57 @@ background-color: #e9b649;
   display:flex ;
   flex-direction: column;
   width: 100%;
+  background-image: url('/FundoPreco.png');
   height: 900px;
-  background-color: #0a0a0a;
   margin-bottom: -1.39rem;
+   justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
 }
+
+
+.PrecosSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; 
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1.4),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}
+.PrecosSection::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.90) 20%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+
 
 .PrecosSection h1{
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   font-weight: 400;
+  margin-top: -2rem;
   margin-bottom: -0.2rem;
 }
 
@@ -787,14 +828,52 @@ padding-right: 1.5rem;
 /* Seção de Contato */
 
 .ContatoSection {
-align-items: center;
+  align-items: center;
   display:flex ;
   flex-direction: column;
   width: 100%;
-  height: 850px;
-  background-color: #0a0a0a;
+  background-image: url('/FundoContato.png');
+  height: 900px;
   margin-bottom: -1.39rem;
+   justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
 }
+
+.ContatoSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; 
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1.4),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}
+.ContatoSection::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.90) 20%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 
 .ContatoSection h1{
   color: #fff;
@@ -845,7 +924,7 @@ padding-right: 10px;
   width: 30rem;
   max-width: 500px;
   padding: 32px;
-  height:620px;
+  height:600px;
   background: linear-gradient(
     180deg,
     #111111,
@@ -985,7 +1064,7 @@ padding-right: 10px;
   width: 100%;
   min-height: 45px;
   background: #C9A14A;
-  color: #000;
+  color: #ffffff;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1134,4 +1213,57 @@ padding-right: 10px;
 
 .RedesSociais a:hover .Sociais{
   transform: scale(1.12);
+}
+
+.JuntoIcon2{
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+
+.JuntoIcon2 .PinIcon{
+  width: 35px;
+  height: 35px;
+  padding-top: 10px;
+  padding-right: 15px;
+}
+
+.JuntoIcon2 h3{
+  color: #777;
+  font-size: 14px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Seção Horaios */
+
+
+.HorarioSection {
+align-items: center;
+  display:flex ;
+  flex-direction: column;
+  width: 100%;
+  height: 850px;
+  background-color: #000000;
+  margin-bottom: -1.39rem;
+}
+
+.HorarioSection .TituloHorario{
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: -0.5rem;
+  padding-top: 50px;
+}
+
+.HorarioSection .TituloHorario strong{
+color: #C9A14A;
+padding-left: 15px;
+}
+
+.HorarioSection .SubtituloHorario{
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 2rem;
 }
