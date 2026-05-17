@@ -1,3 +1,10 @@
+html,
+body{
+  scroll-behavior: smooth !important;
+}
+
+
+
 .header {
   display: flex;
   align-items: center;
@@ -16,13 +23,27 @@
   margin: 0 auto;
 }
 
+.header ul li a{
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.header ul li a:hover{
+  color: #C9A14A;
+}
+
+.Inicio{
+  color: #C9A14A !important;
+}
+
 .header ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-left: 16rem;
-  padding-right: 20rem;
+  padding-left: 12rem;
+  padding-right: 13.5rem;
 }
 
 .header li {
@@ -60,26 +81,30 @@
 }
 
 .header button{
-  border-radius: 10px;
-  width: 6rem;
-  height: 2.2rem;
-  font-family: "Arial";
-  font-size: 15px;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.5rem;
+  height: 2.7rem;
+  padding: 20px 30px;
+  border-radius: 14px;
+  border: 2px solid #000000;
   background-color:#C9A14A;
-  color: white;
-  border: none;
+  color: #000;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
   cursor: pointer;
-  font-weight: 400;
-  box-shadow: rgb(233, 233, 233) 0px 0px 2px 0px;
-   transition: 0.3s ;
+  transition: 0.3s;
+  margin-top: -0.5rem;
 }
 
 .header button:hover{
-  background-color: #e9b649;
-  transition: color 0.5s ease;
-  transform: scale(1.1);
-   transition: 0.3s ;
-   box-shadow: rgb(233, 233, 233) 0px 0px 2px 0px;
+  background:transparent;
+  color: #C9A14A;
+  border: 2px solid #C9A14A;
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(201,161,74,0.4);
 }
 
 
@@ -89,9 +114,9 @@
   
   justify-content: center;
   width: 100%;
-  height: 700px;
+  min-height: 700px;
   margin-bottom: -1.32rem;
-  background-image: url('/fundoInicio2.png');
+  background-image: url('/fundoInicio3.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -119,7 +144,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 320px;
+  height: 200px;
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 1) 0%,
@@ -128,6 +153,7 @@
     rgba(0, 0, 0, 0) 50%,
     rgba(0, 0, 0, 0) 100%
   );
+   pointer-events: none;
 }
 
 .Titulo {
@@ -141,63 +167,68 @@
 .Titulo .Invictus{
   color: white;
   font-family: "Arial";
-  font-size: 100px;
+  font-size: 120px;
   margin-bottom: -2rem;
 }
 
 .Titulo .Barbearia{
   color: #C9A14A;
   font-family: "Arial";
-  font-size: 27px;
+  font-size: 40px;
   margin-bottom: 1rem;
 }
 
 .Titulo .FraseInicio{
-  font-family: "Arial", cursive, sans-serif;
-  font-size: 18px;
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 22px;
   color: white;
   margin-bottom: 4rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .Titulo .ButtonInicio{
-   border-radius: 10px;
-  width: 16rem;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 330px;
   height: 4.5rem;
-  font-family: "Arial";
-  font-size: 20px;
+  padding: 20px 30px;
+  border-radius: 14px;
+  border: 2px solid #000000;
   background-color:#C9A14A;
-  color: white;
-  border: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
   cursor: pointer;
-  font-weight: 500;
-  box-shadow: rgb(233, 233, 233) 0px 0px 2px 0px;
-   transition: 0.3s ;
+  transition: 0.3s;
+  margin-top:3rem;
 }
 
 .Titulo .ButtonInicio:hover{
-background-color: #e9b649;
-  transition: color 0.5s ease;
-  transform: scale(1.1);
-   transition: 0.3s ;
-   box-shadow: rgb(233, 233, 233) 0px 0px 2px 0px;
+ background:transparent;
+  color: #C9A14A;
+  border: 2px solid #C9A14A;
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(201,161,74,0.4);
 }
+
 
 .TextCoroa {
   display: flex;
 }
 
 .TextCoroa img{
-  width: 30px;
-  height: 30px;
-  margin-top: 0.7rem;
+  width: 35px;
+  height: 35px;
+  margin-top: 0.9rem;
 }
 
 /* SEÇÃO CORTES */
 
 .CortesSection{
   width: 100%;
-  height: 850px;
+  min-height: 850px;
   background-color: #000;
   display: flex;
   flex-direction: column;
@@ -383,7 +414,7 @@ background-color: #e9b649;
   flex-direction: column;
   width: 100%;
   background-image: url('/FundoPreco.png');
-  height: 900px;
+  min-height: 900px;
   margin-bottom: -1.39rem;
    justify-content: center;
   background-size: cover;
@@ -652,7 +683,7 @@ text-align: center;
   display:flex ;
   flex-direction: column;
   width: 100%;
-  height: 850px;
+  min-height: 850px;
   background-color: #000000;
   margin-bottom: -1.39rem;
 }
@@ -833,7 +864,7 @@ padding-right: 1.5rem;
   flex-direction: column;
   width: 100%;
   background-image: url('/FundoContato.png');
-  height: 900px;
+  min-height: 900px;
   margin-bottom: -1.39rem;
    justify-content: center;
   background-size: cover;
@@ -1241,7 +1272,7 @@ align-items: center;
   display:flex ;
   flex-direction: column;
   width: 100%;
-  height: 850px;
+  min-height: 850px;
   background-color: #000000;
   margin-bottom: -1.39rem;
 }
@@ -1266,4 +1297,435 @@ padding-left: 15px;
   font-size: 16px;
   font-weight: 300;
   margin-bottom: 2rem;
+}
+
+.CardsHorario{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  gap: 20px;
+}
+/* CARD */
+
+.CardsHorario .CardHorario{
+  width: 135px;
+  height: 285px;
+  background-color: #111111;
+  border-radius: 18px;
+  border: 1px solid rgba(201,161,74,0.22);
+  box-shadow:
+  0 0 20px rgba(201,161,74,0.08),
+  0 0 50px rgba(0,0,0,0.8);
+  transition: 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 14px;
+  overflow: hidden;
+}
+
+.CardsHorario .CardHorario:hover{
+  transform: translateY(-6px);
+  border-color: rgba(201,161,74,0.45);
+  box-shadow:
+  0 0 20px rgba(201,161,74,0.18),
+  0 0 55px rgba(0,0,0,0.85);
+}
+
+/* ÍCONE */
+
+.IconHorario{
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* TÍTULO */
+
+.TituloCard{
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 0.7rem;
+}
+
+/* LINHA */
+
+.Linha4{
+  width: 130px;
+  height: 1.5px;
+  background-color: #C9A14A;
+  position: relative;
+ margin-bottom: 1rem;
+}
+
+.Linha4::after{
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #C9A14A;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:
+  translate(-50%, -50%)
+  rotate(45deg);
+}
+
+/* HORÁRIO */
+
+.HorarioCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #C9A14A;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.HorarioCard strong{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* STATUS */
+
+.Aberto{
+  width: 92px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    #c99b3b,
+    #a97823
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow:
+  0 0 12px rgba(201,161,74,0.22);
+}
+
+.Aberto::before{
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b8ff9c;
+  box-shadow:
+  0 0 8px #b8ff9c;
+}
+
+.Aberto::after{
+  content: "ABERTO";
+}
+
+/* CARD FECHADO */
+
+.Fechado{
+  width: 92px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    #2c2c2c,
+    #1a1a1a
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #d8d8d8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow:
+  0 0 10px rgba(0,0,0,0.4);
+  margin-top: 7.2rem;
+}
+
+.Fechado::before{
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff3b3b;
+  box-shadow:
+  0 0 8px #ff3b3b;
+}
+
+.Fechado::after{
+  content: "FECHADO";
+}
+
+/* CARD ATENÇÃO */
+
+.CardAtencao{
+  width: 89%;
+  min-height: 70px;
+  margin-top: 3rem;
+  padding: 28px 40px;
+  border-radius: 22px;
+  border: 2px solid rgba(201,161,74,0.15);
+  background: linear-gradient(
+    180deg,
+    #111111,
+    #0b0b0b
+  );
+  display: flex;
+  align-items: center;
+  box-shadow:
+  0 0 20px rgba(201,161,74,0.06),
+  0 0 50px rgba(0,0,0,0.8);
+  transition: 0.35s ease;
+}
+
+.CardAtencao:hover{
+  transform: translateY(-3px);
+  box-shadow:
+  0 0 25px rgba(201,161,74,0.12),
+  0 0 60px rgba(0,0,0,0.9);
+}
+
+/* ÍCONE */
+
+.IconAtencao{
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  margin-right: 18px;
+}
+
+/* TEXTO */
+
+.TextAtencao{
+  color: #C9A14A;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-right: 28px;
+}
+
+/* LINHA */
+
+.Linha5{
+  width: 1px;
+  height: 65px;
+  background-color: rgba(201,161,74,0.35);
+  margin-right: 40px;
+}
+
+/* FRASES */
+
+.FraseAtencao{
+  color: #d6d6d6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0;
+}
+
+.FraseAtencao2{
+  color: #d6d6d6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 550;
+  line-height: 30px;
+  margin: 0;
+}
+
+.FraseAtencao{
+  margin-right: 8px;
+}
+
+/* CONTAINER TEXTO */
+
+.CardAtencao{
+  flex-wrap: wrap;
+}
+
+/* FOOTER */
+
+.Footer{
+  width: 100%;
+  background: #080808;
+  padding-top: 70px;
+  padding-bottom: 25px;
+  border-top: 1px solid rgba(201,161,74,0.12);
+}
+
+/* CONTAINER */
+
+.FooterContainer{
+  width: 85%;
+  max-width: 1300px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+/* LOGO */
+
+.FooterInfo{
+  max-width: 320px;
+}
+
+.LogoFooter{
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: -1rem;
+}
+
+.NomeFooter{
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.NomeFooter strong{
+  color: #C9A14A;
+  font-weight: 500;
+}
+
+.TextoFooter{
+  color: #9e9e9e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 300;
+}
+
+/* TÍTULOS */
+
+.FooterLinks h3,
+.FooterContato h3,
+.FooterRedes h3{
+  color: #C9A14A;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* LINKS */
+
+.FooterLinks{
+  display: flex;
+  flex-direction: column;
+}
+
+.FooterLinks a{
+  color: #d4d4d4;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-bottom: 14px;
+  transition: 0.3s ease;
+}
+
+.FooterLinks a:hover{
+  color: #C9A14A;
+  transform: translateX(4px);
+}
+
+/* CONTATO */
+
+.FooterContato p{
+  color: #cfcfcf;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-bottom: 16px;
+  
+}
+
+.FooterContato p .IconFooter{
+  width:20px;
+  height:20px;
+}
+
+/* REDES */
+
+.IconsFooter{
+  display: flex;
+  gap: 18px;
+}
+
+.IconsFooter a{
+  width: 52px;
+  height: 52px;
+  background: #121212;
+  border-radius: 14px;
+  border: 1px solid rgba(201,161,74,0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.35s ease;
+}
+
+.IconsFooter a:hover{
+  transform: translateY(-5px);
+  border-color: #C9A14A;
+
+  box-shadow:
+  0 0 18px rgba(201,161,74,0.18);
+}
+
+.IconsFooter img{
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+
+  filter:
+  brightness(0)
+  saturate(100%)
+  invert(72%)
+  sepia(33%)
+  saturate(587%)
+  hue-rotate(5deg)
+  brightness(92%)
+  contrast(88%);
+}
+
+/* LINHA */
+
+.LinhaFooter{
+  width: 85%;
+  height: 1px;
+  background: rgba(201,161,74,0.12);
+
+  margin: 45px auto 25px auto;
+}
+
+/* COPYRIGHT */
+
+.CopyFooter{
+  text-align: center;
+  color: #777;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
 }

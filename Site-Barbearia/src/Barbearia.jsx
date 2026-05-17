@@ -17,11 +17,12 @@ function App() {
       <nav>
  
         <ul>
-          <li className="Inicio">INICIO</li>
-          <li>CORTES</li>
-          <li>PREÇOS</li>
-          <li>SOBRE</li>
-          <li>CONTATO</li>
+        <li><a href="#Inicio" className="Inicio">INICIO</a></li>
+<li><a href="#Cortes ">CORTES</a></li>
+<li><a href="#Precos">PREÇOS</a></li>
+<li><a href="#Horarios">HORÁRIOS</a></li>
+<li><a href="#Sobre">SOBRE</a></li>
+<li><a href="#Contato">CONTATO</a></li>
         </ul>
 
          <button>AGENDAR</button>
@@ -30,7 +31,7 @@ function App() {
     </header>
 
     <main>
-<section className="InicioSection">
+<section id="Inicio" className="InicioSection">
   <div className="Titulo">
   <h1 className="Invictus">INVICTUS</h1>
   <h1 className="Barbearia">BARBEARIA</h1>
@@ -44,7 +45,7 @@ function App() {
 </section>
 
 
-<section className="CortesSection">
+<section id="Cortes" className="CortesSection">
 
   <h1 className="CortesTitulo">
     NOSSOS <span>CORTES</span>
@@ -113,7 +114,7 @@ function App() {
 </section>
 
 
-<section className="PrecosSection">
+<section id="Precos" className="PrecosSection">
   <h1>NOSSOS <strong className="Serviços">SERVIÇOS</strong></h1>
   <h2 className="SubtituloPrecos">
     Estilo por um preço que vale a experiência.
@@ -200,7 +201,7 @@ function App() {
 
 </section>
 
-<section className="SobreSection">
+<section id="Sobre" className="SobreSection">
     <img className="Icon" src="/coroa.png" alt="Coroa" />
   <h1><strong>S</strong>OBRE</h1>
   <h2 className="SubtituloSobre">Mais que uma barbearia, uma experiência</h2>
@@ -257,7 +258,7 @@ na sua melhor versão.</p>
 
 </section>
 
-<section className="ContatoSection">
+<section id="Contato" className="ContatoSection">
   <div className="TextIcon">
 
   <h1><strong>FALE</strong>CONOSCO</h1>
@@ -353,22 +354,82 @@ na sua melhor versão.</p>
 
 
 
-<section className="HorarioSection">
+<section id="Horarios" className="HorarioSection">
   <div className="TextIcon">
 
   <h1 className="TituloHorario">NOSSOS<strong>HORÁRIOS</strong></h1>
   </div>
-  <h2 className="SubtituloHorario">Entre em contato com a nossa equipe de profissionais.</h2>
+  <h2 className="SubtituloHorario">Escolha o melhor dia e horário e venha viver a experiência Invictus.</h2>
   <div className="Linha2"></div>
 
 
 <div className="CardsHorario">
 
   <div className="CardHorario">
-  
+      <img className="IconHorario" src="/Calendario.png" alt="Calendário" />
+    <h2 className="TituloCard">SEGUNDA</h2>
+    <div className="Linha4"></div>
+    <h2 className="HorarioCard">9:00 <strong>ás</strong> 20:00</h2>
+    <div className="Aberto"></div>
+  </div>
+
+  <div className="CardHorario">
+   <img className="IconHorario" src="/Calendario.png" alt="Calendário" />
+    <h2 className="TituloCard">TERÇA</h2>
+    <div className="Linha4"></div>
+    <h2 className="HorarioCard">9:00 <strong>ás</strong> 20:00</h2>
+    <div className="Aberto"></div>
+  </div>
+
+  <div className="CardHorario">
+   <img className="IconHorario" src="/Calendario.png" alt="Calendário" />
+    <h2 className="TituloCard">QUARTA</h2>
+    <div className="Linha4"></div>
+    <h2 className="HorarioCard">9:00 <strong>ás</strong> 20:00</h2>
+    <div className="Aberto"></div>
+  </div>
+
+  <div className="CardHorario">
+   <img className="IconHorario" src="/Calendario.png" alt="Calendário" />
+    <h2 className="TituloCard">QUINTA</h2>
+    <div className="Linha4"></div>
+    <h2 className="HorarioCard">9:00 <strong>ás</strong> 20:00</h2>
+    <div className="Aberto"></div>
+  </div>
+
+  <div className="CardHorario">
+   <img className="IconHorario" src="/Calendario.png" alt="Calendário" />
+    <h2 className="TituloCard">SEXTA</h2>
+    <div className="Linha4"></div>
+    <h2 className="HorarioCard">9:00 <strong>ás</strong> 20:00</h2>
+    <div className="Aberto"></div>
+  </div>
+
+  <div className="CardHorario">
+   <img className="IconHorario" src="/Calendario.png" alt="Calendário" />
+    <h2 className="TituloCard">SABADO</h2>
+    <div className="Linha4"></div>
+    <h2 className="HorarioCard">9:00 <strong>ás</strong> 17:00</h2>
+    <div className="Aberto"></div>
+  </div>
+
+  <div className="CardHorario">
+   <img className="IconHorario" src="/Calendario.png" alt="Calendário" />
+    <h2 className="TituloCard">DOMINGO</h2>
+    <div className="Linha4"></div>
+    <div className="Fechado"></div>
   </div>
  </div>
 
+<div className="CardAtencao">
+   <img className="IconAtencao" src="/relogio.png" alt="relogio" />
+   <h2 className="TextAtencao">ATENÇÃO</h2>
+   <div className="Linha5"></div>
+    <div className="TextosAtencao">
+   <h3 className="FraseAtencao">Os horários podem sofrer alterações em feriados e data comemorativas.</h3>
+   <h3 className="FraseAtencao2">Entre em contato para confirmar.</h3>
+   </div>
+</div>
 
 
 
@@ -377,10 +438,95 @@ na sua melhor versão.</p>
 
     </main>
 
+<footer className="Footer">
 
-    <footer>
+  <div className="FooterContainer">
 
-    </footer>
+    {/* LOGO E TEXTO */}
+
+    <div className="FooterInfo">
+
+      <img
+        className="LogoFooter"
+        src="/Logo1.png"
+        alt="Logo"
+      />
+
+      <h2 className="NomeFooter">
+        INVICTUS <strong>BARBEARIA</strong>
+      </h2>
+
+      <p className="TextoFooter">
+        Estilo, tradição e excelência em cada detalhe.
+        Transformando cortes em experiências.
+      </p>
+
+    </div>
+
+    {/* LINKS */}
+
+    <div className="FooterLinks">
+
+      <h3>NAVEGAÇÃO</h3>
+
+      <a href="">Início</a>
+      <a href="">Cortes</a>
+      <a href="">Preços</a>
+      <a href="">Sobre</a>
+      <a href="">Contato</a>
+
+    </div>
+
+    {/* CONTATO */}
+
+    <div className="FooterContato">
+
+      <h3>CONTATO</h3>
+
+      <p><img className="IconFooter" src="/pin.png" alt="pin" /> Tupã - SP</p>
+      <p><img className="IconFooter" src="/telefone.png" alt="telefone" /> (14) 99999-9999</p>
+      <p><img className="IconFooter" src="/email.png" alt="email" /> contato@invictus.com</p>
+
+    </div>
+
+    {/* REDES */}
+
+    <div className="FooterRedes">
+
+      <h3>REDES SOCIAIS</h3>
+
+      <div className="IconsFooter">
+
+        <a href="">
+          <img src="/instagram.png" alt="Instagram" />
+        </a>
+
+        <a href="">
+          <img src="/facebook.png" alt="Facebook" />
+        </a>
+
+        <a href="">
+          <img src="/whatsapp.png" alt="Whatsapp" />
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* LINHA */}
+
+  <div className="LinhaFooter"></div>
+
+  {/* COPYRIGHT */}
+
+  <div className="CopyFooter">
+    © 2026 Invictus Barbearia — Todos os direitos reservados.
+  </div>
+
+</footer>
+   
      </>
   )
 }
