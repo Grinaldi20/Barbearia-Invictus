@@ -1,1731 +1,1206 @@
-html,
-body{
-  scroll-behavior: smooth !important;
+﻿/* Reset e base */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  min-height: 100%;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
 
+img, video, svg { display: block; max-width: 100%; height: auto; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; text-decoration: none; }
 
+/* ============================================================
+   HEADER
+   ============================================================ */
 .header {
-  display: flex;
-  align-items: center;
-  height: 130px;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  margin-bottom: -1.31rem; 
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  width: 100%;
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(201,161,74,0.12);
 }
 
-.header nav {
-  display: flex;
-  align-items: center;
-  width: 90%;
-  max-width: 1200px;
+.header .headerInner {
+  width: min(1200px, 100%);
   margin: 0 auto;
-}
-
-.header ul li a{
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.header ul li a:hover{
-  color: #C9A14A;
-}
-
-.Inicio{
-  color: #C9A14A !important;
-}
-
-.header ul {
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding-left: 12rem;
-  padding-right: 13.5rem;
-}
-
-.header li {
-  margin: 12px;
-  font-family: "Arial";
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.3s ;
-}
-
-.header li:hover{
-  color: #C9A14A;
-  transition: color 0.3s ease;
-    transform: scale(1.1);
-   transition: 0.5s ;
-}
-
-.Inicio {
-   margin-left: 35px; 
-  font-family: "Arial";
-  font-size: 18px;
-  cursor: pointer;
-  color: #C9A14A;
-  
-}
-
-.header img{
-  width: 180px;
-  height: 180px;
-}
-
-.header img:hover{
-   transform: scale(1.1);
-   transition: 0.5s ;
-}
-
-.header button{
-   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 6.5rem;
-  height: 2.7rem;
-  padding: 20px 30px;
-  border-radius: 14px;
-  border: 2px solid #000000;
-  background-color:#C9A14A;
-  color: #000;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: -0.5rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.5rem;
+  position: relative;
 }
 
-.header button:hover{
-  background:transparent;
-  color: #C9A14A;
+/* Logo — sempre à ESQUERDA */
+.header .Logo {
+  width: clamp(80px, 10vw, 150px);
+  max-height: 65px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Nav desktop: links em linha, hambúrguer oculto */
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.headerNav ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.2vw, 1.25rem);
+}
+
+.headerNav ul li a {
+  color: #fff;
+  font-size: clamp(0.78rem, 0.9vw, 0.95rem);
+  padding: 0.4rem 0.2rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.headerNav ul li a:hover,
+.headerNav ul li a:focus { color: #C9A14A; }
+
+/* Hambúrguer — oculto no desktop */
+.menuToggle {
+  display: none;
+  background: transparent;
   border: 2px solid #C9A14A;
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(201,161,74,0.4);
+  border-radius: 10px;
+  color: #C9A14A;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
 }
 
+.menuToggle:hover { background: rgba(201,161,74,0.1); }
 
-/* Seção do Inicio */
-
+/* ============================================================
+   HERO
+   ============================================================ */
 .InicioSection {
-  
+  position: relative;
+  display: flex;
+  align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 700px;
-  margin-bottom: -1.32rem;
+  min-height: clamp(560px, 85vh, 760px);
+  padding: 4rem 1rem;
   background-image: url('/fundoInicio3.png');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-   display: flex;
+  text-align: center;
 }
 
 .InicioSection::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 150px; 
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1.4),
-    rgba(0, 0, 0, 0)
-  );
+  top: 0; left: 0; width: 100%; height: 140px;
+  background: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
   pointer-events: none;
 }
+
 .InicioSection::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.90) 20%,
-    rgba(0, 0, 0, 0.35) 45%,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-   pointer-events: none;
+  bottom: 0; left: 0; width: 100%; height: 180px;
+  background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
 }
 
 .Titulo {
-  margin-top: 3rem;
-  align-items: center;
+  width: min(100%, 980px);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-content: center;
-}
-
-.Titulo .Invictus{
-  color: white;
-  font-family: "Arial";
-  font-size: 120px;
-  margin-bottom: -2rem;
-}
-
-.Titulo .Barbearia{
-  color: #C9A14A;
-  font-family: "Arial";
-  font-size: 40px;
-  margin-bottom: 1rem;
-}
-
-.Titulo .FraseInicio{
-  font-family: "Arial", Helvetica, sans-serif;
-  font-size: 22px;
-  color: white;
-  margin-bottom: 4rem;
-  font-weight: 300;
-}
-
-.Titulo .ButtonInicio{
-    display: flex;
   align-items: center;
-  justify-content: center;
-  width: 330px;
-  height: 4.5rem;
-  padding: 20px 30px;
-  border-radius: 14px;
-  border: 2px solid #000000;
-  background-color:#C9A14A;
-  color: #000;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top:3rem;
+  gap: 1rem;
 }
 
-.Titulo .ButtonInicio:hover{
- background:transparent;
+.InicioSection .Invictus {
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 0.9;
+}
+
+.InicioSection .Barbearia {
+  margin: 0;
   color: #C9A14A;
-  border: 2px solid #C9A14A;
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(201,161,74,0.4);
+  font-size: clamp(2rem, 6vw, 4rem);
 }
 
-
-.TextCoroa {
-  display: flex;
+.Titulo .FraseInicio {
+  margin: 0;
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  font-weight: 300;
+  line-height: 1.6;
 }
 
-.TextCoroa img{
-  width: 35px;
-  height: 35px;
-  margin-top: 0.9rem;
+.TextCoroa { display: inline-flex; align-items: center; gap: 0.5rem; }
+.TextCoroa img { width: 28px; }
+
+.Titulo .ButtonInicio {
+  width: min(100%, 280px);
+  padding: 0.9rem 1.5rem;
+  border-radius: 14px;
+  border: 2px solid #000;
+  background-color: #C9A14A;
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
-/* SEÇÃO CORTES */
+.Titulo .ButtonInicio:hover {
+  background: transparent;
+  color: #C9A14A;
+  border-color: #C9A14A;
+}
 
-.CortesSection{
+/* ============================================================
+   CORTES
+   ============================================================ */
+.CortesSection {
   width: 100%;
-  min-height: 850px;
   background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
-  padding-bottom: 100px;
-  position: relative;
-  overflow: visible;
+  padding: 3.5rem 1rem 4rem;
 }
 
-.CortesTitulo{
-  color: white;
-  font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
+.CortesTitulo {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.5rem);
   font-weight: 300;
   letter-spacing: 4px;
-  margin-bottom: -0.2rem;
 }
 
-.CortesTitulo span{
-  color: #C9A14A;
-}
+.CortesTitulo span { color: #C9A14A; }
 
-.SubtituloCortes{
-  color: #ffffff;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 2rem;
+.SubtituloCortes {
+  margin: 1rem 0 0;
+  font-size: clamp(0.88rem, 1.1vw, 1.1rem);
   font-weight: 200;
+  text-align: center;
 }
 
-.CortesImg{
+.Linha2 {
+  width: min(160px, 14%);
+  height: 1px;
+  background-color: #C9A14A;
+  margin: 2rem auto 2.5rem;
+  opacity: 0.7;
+  position: relative;
+}
+
+.Linha2::after {
+  content: "";
+  width: 8px; height: 8px;
+  background-color: #C9A14A;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+/* Grade: sempre 3 colunas */
+.CortesImg {
+  width: min(1100px, 100%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
+  gap: clamp(0.5rem, 1.2vw, 1.25rem);
 }
 
-/* CARD */
-
-.item{
+.item {
   position: relative;
-  width: 350px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 18px;
-  border: 2px solid rgba(201,161,74,0.5);
-  box-shadow:
-  0 0 10px rgba(201,161,74,0.25),
-  0 0 30px rgba(0,0,0,0.7);
-  transition: 0.5s ease;
-  cursor: pointer;
-}
-
-/* IMAGEM */
-
-.item img{
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(201,161,74,0.5);
+  box-shadow: 0 0 10px rgba(201,161,74,0.2), 0 0 24px rgba(0,0,0,0.7);
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(201,161,74,0.4), 0 0 30px rgba(201,161,74,0.15);
+}
+
+.item img {
+  width: 100%; height: 100%;
   object-fit: cover;
-  transition: 0.5s ease;
-  filter: brightness(0.88);
+  transition: transform 0.5s;
 }
 
-/* HOVER */
+.item:hover img { transform: scale(1.07); }
 
-.item:hover{
-  transform: translateY(-10px);
-  box-shadow:
-  0 0 15px rgba(201,161,74,0.5),
-  0 0 40px rgba(201,161,74,0.2);
-}
-
-.item:hover img{
-  transform: scale(1.08);
-  filter: brightness(1);
-}
-
-/* OVERLAY */
-
-.overlay{
+.overlay {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 25px;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.95),
-    rgba(0,0,0,0.1)
-  );
+  padding: 0.75rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.05));
   opacity: 0;
-  transition: 0.4s ease;
+  transition: opacity 0.35s;
 }
 
-/* HOVER OVERLAY */
+.item:hover .overlay { opacity: 1; }
 
-.item:hover .overlay{
-  opacity: 1;
+.overlay h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(0.85rem, 1.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-/* TEXTO */
-
-.overlay h3{
-  color: white;
-  font-size: 32px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  margin-bottom: 5px;
-  transform: translateY(20px);
-  transition: 0.4s ease;
-}
-
-.overlay p{
+.overlay p {
+  margin: 0.25rem 0 0;
   color: #C9A14A;
-  font-size: 15px;
-  transform: translateY(20px);
-  transition: 0.5s ease;
+  font-size: clamp(0.72rem, 1vw, 0.95rem);
 }
 
-.item:hover .overlay h3,
-.item:hover .overlay p{
-  transform: translateY(0);
-}
-
-/* BOTÃO */
-
-.BotaoCortes{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 240px;
-  height: 3rem;
-  padding: 20px 30px;
+.BotaoCortes {
+  margin-top: 2.25rem;
+  width: min(100%, 240px);
+  padding: 0.9rem 1.25rem;
   border-radius: 14px;
   border: 2px solid #C9A14A;
   background: transparent;
   color: #C9A14A;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top:3rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
-
-.BotaoCortes:hover{
+.BotaoCortes:hover {
   background-color: #C9A14A;
-  color: black;
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(201,161,74,0.4);
+  color: #000;
+  transform: translateY(-3px);
 }
 
-.Linha2{
-    width: 14%;
-    height: 1px;
-    background-color: #C9A14A;
-    margin: 20px auto;
-    position: relative;
-    opacity: 70%;
-    margin-top: -1.5rem;
-    margin-bottom: 4rem;
-}
-
-
-.Linha2::after{
-    content: "";
-    width: 8px;
-    height: 8px;
-    background-color: #C9A14A;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-/* Seção do Preços */
-
+/* ============================================================
+   PREÇOS
+   ============================================================ */
 .PrecosSection {
-  align-items: center;
-  display:flex ;
-  flex-direction: column;
   width: 100%;
+  padding: 4rem 1rem;
   background-image: url('/FundoPreco.png');
-  min-height: 900px;
-  margin-bottom: -1.39rem;
-   justify-content: center;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.PrecosSection h1, .Serviços { margin: 0; }
 
-.PrecosSection::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px; 
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1.4),
-    rgba(0, 0, 0, 0)
-  );
-  pointer-events: none;
-}
-.PrecosSection::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.90) 20%,
-    rgba(0, 0, 0, 0.35) 45%,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-
-
-.PrecosSection h1{
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 40px;
-  font-weight: 400;
-  margin-top: -2rem;
-  margin-bottom: -0.2rem;
-}
-
-.Serviços{
-  color: #C9A14A;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 40px;
+.PrecosSection h1 {
+  font-size: clamp(2rem, 3vw, 3.8rem);
   font-weight: 400;
 }
 
- .PrecosSection .SubtituloPrecos{
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:16px;
-  font-weight:normal;
-  margin-bottom:2rem;
-}
+.Serviços { color: #C9A14A; }
 
-.Card{
-width: 290px;
-height: 630px;
-border: solid 2px #C9A14A;
-border-radius: 16px;
-text-align: center;
- box-shadow:
-  0 0 10px rgba(201,161,74,0.25),
-  0 0 30px rgba(0,0,0,0.7);
-  transition: 0.5s ease;
-  cursor: pointer;
-}
-.Card:hover{
-  width: 300px;
-  height: 635px;
-   transform: translateY(-10px);
-  box-shadow:
-  0 0 15px rgba(201,161,74,0.5),
-  0 0 40px rgba(201,161,74,0.2);
+.PrecosSection .SubtituloPrecos {
+  margin: 1rem 0 2rem;
+  font-size: clamp(0.88rem, 1.1vw, 1.1rem);
+  font-weight: 300;
   text-align: center;
 }
 
+/* Grid de cards — 4 colunas desktop */
+.Cards {
+  width: min(1200px, 100%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
 
-.Card h3{
-  font-family: Arial, Helvetica, sans-serif;
+.Card {
+  padding: 1.25rem 1rem 1.5rem;
+  border: 2px solid #C9A14A;
+  border-radius: 16px;
+  background: rgba(0,0,0,0.25);
+  box-shadow: 0 0 10px rgba(201,161,74,0.2), 0 0 28px rgba(0,0,0,0.7);
+  transition: transform 0.35s, box-shadow 0.35s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.Card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px rgba(201,161,74,0.45), 0 0 38px rgba(201,161,74,0.18);
+}
+
+.Card img { width: 54px; height: auto; }
+
+.Card h2, .Card h3, .Card h4,
+.Card .Cortetext, .Card .Cortetext2 {
+  margin: 0;
+  text-align: center;
+}
+
+.Card h2 { font-size: clamp(0.88rem, 1.3vw, 1.25rem); }
+
+.Card h3 {
   color: #dadada;
-  font-size: 15px;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.Card h4{
-  color: #dadada ;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  width: 300px;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.Card h4 strong{
-  color: #C9A14A;
-}
-
-.Card h2{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
   font-weight: 400;
 }
 
-.Card h3.CardPrecos{
+.Card h4 {
+  color: #dadada;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.Card h3.CardPrecos { color: #C9A14A; font-size: 1.2rem; }
+
+.CardPrecos2 {
   color: #C9A14A;
-  font-size: 25px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
 }
 
-.CardPrecos2{
-  color: #C9A14A;
-  font-size: 40px;
-  font-family:Arial, Helvetica, sans-serif;
-}
+.Card .Cortetext, .Card .Cortetext2 { color: #C9A14A; font-size: 0.9rem; }
 
-.Card .Cortetext{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 2.5rem;
-  color: #C9A14A;
-}
+.Card ul { width: 100%; display: grid; gap: 0.5rem; }
 
-.Card ul{
-  padding: 0;
-  margin-top: 1rem;
-}
-
-.Card ul li{
+.Card ul li {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 0.5rem;
   color: #e2e2e2;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  list-style: none;
-  margin-bottom: 14px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
-
-.Card ul li img{
-  width: 18px;
-  padding-left: 30px;
-  height: 18px;
-  object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(72%) sepia(33%) saturate(587%) hue-rotate(5deg) brightness(92%) contrast(88%);
+.Card ul li img {
+  width: 15px; height: 15px;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
 }
 
-.Card img{
-  width: 85px;
-  height: 85px;
-  margin-top: 0.5rem;
-}
-
- .Card .imgCard2{
-  margin-bottom: 0.7rem;
- }
-
- .Card .Cortetext2{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 3.2rem;
-  color: #C9A14A;
-}
-
-
-.Linha{
-    width: 80%;
-    height: 1px;
-    background-color: #C9A14A;
-    margin: 20px auto;
-    position: relative;
-    opacity: 70%;
-    margin-top: -1.5rem;
-    margin-bottom: 2rem;
-}
-
-.Linha::after{
-    content: "";
-    width: 8px;
-    height: 8px;
-    background-color: #C9A14A;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.BotaoCard{
-  width: 200px;
-  height: 47px;
-  border-radius: 14px;
-  border: 2px solid #C9A14A;
+.Linha {
+  width: 80%;
+  max-width: 240px;
+  height: 1px;
   background-color: #C9A14A;
-  color: #000;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s;
+  margin: 0.25rem auto;
+  opacity: 0.7;
 }
 
-.BotaoCard:hover{
-  background-color: #000000;
-  color: #C9A14A;
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(201,161,74,0.4);
-}
-
-.BotaoCard2{
-  width: 200px;
-  height: 47px;
-  border-radius: 14px;
-  border: 2px solid #C9A14A;
-  background-color: #C9A14A;
-  color: #000;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s;
-  display: inline;
-  margin-top: 2.4rem;
-}
-
-.BotaoCard2:hover{
-  background-color: #000000;
-  color: #C9A14A;
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(201,161,74,0.4);
-}
-
-
-
-.Cards{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-}
-
-
-
-/* Seção do Sobre */
-
-.SobreSection {
-  align-items: center;
-  display:flex ;
-  flex-direction: column;
+.BotaoCard, .BotaoCard2 {
   width: 100%;
-  min-height: 850px;
-  background-color: #000000;
-  margin-bottom: -1.39rem;
+  max-width: 200px;
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  border: 2px solid #C9A14A;
+  background-color: #C9A14A;
+  color: #000;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
-.SobreSection h1{
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  margin-bottom: -0.5rem;
+.BotaoCard:hover, .BotaoCard2:hover {
+  background-color: #000;
+  color: #C9A14A;
+  transform: translateY(-3px);
 }
 
-.SobreSection h1 strong{
-color: #C9A14A;
-}
-
-.SobreSection .SubtituloSobre{
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight:normal;
-  margin-bottom: 2rem;
-}
-
-.SobreSection .Icon{
-  padding-top: 25px;
-  width: 35px;
-  height: 35px;
- margin-bottom: -2rem;
-}
-
-
-.ContainerSobre{
-  width: 85%;
-  max-width: 1300px;
-  display:flex;
-  justify-content: center;
-  gap: 80px;
-  margin-bottom: 3rem;
-}
-
-.ContainerSobre img{
-  width: 600px;
-  height: 450px;
-  border-radius: 24px;
-  border: 2px solid rgba(201,161,74,0.5);
-  box-shadow:
-  0 0 15px rgba(201,161,74,0.15),
-  0 0 40px rgba(0,0,0,0.8);
-  transition: 0.5s ease;
-}
-
-.ContainerSobre img:hover{
-  width: 605px;
-  height: 455px;
-  transition: 0.5s ease;
-  box-shadow:
-  0 0 25px rgba(201,161,74,0.35),
-  0 0 50px rgba(201,161,74,0.1);
-}
-
-.TextosSobre{
-  display:flex;
+/* ============================================================
+   SOBRE
+   ============================================================ */
+.SobreSection {
+  width: 100%;
+  padding: 4rem 1rem;
+  background-color: #000;
+  display: flex;
   flex-direction: column;
-  max-width: 520px;
+  align-items: center;
 }
 
-.ContainerSobre .NossaSobre{
-  color:#C9A14A;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 13px;
+.SobreSection h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: 400;
+}
+
+.SobreSection h1 strong { color: #C9A14A; }
+
+.SobreSection .SubtituloSobre {
+  margin: 1rem 0 2rem;
+  font-size: clamp(0.88rem, 1.1vw, 1.1rem);
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Lado a lado em TODAS as telas */
+.ContainerSobre {
+  width: min(1200px, 100%);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 2vw, 2rem);
+}
+
+.ContainerSobre > img {
+  flex: 0 0 clamp(140px, 38%, 540px);
+  width: clamp(140px, 38%, 540px);
+  height: auto;
+  border-radius: 16px;
+  border: 2px solid rgba(201,161,74,0.45);
+  box-shadow: 0 0 14px rgba(201,161,74,0.12), 0 0 36px rgba(0,0,0,0.8);
+  object-fit: cover;
+}
+
+.TextosSobre {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.NossaSobre {
+  color: #C9A14A;
+  font-size: 0.75rem;
   font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: -0.5rem;
+  margin: 0;
 }
 
-.ContainerSobre .TraSobre{
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:35px;
-  line-height: 52px;
-  font-weight:300;
-  margin-bottom: -0rem;
+.TraSobre {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.1rem, 3vw, 3rem);
+  line-height: 1.1;
+  font-weight: 300;
 }
 
-.ContainerSobre .TraSobre strong{
-  color:#C9A14A;
-  font-weight:500;
+.TraSobre strong { color: #C9A14A; font-weight: 500; }
+
+.ParaSobre {
+  margin: 0;
+  color: #cfcfcf;
+  font-size: clamp(0.78rem, 1.2vw, 1rem);
+  line-height: 1.7;
 }
 
-.ContainerSobre .ParaSobre{
-  color:#cfcfcf;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size:15px;
-  width:520px;
-  line-height: 32px;
-  font-weight:300;
+.QuantSobre {
+  width: min(100%, 1000px);
+  padding: 1.25rem;
+  border: 2px solid #C9A14A;
+  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.Quant {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.Quant > div { display: flex; align-items: center; gap: 0.65rem; }
+
+.IconQuant { width: 38px; height: 38px; object-fit: contain; }
+
+.Number { color: #C9A14A; font-size: 1.5rem; margin: 0; }
+
+.TextosQuant {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.Text {
+  color: #fff;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.Linha3 {
+  width: 1px;
+  min-height: 2.5rem;
+  background-color: #C9A14A;
+  opacity: 0.4;
+}
+
+/* ============================================================
+   CONTATO
+   ============================================================ */
+.ContatoSection {
+  width: 100%;
+  padding: 4rem 1rem;
+  background-image: url('/FundoContato.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ContatoSection h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: 400;
+}
+
+.ContatoSection h1 strong { color: #C9A14A; }
+
+.ContatoSection .SubtituloContato {
+  margin: 1rem 0 2rem;
+  font-size: clamp(0.88rem, 1vw, 1.1rem);
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Form + mapa — lado a lado em TODAS as telas */
+.ContatoContent {
+  width: min(1200px, 100%);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+}
+
+.FormContato {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: clamp(1rem, 2.5vw, 2rem) clamp(0.85rem, 2vw, 1.75rem);
+  background: linear-gradient(180deg, #111, #0d0d0d);
+  border: 2px solid rgba(201,161,74,0.12);
+  border-radius: 20px;
+  box-shadow: 0 0 18px rgba(201,161,74,0.07), 0 0 44px rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.InfoContato {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: clamp(0.85rem, 2vw, 1.5rem);
+  background: #111;
+  border: 2px solid rgba(201,161,74,0.12);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.FormIconTop { width: 26px; height: 26px; }
+
+.JuntoIcon {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.QuantSobre{
-  width: 65%;
-  height: 5.5rem;
-  background: transparent;
-  border: 2px solid #C9A14A;
-  border-radius: 16px;
-   transition: 0.3s ease;
-   display:flex;
-   flex-direction:column;
-}
-
-.QuantSobre:hover{
-  transition: 0.3s ease;
-  transform:translateY(-1px);
-    box-shadow:
-  0 0 20px rgba(201,161,74,0.35),
-  0 0 20px rgba(201,161,74,0.1);
-}
-
-.Quant{
-  display:flex;
-  justify-content:space-between;
- padding-right: 1.5rem;
-  margin-bottom: -2rem;
-}
-
-.IconQuant{
-  width: 45px;
-  height:45px;
-  padding-left:20px;
-  padding-right: 15px;
-  padding-top: 10px;
-}
-
-.Estrelas,.Clientes,
-.Historia,.Pessoas{
-    display:flex;
-}
-
-.Historia,.Pessoas,
-.Clientes,.Estrelas 
-.Number{
-    color:#C9A14A;
-}
-
-.TextosQuant{
-display:flex;
-justify-content:space-between;
-padding-left: 1rem;
-padding-right: 1.5rem;
-}
-
-.Text{
- color:#fff;
- font-size: 11px;
- font-family:Arial, Helvetica, sans-serif;
- font-weight: 400;
- text-transform: uppercase;
-}
-
-.Linha3{
-    width: 1px;
-    height: 3rem;
-    background-color: #C9A14A;
-    margin: 20px auto;
-    position: relative;
-    opacity: 40%;
-}
-
-
-
-/* Seção de Contato */
-
-.ContatoSection {
-  align-items: center;
-  display:flex ;
-  flex-direction: column;
-  width: 100%;
-  background-image: url('/FundoContato.png');
-  min-height: 900px;
-  margin-bottom: -1.39rem;
-   justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-}
-
-.ContatoSection::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px; 
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1.4),
-    rgba(0, 0, 0, 0)
-  );
-  pointer-events: none;
-}
-.ContatoSection::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.90) 20%,
-    rgba(0, 0, 0, 0.35) 45%,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-
-.ContatoSection h1{
+.JuntoIcon h2 {
+  margin: 0;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  margin-bottom: -0.5rem;
-}
-
-.ContatoSection h1 strong{
-color: #C9A14A;
-padding-right: 10px;
-}
-
-.ContatoSection .SubtituloContato{
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  margin-bottom: 2rem;
-}
-
-.ContatoSection .Icon{
-  padding-top: 15px;
-  width: 38px;
-  height: 36px;
-  margin-top: 11px;
-  padding-left: 5px;
-}
-
-.TextIcon{
-  display: flex;
-
-}
-
-.ContatoContent{
-   width: 85%;
-  max-width: 1300px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-  margin-top: -1rem;
-}
-
-
-.FormContato{
-  width: 30rem;
-  max-width: 500px;
-  padding: 32px;
-  height:600px;
-  background: linear-gradient(
-    180deg,
-    #111111,
-    #0d0d0d
-  );
-  border: 2px solid rgba(201,161,74,0.12);
-  border-radius: 24px;
-  display: flex;
-  flex-direction: column;
-  box-shadow:
-  0 0 20px rgba(201,161,74,0.08),
-  0 0 50px rgba(0,0,0,0.8);
-  transition: 0.4s ease;
-}
-
-.FormContato:hover{
-  box-shadow:
-  0 0 25px rgba(201,161,74,0.15),
-  0 0 60px rgba(201,161,74,0.08);
-}
-
-.FormIconTop{
-  width: 30px;
-  height: 30px;
-  margin-top: 0;
-}
-
-.FormTextTop{
-  display:flex;
-  flex-direction:column;
-}
-
-.JuntoIcon{
-  display:flex;
-   margin-bottom: 2rem;
-}
-
-.JuntoIcon h2{
-  color: #fff;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
-  letter-spacing: 2px;
-  margin-bottom: 0.2rem;
-  margin-top: 6px;
-  padding-left: 15px;
-}
-
-.FormTextTop h3{
-  color: #9e9e9e;
-  font-size: 13px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
-  line-height: 24px;
-  width: 320px;
-  margin-bottom: 0.2rem;
-  margin-top: -0.2rem;
-  margin-left:15px;
-}
-
-/* INPUTS LADO */
-
-.InputLado{
-  display:flex;
-  gap: 18px;
-  width: 100%;
-}
-
-/* CONTAINER INPUT */
-
-.TextInputTop{
-  width: 100%;
-  display:flex;
-  flex-direction:column;
-  margin-bottom: 1.3rem;
-}
-
-/* LABELS */
-
-.FormContato label{
-  color: #C9A14A;
-  font-size: 13px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(0.78rem, 1.5vw, 1.1rem);
   font-weight: 300;
   letter-spacing: 1px;
-  margin-bottom: 10px;
-  padding-left: 3px;
 }
 
-/* INPUTS */
+.InputLado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.TextInputTop {
+  flex: 1 1 120px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.FormContato label {
+  color: #C9A14A;
+  font-size: clamp(0.72rem, 1vw, 0.85rem);
+  letter-spacing: 0.8px;
+}
 
 .FormContato input:not(.BotaoContato),
 .FormContato select,
-.FormContato textarea{
+.FormContato textarea {
   width: 100%;
-  min-height: 52px;
+  min-height: 44px;
   background: #1a1a1a;
   border: 2px solid rgba(201,161,74,0.12);
-  border-radius: 14px;
-  padding: 0 18px;
-  color: white;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  outline: none;
-  transition: 0.3s ease;
-  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 0.65rem 0.85rem;
+  color: #fff;
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* DATE */
-
-.FormContato input[type="date"]{
-  appearance: none;
-  -webkit-appearance: none;
-  color: #777;
-}
-
-/* SELECT */
-
-.FormContato select{
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  color: #777;
-}
-
-/* TEXTAREA */
-
-.FormContato textarea{
-  min-height: 80px;
-  padding-top: 16px;
-  resize: none;
-}
-
-/* BOTÃO */
-
-.FormContato .BotaoContato{
-  width: 100%;
-  min-height: 45px;
-  background: #C9A14A;
-  color: #ffffff;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  border-radius: 14px;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 1rem;
-  transition: 0.3s ease;
-}
-
-.FormContato .BotaoContato:hover{
-  transform:
-  translateY(-3px);
-  background: #ddb04d;
-  box-shadow:
-  0 0 20px rgba(201,161,74,0.25);
-}
-
-
-/* FOCUS */
+.FormContato textarea { min-height: 70px; resize: vertical; }
 
 .FormContato input:focus,
 .FormContato select:focus,
-.FormContato textarea:focus{
+.FormContato textarea:focus {
   border-color: #C9A14A;
-  box-shadow:
-  0 0 15px rgba(201,161,74,0.15);
+  box-shadow: 0 0 10px rgba(201,161,74,0.16);
+  outline: none;
 }
 
-/* PLACEHOLDER */
-
-.FormContato input::placeholder,
-.FormContato textarea::placeholder{
-  color: #777;
-}
-
-.FormContato .DataInput{
-   cursor:pointer;
-  color: #777;
-  font-size: 15px;
-  height: 40px;
-}
-
- .FormContato .DataInput input[type="date"]::-webkit-calendar-picker-indicator{
-   position: absolute;
-  right: 0;
+.FormContato .BotaoContato {
   width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
+  padding: 0.85rem;
+  background: #C9A14A;
+  color: #000;
+  font-weight: 700;
+  font-size: clamp(0.82rem, 1.1vw, 0.95rem);
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: background 0.2s, transform 0.2s;
 }
 
-/* SELECT */
-
-.FormContato .Horarios{
-  cursor:pointer;
-  margin-bottom: 1.3rem;
-  color: #777;
-  font-size: 15px;
+.FormContato .BotaoContato:hover {
+  transform: translateY(-2px);
+  background: #ddb04d;
 }
 
-.Horarios option{
-  background-color: #1a1a1a;
-  color: #777;
-  font-size: 13px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* TEXTO FINAL */
-
-.FormContato h3{
-  color: #777;
-  font-size: 12px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
+.FormContato h3 {
+  margin: 0;
+  color: #666;
+  font-size: clamp(0.68rem, 0.9vw, 0.8rem);
   text-align: center;
-  line-height: 22px;
+  font-weight: 300;
 }
 
-.Htext{
-  margin-top: 0.5rem;
-}
-
-.InfoContato{
-  width: 420px;
-  height: 500px;
-  border: 2px solid rgba(201,161,74,0.12);
-  border-radius: 24px;
-  background: #111;
-  padding: 30px;
-}
-
-.Mapa{
+.Mapa {
   width: 100%;
-  height: 340px;
-  border-radius: 18px;
+  height: clamp(140px, 22vw, 260px);
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(201,161,74,0.2);
-  margin-bottom: 2rem;
-  box-shadow:
-  0 0 20px rgba(201,161,74,0.08),
-  0 0 50px rgba(0,0,0,0.8);
+  flex-shrink: 0;
 }
 
-.RedesSociais{
+.Mapa iframe { width: 100%; height: 100%; }
+
+.RedesSociais {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 22px;
-  margin-top: 1.8rem;
+  gap: 0.65rem;
 }
 
-.RedesSociais a{
-  width: 65px;
-  height: 65px;
+.RedesSociais a {
+  width: 50px; height: 50px;
   background: #161616;
   border: 2px solid rgba(201,161,74,0.18);
-  border-radius: 18px;
-  display: flex;
+  border-radius: 14px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: 0.35s ease;
-  box-shadow:
-  0 0 15px rgba(201,161,74,0.08),
-  0 0 30px rgba(0,0,0,0.7);
+  transition: transform 0.25s, border-color 0.25s;
 }
 
-.RedesSociais a:hover{
-  transform: translateY(-6px) scale(1.06);
-  border-color: #C9A14A;
-  background: #1d1d1d;
-  box-shadow:
-  0 0 20px rgba(201,161,74,0.28),
-  0 0 40px rgba(201,161,74,0.12);
-}
+.RedesSociais a:hover { transform: translateY(-3px) scale(1.02); border-color: #C9A14A; }
 
-.RedesSociais .Sociais{
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  transition: 0.3s ease;
-}
+.Sociais { width: 22px; height: 22px; }
 
-.RedesSociais a:hover .Sociais{
-  transform: scale(1.12);
-}
+.JuntoIcon2 { display: flex; align-items: flex-start; gap: 0.65rem; }
 
-.JuntoIcon2{
-  margin-bottom: 0.5rem;
-  display: flex;
-}
+.JuntoIcon2 .PinIcon { width: 26px; height: 26px; flex-shrink: 0; margin-top: 2px; }
 
-.JuntoIcon2 .PinIcon{
-  width: 35px;
-  height: 35px;
-  padding-top: 10px;
-  padding-right: 15px;
-}
-
-.JuntoIcon2 h3{
+.JuntoIcon2 h3 {
+  margin: 0;
   color: #777;
-  font-size: 14px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-size: clamp(0.72rem, 1vw, 0.88rem);
+  line-height: 1.5;
 }
 
-/* Seção Horaios */
-
-
+/* ============================================================
+   HORÁRIOS
+   ============================================================ */
 .HorarioSection {
-align-items: center;
-  display:flex ;
-  flex-direction: column;
   width: 100%;
-  min-height: 850px;
-  background-color: #000000;
-  margin-bottom: -1.39rem;
-}
-
-.HorarioSection .TituloHorario{
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  margin-bottom: -0.5rem;
-  padding-top: 50px;
-}
-
-.HorarioSection .TituloHorario strong{
-color: #C9A14A;
-padding-left: 15px;
-}
-
-.HorarioSection .SubtituloHorario{
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  margin-bottom: 2rem;
-}
-
-.CardsHorario{
-  display: flex;
-  align-items:center;
-  justify-content:center;
-  gap: 20px;
-}
-/* CARD */
-
-.CardsHorario .CardHorario{
-  width: 135px;
-  height: 285px;
-  background-color: #111111;
-  border-radius: 18px;
-  border: 1px solid rgba(201,161,74,0.22);
-  box-shadow:
-  0 0 20px rgba(201,161,74,0.08),
-  0 0 50px rgba(0,0,0,0.8);
-  transition: 0.35s ease;
+  padding: 4rem 1rem 3.5rem;
+  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 22px 14px;
-  overflow: hidden;
 }
 
-.CardsHorario .CardHorario:hover{
-  transform: translateY(-6px);
+.HorarioSection .TituloHorario {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: 400;
+}
+
+.HorarioSection .SubtituloHorario {
+  margin: 1rem 0 2rem;
+  font-size: clamp(0.88rem, 1vw, 1.1rem);
+  font-weight: 300;
+  text-align: center;
+}
+
+.CardsHorario {
+  width: min(100%, 1000px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.CardsHorario .CardHorario {
+  flex: 1 1 110px;
+  min-width: 100px;
+  max-width: 170px;
+  padding: 1rem 0.75rem;
+  background-color: #111;
+  border-radius: 14px;
+  border: 1px solid rgba(201,161,74,0.22);
+  box-shadow: 0 0 18px rgba(201,161,74,0.07), 0 0 40px rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.CardsHorario .CardHorario:hover {
+  transform: translateY(-4px);
   border-color: rgba(201,161,74,0.45);
-  box-shadow:
-  0 0 20px rgba(201,161,74,0.18),
-  0 0 55px rgba(0,0,0,0.85);
 }
 
-/* ÍCONE */
+.IconHorario { width: 34px; height: 34px; }
 
-.IconHorario{
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-}
-
-/* TÍTULO */
-
-.TituloCard{
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
+.TituloCard {
+  margin: 0;
+  font-size: 0.82rem;
   font-weight: 300;
   letter-spacing: 1px;
-  margin-bottom: 0.7rem;
+  color: #fff;
 }
 
-/* LINHA */
-
-.Linha4{
-  width: 130px;
+.Linha4 {
+  width: 100%;
+  max-width: 100px;
   height: 1.5px;
   background-color: #C9A14A;
-  position: relative;
- margin-bottom: 1rem;
 }
 
-.Linha4::after{
-  content: "";
-  width: 6px;
-  height: 6px;
-  background-color: #C9A14A;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform:
-  translate(-50%, -50%)
-  rotate(45deg);
-}
-
-/* HORÁRIO */
-
-.HorarioCard{
+.HorarioCard {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.2rem;
   color: #C9A14A;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 28px;
+  font-size: 0.88rem;
+  text-align: center;
+  line-height: 1.3;
 }
 
-.HorarioCard strong{
-  color: #fff;
-  font-size: 15px;
-  font-weight: 300;
-}
+.HorarioCard strong { color: #fff; font-size: 0.75rem; font-weight: 300; }
 
-/* STATUS */
-
-.Aberto{
-  width: 92px;
-  height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(
-    135deg,
-    #c99b3b,
-    #a97823
-  );
-  display: flex;
+.Aberto, .Fechado {
+  min-width: 72px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  gap: 0.35rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  box-shadow:
-  0 0 12px rgba(201,161,74,0.22);
+  letter-spacing: 0.4px;
 }
 
-.Aberto::before{
+.Aberto {
+  background: linear-gradient(135deg, #c99b3b, #a97823);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(201,161,74,0.2);
+}
+
+.Aberto::before {
   content: "";
-  width: 8px;
-  height: 8px;
+  width: 6px; height: 6px;
   border-radius: 50%;
   background: #b8ff9c;
-  box-shadow:
-  0 0 8px #b8ff9c;
+  flex-shrink: 0;
 }
 
-.Aberto::after{
-  content: "ABERTO";
-}
+.Aberto::after { content: "ABERTO"; }
 
-/* CARD FECHADO */
-
-.Fechado{
-  width: 92px;
-  height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(
-    135deg,
-    #2c2c2c,
-    #1a1a1a
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+.Fechado {
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
   color: #d8d8d8;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  box-shadow:
-  0 0 10px rgba(0,0,0,0.4);
-  margin-top: 7.2rem;
 }
 
-.Fechado::before{
+.Fechado::before {
   content: "";
-  width: 8px;
-  height: 8px;
+  width: 6px; height: 6px;
   border-radius: 50%;
   background: #ff3b3b;
-  box-shadow:
-  0 0 8px #ff3b3b;
+  flex-shrink: 0;
 }
 
-.Fechado::after{
-  content: "FECHADO";
-}
+.Fechado::after { content: "FECHADO"; }
 
-/* CARD ATENÇÃO */
-
-.CardAtencao{
-  width: 89%;
-  min-height: 70px;
-  margin-top: 3rem;
-  padding: 28px 40px;
-  border-radius: 22px;
+.CardAtencao {
+  width: min(100%, 980px);
+  padding: 1.25rem 1.75rem;
+  border-radius: 20px;
   border: 2px solid rgba(201,161,74,0.15);
-  background: linear-gradient(
-    180deg,
-    #111111,
-    #0b0b0b
-  );
+  background: linear-gradient(180deg, #111, #0b0b0b);
   display: flex;
-  align-items: center;
-  box-shadow:
-  0 0 20px rgba(201,161,74,0.06),
-  0 0 50px rgba(0,0,0,0.8);
-  transition: 0.35s ease;
-}
-
-.CardAtencao:hover{
-  transform: translateY(-3px);
-  box-shadow:
-  0 0 25px rgba(201,161,74,0.12),
-  0 0 60px rgba(0,0,0,0.9);
-}
-
-/* ÍCONE */
-
-.IconAtencao{
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
-  margin-right: 18px;
-}
-
-/* TEXTO */
-
-.TextAtencao{
-  color: #C9A14A;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 23px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin-right: 28px;
-}
-
-/* LINHA */
-
-.Linha5{
-  width: 1px;
-  height: 65px;
-  background-color: rgba(201,161,74,0.35);
-  margin-right: 40px;
-}
-
-/* FRASES */
-
-.FraseAtencao{
-  color: #d6d6d6;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 30px;
-  margin: 0;
-}
-
-.FraseAtencao2{
-  color: #d6d6d6;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 550;
-  line-height: 30px;
-  margin: 0;
-}
-
-.FraseAtencao{
-  margin-right: 8px;
-}
-
-/* CONTAINER TEXTO */
-
-.CardAtencao{
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-/* FOOTER */
+.IconAtencao { width: 38px; height: 38px; }
 
-.Footer{
+.TextAtencao { color: #C9A14A; font-size: 1rem; font-weight: 500; letter-spacing: 1px; margin: 0; }
+
+.TextosAtencao { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.FraseAtencao, .FraseAtencao2 { margin: 0; color: #d6d6d6; line-height: 1.6; }
+.FraseAtencao  { font-size: 0.88rem; font-weight: 300; }
+.FraseAtencao2 { font-size: 0.92rem; font-weight: 600; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.Footer {
   width: 100%;
   background: #080808;
-  padding-top: 70px;
-  padding-bottom: 25px;
+  padding: 3rem 1rem 2rem;
   border-top: 1px solid rgba(201,161,74,0.12);
 }
 
-/* CONTAINER */
-
-.FooterContainer{
-  width: 85%;
-  max-width: 1300px;
+.FooterContainer {
+  width: min(1200px, 100%);
   margin: 0 auto;
-
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
-/* LOGO */
-
-.FooterInfo{
-  max-width: 320px;
+.FooterInfo, .FooterLinks, .FooterContato, .FooterRedes {
+  flex: 1 1 200px;
+  min-width: 160px;
 }
 
-.LogoFooter{
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin-bottom: -1rem;
-}
+.LogoFooter { width: 100px; height: auto; margin-bottom: 1rem; }
 
-.NomeFooter{
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 28px;
+.NomeFooter {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
   font-weight: 300;
-  letter-spacing: 2px;
+}
+
+.NomeFooter strong { color: #C9A14A; }
+
+.TextoFooter, .FooterContato p { color: #cfcfcf; font-size: 0.9rem; line-height: 1.8; }
+
+.FooterLinks h3, .FooterContato h3, .FooterRedes h3 {
+  color: #C9A14A;
+  font-size: 0.88rem;
+  letter-spacing: 1.5px;
   margin-bottom: 1rem;
 }
 
-.NomeFooter strong{
-  color: #C9A14A;
-  font-weight: 500;
-}
-
-.TextoFooter{
-  color: #9e9e9e;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 28px;
-  font-weight: 300;
-}
-
-/* TÍTULOS */
-
-.FooterLinks h3,
-.FooterContato h3,
-.FooterRedes h3{
-  color: #C9A14A;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
-}
-
-/* LINKS */
-
-.FooterLinks{
-  display: flex;
-  flex-direction: column;
-}
-
-.FooterLinks a{
+.FooterLinks a {
+  display: block;
   color: #d4d4d4;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  margin-bottom: 14px;
-  transition: 0.3s ease;
+  font-size: 0.88rem;
+  margin-bottom: 0.75rem;
+  transition: color 0.2s, transform 0.2s;
 }
 
-.FooterLinks a:hover{
-  color: #C9A14A;
-  transform: translateX(4px);
-}
+.FooterLinks a:hover { color: #C9A14A; transform: translateX(3px); }
 
-/* CONTATO */
+.IconsFooter { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
-.FooterContato p{
-  color: #cfcfcf;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  margin-bottom: 16px;
-  
-}
-
-.FooterContato p .IconFooter{
-  width:20px;
-  height:20px;
-}
-
-/* REDES */
-
-.IconsFooter{
-  display: flex;
-  gap: 18px;
-}
-
-.IconsFooter a{
-  width: 52px;
-  height: 52px;
+.IconsFooter a {
+  width: 46px; height: 46px;
   background: #121212;
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid rgba(201,161,74,0.12);
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  transition: 0.35s ease;
+  transition: border-color 0.2s, transform 0.2s;
 }
 
-.IconsFooter a:hover{
-  transform: translateY(-5px);
-  border-color: #C9A14A;
+.IconsFooter a:hover { border-color: rgba(201,161,74,0.4); transform: translateY(-2px); }
+.IconsFooter img { width: 20px; height: 20px; }
 
-  box-shadow:
-  0 0 18px rgba(201,161,74,0.18);
-}
-
-.IconsFooter img{
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-
-  filter:
-  brightness(0)
-  saturate(100%)
-  invert(72%)
-  sepia(33%)
-  saturate(587%)
-  hue-rotate(5deg)
-  brightness(92%)
-  contrast(88%);
-}
-
-/* LINHA */
-
-.LinhaFooter{
-  width: 85%;
+.LinhaFooter {
+  width: 100%;
   height: 1px;
-  background: rgba(201,161,74,0.12);
-
-  margin: 45px auto 25px auto;
+  background: rgba(201,161,74,0.1);
+  margin-top: 2rem;
 }
 
-/* COPYRIGHT */
-
-.CopyFooter{
+.CopyFooter {
+  margin-top: 1.5rem;
   text-align: center;
   color: #777;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   BREAKPOINTS
+   ============================================================ */
+
+/* Desktop médio: 4 → 2 cards */
+@media (max-width: 1100px) {
+  .Cards {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 680px;
+  }
+}
+
+/* Tablet / mobile — hambúrguer ativa aqui */
+@media (max-width: 768px) {
+
+  /* ── HEADER ── */
+  .header .headerInner {
+    padding: 0.7rem 1rem;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .header .Logo {
+    width: clamp(72px, 18vw, 110px);
+    flex-shrink: 0;
+  }
+
+  /* Hambúrguer: visível, empurrado para a direita */
+  .menuToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    z-index: 110;
+  }
+
+  /* Nav desce como drawer abaixo do header */
+  .headerNav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #000;
+    border-top: 1px solid rgba(201,161,74,0.15);
+    border-bottom: 1px solid rgba(201,161,74,0.1);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 99;
+    transition: max-height 0.35s ease, opacity 0.28s ease;
+  }
+
+  .headerNav.open {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .headerNav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 1rem 1rem;
+    width: 100%;
+  }
+
+  .headerNav ul li { width: 100%; }
+
+  .headerNav ul li a {
+    display: block;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .headerNav ul li a:hover,
+  .headerNav ul li a:focus {
+    background: rgba(201,161,74,0.1);
+    color: #C9A14A;
+  }
+
+  /* ── CORTES: 3 colunas compactas ── */
+  .CortesImg { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  .item { aspect-ratio: 1 / 1; border-radius: 10px; }
+  .overlay { padding: 0.5rem; }
+  .overlay p { display: none; }
+
+  /* ── PREÇOS: 2 colunas ── */
+  .Cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+
+  /* ── SOBRE: imagem menor, lado a lado ── */
+  .ContainerSobre { gap: 1rem; }
+  .ContainerSobre > img {
+    flex: 0 0 clamp(110px, 35%, 200px);
+    width: clamp(110px, 35%, 200px);
+    border-radius: 12px;
+  }
+
+  /* ── CONTATO: lado a lado compacto ── */
+  .ContatoContent { gap: 0.75rem; }
+  .FormContato { padding: 1rem 0.85rem; gap: 0.6rem; }
+  .InfoContato { padding: 0.85rem; gap: 0.6rem; }
+  .Mapa { height: clamp(120px, 20vw, 200px); }
+
+  /* ── HORÁRIOS ── */
+  .CardsHorario .CardHorario {
+    flex: 1 1 calc(33% - 0.5rem);
+    max-width: 140px;
+    min-width: 88px;
+    padding: 0.85rem 0.6rem;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+
+  .header .headerInner { padding: 0.6rem 0.85rem; }
+  .header .Logo { width: clamp(64px, 16vw, 90px); }
+  .menuToggle { padding: 0.48rem 0.75rem; font-size: 0.75rem; }
+
+  /* CORTES: 3 colunas bem compactas */
+  .CortesImg { gap: 0.45rem; }
+  .overlay h3 { font-size: 0.72rem; }
+
+  /* PREÇOS: 2 colunas menores */
+  .Card { padding: 0.9rem 0.75rem; gap: 0.55rem; }
+  .Card img { width: 42px; }
+  .Card h2 { font-size: 0.82rem; }
+  .Card h3 { font-size: 0.75rem; }
+  .Card h4 { font-size: 0.75rem; }
+  .CardPrecos2 { font-size: 1.6rem; }
+  .Card ul li { font-size: 0.72rem; gap: 0.4rem; }
+  .BotaoCard, .BotaoCard2 { font-size: 0.78rem; padding: 0.6rem; }
+
+  /* SOBRE: proporcional */
+  .ContainerSobre > img {
+    flex: 0 0 clamp(100px, 32%, 160px);
+    width: clamp(100px, 32%, 160px);
+  }
+  .TraSobre { font-size: clamp(1rem, 4vw, 1.5rem); }
+  .ParaSobre { font-size: 0.75rem; line-height: 1.6; }
+  .NossaSobre { font-size: 0.68rem; }
+
+  /* CONTATO */
+  .JuntoIcon h2 { font-size: 0.72rem; }
+  .FormContato label { font-size: 0.68rem; }
+  .FormContato input:not(.BotaoContato),
+  .FormContato select,
+  .FormContato textarea {
+    min-height: 38px;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.75rem;
+  }
+  .FormContato .BotaoContato { font-size: 0.78rem; padding: 0.7rem; }
+  .JuntoIcon2 h3 { font-size: 0.68rem; }
+  .Mapa { height: 130px; }
+  .RedesSociais a { width: 42px; height: 42px; }
+  .Sociais { width: 18px; height: 18px; }
+
+  /* HORÁRIOS */
+  .CardsHorario .CardHorario {
+    flex: 1 1 calc(33% - 0.45rem);
+    min-width: 80px;
+    padding: 0.7rem 0.5rem;
+  }
+  .TituloCard { font-size: 0.7rem; letter-spacing: 0.5px; }
+  .HorarioCard { font-size: 0.75rem; }
+  .IconHorario { width: 26px; height: 26px; }
+  .Aberto, .Fechado { font-size: 0.6rem; padding: 0.32rem 0.45rem; min-width: 60px; }
+}
+
+/* Telas muito estreitas */
+@media (max-width: 380px) {
+
+  .header .Logo { width: 58px; }
+
+  .CortesImg { gap: 0.35rem; }
+  .overlay h3 { font-size: 0.62rem; }
+
+  /* PREÇOS: 1 coluna — melhor que 2 espremidos */
+  .Cards { grid-template-columns: 1fr; max-width: 320px; }
+  .Card { padding: 1rem; }
+  .Card img { width: 48px; }
+  .Card h2 { font-size: 1rem; }
+  .Card h3 { font-size: 0.88rem; }
+  .CardPrecos2 { font-size: 2rem; }
+  .Card ul li { font-size: 0.82rem; }
+
+  /* SOBRE */
+  .ContainerSobre > img {
+    flex: 0 0 clamp(88px, 30%, 130px);
+    width: clamp(88px, 30%, 130px);
+  }
+
+  /* HORÁRIOS */
+  .CardsHorario .CardHorario { min-width: 72px; }
+  .TituloCard { font-size: 0.62rem; }
+  .HorarioCard { font-size: 0.66rem; }
+}
+
+@media (max-width: 320px) {
+  .header .headerInner { padding: 0.5rem 0.6rem; }
+  .menuToggle { padding: 0.42rem 0.6rem; font-size: 0.7rem; }
+  .CortesImg { gap: 0.28rem; }
+  .Cards { grid-template-columns: 1fr; }
 }
