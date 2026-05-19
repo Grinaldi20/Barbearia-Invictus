@@ -23,7 +23,6 @@ function App() {
     <header className="header">
       
       <div className="headerInner">
-        <img className="Logo" src={Logo1} alt="Invictus Barbearia" />
 
         <nav className={`headerNav ${menuOpen ? 'open' : ''}`}>
           <ul>
