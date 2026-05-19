@@ -21,6 +21,7 @@ function App() {
       O botão hambúrguer está FORA do <nav> para não sumir com ele.
     */}
     <header className="header">
+      
       <div className="headerInner">
         <img className="Logo" src={Logo1} alt="Invictus Barbearia" />
 
@@ -66,7 +67,7 @@ function App() {
       <section id="Cortes" className="CortesSection">
         <h1 className="CortesTitulo">NOSSOS <span>CORTES</span></h1>
         <h2 className="SubtituloCortes">Estilo, personalidade e acabamento premium.</h2>
-        <div className="Linha2"></div>
+        <div className="Linha5"></div>
 
         <div className="CortesImg">
           {[
@@ -107,11 +108,11 @@ function App() {
             <div className="Linha"></div>
             <h3 className="CardPrecos">R$<strong className="CardPrecos2">35</strong>,00</h3>
             <ul>
-              <li><img src="/correto.png" alt="" />Acabamento na Navalha</li>
-              <li><img src="/correto.png" alt="" />Toalha Quente</li>
-              <li><img src="/correto.png" alt="" />Pomada Inclusa</li>
+              <li><img src="/correto1.png" alt="" />Acabamento na Navalha</li>
+              <li><img src="/correto1.png" alt="" />Toalha Quente</li>
+              <li><img src="/correto1.png" alt="" />Pomada Inclusa</li>
             </ul>
-            <button className="BotaoCard2">Agendar</button>
+            <button className="BotaoCard">Agendar</button>
           </div>
 
           <div className="Card">
@@ -123,10 +124,10 @@ function App() {
             <div className="Linha"></div>
             <h3 className="CardPrecos">R$<strong className="CardPrecos2">45</strong>,00</h3>
             <ul>
-              <li><img src="/correto.png" alt="" />Acabamento na Navalha</li>
-              <li><img src="/correto.png" alt="" />Toalha Quente</li>
-              <li><img src="/correto.png" alt="" />Pomada Inclusa</li>
-              <li><img src="/correto.png" alt="" />Design da Sobrancelha</li>
+              <li><img src="/correto1.png" alt="" />Acabamento na Navalha</li>
+              <li><img src="/correto1.png" alt="" />Toalha Quente</li>
+              <li><img src="/correto1.png" alt="" />Pomada Inclusa</li>
+              <li><img src="/correto1.png" alt="" />Design da Sobrancelha</li>
             </ul>
             <button className="BotaoCard">Agendar</button>
           </div>
@@ -140,10 +141,10 @@ function App() {
             <div className="Linha"></div>
             <h3 className="CardPrecos">R$<strong className="CardPrecos2">55</strong>,00</h3>
             <ul>
-              <li><img src="/correto.png" alt="" />Toalha Quente</li>
-              <li><img src="/correto.png" alt="" />Pomada Inclusa</li>
-              <li><img src="/correto.png" alt="" />Barba na Navalha</li>
-              <li><img src="/correto.png" alt="" />Design da Barba</li>
+              <li><img src="/correto1.png" alt="" />Toalha Quente</li>
+              <li><img src="/correto1.png" alt="" />Pomada Inclusa</li>
+              <li><img src="/correto1.png" alt="" />Barba na Navalha</li>
+              <li><img src="/correto1.png" alt="" />Design da Barba</li>
             </ul>
             <button className="BotaoCard">Agendar</button>
           </div>
@@ -160,10 +161,10 @@ function App() {
             <div className="Linha"></div>
             <h3 className="CardPrecos">R$<strong className="CardPrecos2">65</strong>,00</h3>
             <ul>
-              <li><img src="/correto.png" alt="" />Corte + Barba + Sobrancelha</li>
-              <li><img src="/correto.png" alt="" />Acabamento na Navalha</li>
-              <li><img src="/correto.png" alt="" />Toalha Quente</li>
-              <li><img src="/correto.png" alt="" />Pomada Inclusa</li>
+              <li><img src="/correto1.png" alt="" />Corte + Barba + Sobrancelha</li>
+              <li><img src="/correto1.png" alt="" />Acabamento na Navalha</li>
+              <li><img src="/correto1.png" alt="" />Toalha Quente</li>
+              <li><img src="/correto1.png" alt="" />Pomada Inclusa</li>
             </ul>
             <button className="BotaoCard">Agendar</button>
           </div>
@@ -176,7 +177,7 @@ function App() {
         <img className="Icon" src="/coroa.png" alt="Coroa" />
         <h1><strong>S</strong>OBRE</h1>
         <h2 className="SubtituloSobre">Mais que uma barbearia, uma experiência</h2>
-        <div className="Linha2"></div>
+        <div className="Linha5"></div>
 
         {/*
           Desktop: imagem + texto lado a lado

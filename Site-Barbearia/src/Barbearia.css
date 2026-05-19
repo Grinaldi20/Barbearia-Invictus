@@ -35,12 +35,12 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .header .headerInner {
-  width: min(1200px, 100%);
+  width: min(600px, 50%);
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 10rem;
   position: relative; 
   padding: .7rem 1rem;
   flex-wrap: nowrap;
@@ -61,7 +61,7 @@ a   { color: inherit; text-decoration: none; }
 
 .headerNav ul {
   display: flex;
-  align-items: center;
+  align-items: end;
   gap: clamp(.5rem, 1.2vw, 1.4rem);
 }
 
@@ -189,7 +189,6 @@ a   { color: inherit; text-decoration: none; }
 .CortesTitulo span { color: #C9A14A; }
 
 .SubtituloCortes {
-  margin: 1rem 0 0;
   font-size: clamp(.88rem,1.1vw,1.1rem);
   font-weight: 200;
   text-align: center;
@@ -199,13 +198,29 @@ a   { color: inherit; text-decoration: none; }
   width: min(260px, 28%);
   height: 1.5px;
   background-color: #C9A14A;
-  margin: 1rem auto 2.2rem;
   opacity: .8;
   position: relative;
 }
 
 
 .Linha2::after {
+  content: "";
+  width: 8px; height: 8px;
+  background-color: #C9A14A;
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.Linha5{
+  width: min(260px, 28%);
+  height: 1.5px;
+  background-color: #C9A14A;
+  opacity: .8;
+  position: relative;
+}
+
+
+.Linha5::after {
   content: "";
   width: 8px; height: 8px;
   background-color: #C9A14A;
@@ -248,11 +263,11 @@ a   { color: inherit; text-decoration: none; }
 
 .overlay h3 {
   margin: 0; color: #fff;
-  font-size: clamp(.85rem,1.5vw,1.5rem);
+  font-size: 15px;
   font-weight: 700; line-height: 1.2;
 }
 
-.overlay p { margin: .25rem 0 0; color: #C9A14A; font-size: clamp(.72rem,1vw,.95rem); }
+.overlay p { margin: .25rem 0 0; color: #C9A14A; font-size: 16px; }
 
 /* Botão proporcional à grade de cortes */
 .BotaoCortes {
@@ -333,7 +348,7 @@ a   { color: inherit; text-decoration: none; }
 
 .Card .Cortetext, .Card .Cortetext2 { color: #C9A14A; font-size: .9rem; }
 
-.Card ul { width: 100%; display: grid; gap: .5rem; }
+.Card ul { width: 100%; display:flex; gap: .5rem; align-items: start; flex-direction: column;}
 
 .Card ul li {
   display: flex; align-items: flex-start; gap: .5rem;
@@ -341,7 +356,7 @@ a   { color: inherit; text-decoration: none; }
   overflow-wrap: break-word; word-break: break-word;
 }
 
-.Card ul li img { width: 15px; height: 15px; flex-shrink: 0; margin-top: .15rem; }
+.Card ul li img { width: 15px; height: 15px; }
 
 .Linha {
   width: 80%; max-width: 240px;
@@ -349,7 +364,7 @@ a   { color: inherit; text-decoration: none; }
   margin: .25rem auto; opacity: .7;
 }
 
-.BotaoCard, .BotaoCard2 {
+.BotaoCard {
   width: 100%; max-width: 200px;
   padding: .75rem .85rem;
   border-radius: 12px;
@@ -357,9 +372,10 @@ a   { color: inherit; text-decoration: none; }
   background-color: #C9A14A;
   color: #000; font-size: .88rem; font-weight: 700;
   transition: background .2s, color .2s, transform .2s;
+  margin-top: auto;
 }
 
-.BotaoCard:hover, .BotaoCard2:hover {
+.BotaoCard:hover {
   background-color: #000; color: #C9A14A; transform: translateY(-3px);
 }
 
@@ -378,7 +394,6 @@ a   { color: inherit; text-decoration: none; }
 .Icon {
   width: clamp(38px, 4vw, 60px);
   height: auto;
-  margin-bottom: 1rem;
   object-fit: contain;
 }
 
@@ -386,7 +401,7 @@ a   { color: inherit; text-decoration: none; }
 .SobreSection h1 strong { color: #C9A14A; }
 
 .SobreSection .SubtituloSobre {
-  margin: 1rem 0 2rem;
+  margin: 1rem 0 1rem;
   font-size: clamp(.88rem,1.1vw,1.1rem);
   font-weight: 300; text-align: center;
 }
@@ -769,7 +784,7 @@ a   { color: inherit; text-decoration: none; }
 
   /* ── HEADER ── */
   .header .headerInner { padding: .7rem 1rem; flex-wrap: nowrap; }
-  .header .Logo { width: clamp(68px,16vw,100px); margin-right: auto; }
+  .header .Logo { width: clamp(68px,16vw,100px); margin-right: start; }
 
 .Icon {
   width: 40px;
@@ -821,7 +836,7 @@ a   { color: inherit; text-decoration: none; }
   .item { aspect-ratio: 1/1; border-radius: 10px; }
   .overlay { padding: .4rem; }
   .overlay p { display: none; }
-  .overlay h3 { font-size: clamp(.7rem,2vw,1rem); }
+  .overlay h3 { font-size: 13px; color:  #C9A14A; font-weight: 300; font-family: Arial, Helvetica, sans-serif; }
   .BotaoCortes { width: min(100%,160px); font-size: .8rem; padding: .6rem .85rem; }
 
   /* ── PREÇOS: 2 colunas, itens empilhados (já são flex-col) ── */
@@ -837,7 +852,14 @@ a   { color: inherit; text-decoration: none; }
 
 .Linha2 {
   width: 180px;
-  margin: .8rem auto 1.8rem;
+  margin: -1.5rem auto 2rem;
+  
+}
+
+
+.Linha5 {
+  width: 180px;
+  margin: -0.5rem auto 2rem;
   
 }
 
@@ -876,8 +898,8 @@ a   { color: inherit; text-decoration: none; }
 /* 480 px — reduz mais */
 @media (max-width: 480px) {
 
-  .header .headerInner { padding: .6rem .85rem; }
-  .header .Logo { width: clamp(60px,14vw,85px); }
+  .header .headerInner { padding: .6rem .40rem; }
+  .header .Logo { width: clamp(60px,14vw,85px); margin-right:auto; }
   .menuToggle { padding: .45rem .75rem; font-size: .75rem; }
 
 .Icon {
@@ -898,7 +920,7 @@ a   { color: inherit; text-decoration: none; }
   .CardPrecos2 { font-size: 1.4rem; }
   .Card ul li { font-size: .68rem; gap: .35rem; }
   .Card ul li img { width: 12px; height: 12px; }
-  .BotaoCard, .BotaoCard2 { font-size: .74rem; padding: .55rem .45rem; }
+  .BotaoCard{ font-size: .74rem; padding: .55rem .45rem; }
 
   /* SOBRE */
   .TraSobre  { font-size: clamp(1.2rem,3.5vw,1.6rem); }
@@ -935,7 +957,7 @@ a   { color: inherit; text-decoration: none; }
   .menuToggle { padding: .42rem .65rem; font-size: .72rem; }
 
   .CortesImg { gap: .3rem; }
-  .overlay h3 { font-size: .62rem; }
+  .overlay h3 { font-size: 16px; }
   .BotaoCortes { width: min(100%,130px); font-size: .72rem; }
 
   /* PREÇOS: 1 coluna */
