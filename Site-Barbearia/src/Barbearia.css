@@ -1,4 +1,6 @@
-﻿/* Reset e base */
+﻿/* ============================================================
+   RESET & BASE
+   ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body {
@@ -9,27 +11,27 @@ html, body {
   overflow-x: hidden;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  text-rendering: optimizeLegibility;
-}
+body { font-family: Arial, Helvetica, sans-serif; text-rendering: optimizeLegibility; }
 
 img, video, svg { display: block; max-width: 100%; height: auto; }
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
-ul { list-style: none; margin: 0; padding: 0; }
-a { color: inherit; text-decoration: none; }
+ul  { list-style: none; margin: 0; padding: 0; }
+a   { color: inherit; text-decoration: none; }
 
 /* ============================================================
    HEADER
+   Desktop : [Logo ←]  ·············  [Links nav]
+   Mobile  : [Logo ←]  ·············  [Botão MENU →]
+             ↓ drawer desce ao abrir
    ============================================================ */
 .header {
   width: 100%;
   background: #000;
   position: sticky;
   top: 0;
-  z-index: 100;
-  border-bottom: 1px solid rgba(201,161,74,0.12);
+  z-index: 200;
+  border-bottom: 1px solid rgba(201,161,74,.12);
 }
 
 .header .headerInner {
@@ -39,59 +41,60 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.85rem 1.5rem;
-  position: relative;
+  position: relative; 
+  padding: .7rem 1rem;
+  flex-wrap: nowrap;
 }
-
-/* Logo — sempre à ESQUERDA */
+/* Logo — canto esquerdo, tamanho fluido */
 .header .Logo {
-  width: clamp(80px, 10vw, 150px);
-  max-height: 65px;
-  object-fit: contain;
+  width: clamp(70px,16vw,105px);
+  margin-right: auto;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
-/* Nav desktop: links em linha, hambúrguer oculto */
+/* Nav desktop */
 .headerNav {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
 .headerNav ul {
   display: flex;
   align-items: center;
-  gap: clamp(0.5rem, 1.2vw, 1.25rem);
+  gap: clamp(.5rem, 1.2vw, 1.4rem);
 }
 
 .headerNav ul li a {
   color: #fff;
-  font-size: clamp(0.78rem, 0.9vw, 0.95rem);
-  padding: 0.4rem 0.2rem;
+  font-size: clamp(.78rem, .9vw, .95rem);
+  padding: .4rem .2rem;
   white-space: nowrap;
-  transition: color 0.2s;
+  transition: color .2s;
 }
 
 .headerNav ul li a:hover,
 .headerNav ul li a:focus { color: #C9A14A; }
 
-/* Hambúrguer — oculto no desktop */
+/* Hambúrguer — oculto no desktop, aparece em ≤ 768 px */
 .menuToggle {
+    min-width: 92px;
   display: none;
   background: transparent;
   border: 2px solid #C9A14A;
   border-radius: 10px;
   color: #C9A14A;
-  padding: 0.55rem 0.9rem;
-  font-size: 0.8rem;
+  padding: .55rem 1rem;
+  font-size: .82rem;
   font-weight: 700;
   letter-spacing: 1px;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: background 0.2s;
+  transition: background .2s;
+  margin-left: auto;
 }
 
-.menuToggle:hover { background: rgba(201,161,74,0.1); }
+.menuToggle:hover { background: rgba(201,161,74,.1); }
 
 /* ============================================================
    HERO
@@ -112,16 +115,14 @@ a { color: inherit; text-decoration: none; }
 
 .InicioSection::before {
   content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 140px;
+  position: absolute; top: 0; left: 0; width: 100%; height: 140px;
   background: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
   pointer-events: none;
 }
 
 .InicioSection::after {
   content: "";
-  position: absolute;
-  bottom: 0; left: 0; width: 100%; height: 180px;
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 180px;
   background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0));
   pointer-events: none;
 }
@@ -135,38 +136,29 @@ a { color: inherit; text-decoration: none; }
   gap: 1rem;
 }
 
-.InicioSection .Invictus {
-  margin: 0;
-  font-size: clamp(3rem, 9vw, 8rem);
-  line-height: 0.9;
-}
-
-.InicioSection .Barbearia {
-  margin: 0;
-  color: #C9A14A;
-  font-size: clamp(2rem, 6vw, 4rem);
-}
+.InicioSection .Invictus  { margin: 0; font-size: clamp(3rem,9vw,8rem); line-height: .9; }
+.InicioSection .Barbearia { margin: 0; color: #C9A14A; font-size: clamp(2rem,6vw,4rem); }
 
 .Titulo .FraseInicio {
   margin: 0;
-  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  font-size: clamp(.9rem,2vw,1.4rem);
   font-weight: 300;
   line-height: 1.6;
 }
 
-.TextCoroa { display: inline-flex; align-items: center; gap: 0.5rem; }
+.TextCoroa { display: inline-flex; align-items: center; gap: .5rem; }
 .TextCoroa img { width: 28px; }
 
 .Titulo .ButtonInicio {
   width: min(100%, 280px);
-  padding: 0.9rem 1.5rem;
+  padding: .9rem 1.5rem;
   border-radius: 14px;
   border: 2px solid #000;
   background-color: #C9A14A;
   color: #000;
-  font-size: 0.95rem;
+  font-size: .95rem;
   font-weight: 700;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: background .2s, color .2s, border-color .2s;
 }
 
 .Titulo .ButtonInicio:hover {
@@ -176,7 +168,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   CORTES
+   CORTES  — grade 3 colunas em todas as telas
    ============================================================ */
 .CortesSection {
   width: 100%;
@@ -189,7 +181,7 @@ a { color: inherit; text-decoration: none; }
 
 .CortesTitulo {
   margin: 0;
-  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-size: clamp(2rem,3vw,3.5rem);
   font-weight: 300;
   letter-spacing: 4px;
 }
@@ -198,110 +190,88 @@ a { color: inherit; text-decoration: none; }
 
 .SubtituloCortes {
   margin: 1rem 0 0;
-  font-size: clamp(0.88rem, 1.1vw, 1.1rem);
+  font-size: clamp(.88rem,1.1vw,1.1rem);
   font-weight: 200;
   text-align: center;
 }
 
 .Linha2 {
-  width: min(160px, 14%);
-  height: 1px;
+  width: min(260px, 28%);
+  height: 1.5px;
   background-color: #C9A14A;
-  margin: 2rem auto 2.5rem;
-  opacity: 0.7;
+  margin: 1rem auto 2.2rem;
+  opacity: .8;
   position: relative;
 }
+
 
 .Linha2::after {
   content: "";
   width: 8px; height: 8px;
   background-color: #C9A14A;
-  position: absolute;
-  top: 50%; left: 50%;
+  position: absolute; top: 50%; left: 50%;
   transform: translate(-50%,-50%) rotate(45deg);
 }
 
-/* Grade: sempre 3 colunas */
 .CortesImg {
-  width: min(1100px, 100%);
+  width: min(1100px,100%);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(0.5rem, 1.2vw, 1.25rem);
+  grid-template-columns: repeat(3,1fr);
+  gap: clamp(.5rem,1.2vw,1.25rem);
 }
 
 .item {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/3;
   border-radius: 14px;
   overflow: hidden;
-  border: 2px solid rgba(201,161,74,0.5);
-  box-shadow: 0 0 10px rgba(201,161,74,0.2), 0 0 24px rgba(0,0,0,0.7);
-  transition: transform 0.35s, box-shadow 0.35s;
+  border: 2px solid rgba(201,161,74,.5);
+  box-shadow: 0 0 10px rgba(201,161,74,.2), 0 0 24px rgba(0,0,0,.7);
+  transition: transform .35s, box-shadow .35s;
 }
 
-.item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(201,161,74,0.4), 0 0 30px rgba(201,161,74,0.15);
-}
-
-.item img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-
+.item:hover { transform: translateY(-5px); box-shadow: 0 0 15px rgba(201,161,74,.4), 0 0 30px rgba(201,161,74,.15); }
+.item img   { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
 .item:hover img { transform: scale(1.07); }
 
 .overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0.75rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.05));
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: .75rem;
+  background: linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.05));
   opacity: 0;
-  transition: opacity 0.35s;
+  transition: opacity .35s;
 }
 
 .item:hover .overlay { opacity: 1; }
 
 .overlay h3 {
-  margin: 0;
-  color: #fff;
-  font-size: clamp(0.85rem, 1.5vw, 1.5rem);
-  font-weight: 700;
-  line-height: 1.2;
+  margin: 0; color: #fff;
+  font-size: clamp(.85rem,1.5vw,1.5rem);
+  font-weight: 700; line-height: 1.2;
 }
 
-.overlay p {
-  margin: 0.25rem 0 0;
-  color: #C9A14A;
-  font-size: clamp(0.72rem, 1vw, 0.95rem);
-}
+.overlay p { margin: .25rem 0 0; color: #C9A14A; font-size: clamp(.72rem,1vw,.95rem); }
 
+/* Botão proporcional à grade de cortes */
 .BotaoCortes {
-  margin-top: 2.25rem;
-  width: min(100%, 240px);
-  padding: 0.9rem 1.25rem;
-  border-radius: 14px;
+  margin-top: 1.75rem;
+  width: min(100%, 200px);   /* proporcional, não gigante */
+  padding: .7rem 1rem;
+  border-radius: 12px;
   border: 2px solid #C9A14A;
   background: transparent;
   color: #C9A14A;
-  font-size: 0.95rem;
+  font-size: .88rem;
   font-weight: 700;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  transition: background .2s, color .2s, transform .2s;
 }
 
-.BotaoCortes:hover {
-  background-color: #C9A14A;
-  color: #000;
-  transform: translateY(-3px);
-}
+.BotaoCortes:hover { background-color: #C9A14A; color: #000; transform: translateY(-3px); }
 
 /* ============================================================
-   PREÇOS
+   PREÇOS  — 4 cols desktop / 2 cols tablet / 1 col tiny
    ============================================================ */
 .PrecosSection {
   width: 100%;
@@ -315,26 +285,19 @@ a { color: inherit; text-decoration: none; }
 }
 
 .PrecosSection h1, .Serviços { margin: 0; }
-
-.PrecosSection h1 {
-  font-size: clamp(2rem, 3vw, 3.8rem);
-  font-weight: 400;
-}
-
+.PrecosSection h1 { font-size: clamp(2rem,3vw,3.8rem); font-weight: 400; }
 .Serviços { color: #C9A14A; }
 
 .PrecosSection .SubtituloPrecos {
   margin: 1rem 0 2rem;
-  font-size: clamp(0.88rem, 1.1vw, 1.1rem);
-  font-weight: 300;
-  text-align: center;
+  font-size: clamp(.88rem,1.1vw,1.1rem);
+  font-weight: 300; text-align: center;
 }
 
-/* Grid de cards — 4 colunas desktop */
 .Cards {
-  width: min(1200px, 100%);
+  width: min(1200px,100%);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,1fr);
   gap: 1rem;
 }
 
@@ -342,865 +305,664 @@ a { color: inherit; text-decoration: none; }
   padding: 1.25rem 1rem 1.5rem;
   border: 2px solid #C9A14A;
   border-radius: 16px;
-  background: rgba(0,0,0,0.25);
-  box-shadow: 0 0 10px rgba(201,161,74,0.2), 0 0 28px rgba(0,0,0,0.7);
-  transition: transform 0.35s, box-shadow 0.35s;
+  background: rgba(0,0,0,.25);
+  box-shadow: 0 0 10px rgba(201,161,74,.2), 0 0 28px rgba(0,0,0,.7);
+  transition: transform .35s, box-shadow .35s;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;   /* itens empilhados verticalmente */
   align-items: center;
-  gap: 0.7rem;
+  gap: .7rem;
 }
 
-.Card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 15px rgba(201,161,74,0.45), 0 0 38px rgba(201,161,74,0.18);
-}
+.Card:hover { transform: translateY(-6px); box-shadow: 0 0 15px rgba(201,161,74,.45), 0 0 38px rgba(201,161,74,.18); }
 
-.Card img { width: 54px; height: auto; }
+.Card > img { width: 52px; height: auto; }
+
+.CardDuasImgs { display: flex; gap: .5rem; justify-content: center; }
+.CardDuasImgs img { width: 40px; height: auto; }
 
 .Card h2, .Card h3, .Card h4,
-.Card .Cortetext, .Card .Cortetext2 {
-  margin: 0;
-  text-align: center;
-}
+.Card .Cortetext, .Card .Cortetext2 { margin: 0; text-align: center; }
 
-.Card h2 { font-size: clamp(0.88rem, 1.3vw, 1.25rem); }
-
-.Card h3 {
-  color: #dadada;
-  font-size: clamp(0.8rem, 1vw, 0.95rem);
-  font-weight: 400;
-}
-
-.Card h4 {
-  color: #dadada;
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
+.Card h2 { font-size: clamp(.88rem,1.3vw,1.25rem); }
+.Card h3 { color: #dadada; font-size: clamp(.8rem,1vw,.95rem); font-weight: 400; }
+.Card h4 { color: #dadada; font-size: .85rem; line-height: 1.5; }
 
 .Card h3.CardPrecos { color: #C9A14A; font-size: 1.2rem; }
+.CardPrecos2 { color: #C9A14A; font-size: clamp(1.8rem,3vw,2.8rem); }
 
-.CardPrecos2 {
-  color: #C9A14A;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-}
+.Card .Cortetext, .Card .Cortetext2 { color: #C9A14A; font-size: .9rem; }
 
-.Card .Cortetext, .Card .Cortetext2 { color: #C9A14A; font-size: 0.9rem; }
-
-.Card ul { width: 100%; display: grid; gap: 0.5rem; }
+.Card ul { width: 100%; display: grid; gap: .5rem; }
 
 .Card ul li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  color: #e2e2e2;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  display: flex; align-items: flex-start; gap: .5rem;
+  color: #e2e2e2; font-size: .82rem; line-height: 1.5;
+  overflow-wrap: break-word; word-break: break-word;
 }
 
-.Card ul li img {
-  width: 15px; height: 15px;
-  flex-shrink: 0;
-  margin-top: 0.15rem;
-}
+.Card ul li img { width: 15px; height: 15px; flex-shrink: 0; margin-top: .15rem; }
 
 .Linha {
-  width: 80%;
-  max-width: 240px;
-  height: 1px;
-  background-color: #C9A14A;
-  margin: 0.25rem auto;
-  opacity: 0.7;
+  width: 80%; max-width: 240px;
+  height: 1px; background-color: #C9A14A;
+  margin: .25rem auto; opacity: .7;
 }
 
 .BotaoCard, .BotaoCard2 {
-  width: 100%;
-  max-width: 200px;
-  padding: 0.75rem 0.85rem;
+  width: 100%; max-width: 200px;
+  padding: .75rem .85rem;
   border-radius: 12px;
   border: 2px solid #C9A14A;
   background-color: #C9A14A;
-  color: #000;
-  font-size: 0.88rem;
-  font-weight: 700;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  color: #000; font-size: .88rem; font-weight: 700;
+  transition: background .2s, color .2s, transform .2s;
 }
 
 .BotaoCard:hover, .BotaoCard2:hover {
-  background-color: #000;
-  color: #C9A14A;
-  transform: translateY(-3px);
+  background-color: #000; color: #C9A14A; transform: translateY(-3px);
 }
 
 /* ============================================================
    SOBRE
+   Desktop : imagem | texto lado a lado
+   Mobile  : imagem some, só texto; card stats horizontal e compacto
    ============================================================ */
 .SobreSection {
   width: 100%;
   padding: 4rem 1rem;
   background-color: #000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; flex-direction: column; align-items: center;
 }
 
-.SobreSection h1 {
-  margin: 0;
-  font-size: clamp(2rem, 3vw, 3.5rem);
-  font-weight: 400;
+.Icon {
+  width: clamp(38px, 4vw, 60px);
+  height: auto;
+  margin-bottom: 1rem;
+  object-fit: contain;
 }
 
+.SobreSection h1 { margin: 0; font-size: clamp(2rem,3vw,3.5rem); font-weight: 400; }
 .SobreSection h1 strong { color: #C9A14A; }
 
 .SobreSection .SubtituloSobre {
   margin: 1rem 0 2rem;
-  font-size: clamp(0.88rem, 1.1vw, 1.1rem);
-  font-weight: 300;
-  text-align: center;
+  font-size: clamp(.88rem,1.1vw,1.1rem);
+  font-weight: 300; text-align: center;
 }
 
-/* Lado a lado em TODAS as telas */
 .ContainerSobre {
-  width: min(1200px, 100%);
+  width: min(1200px,100%);
   display: flex;
   flex-wrap: nowrap;
   align-items: flex-start;
-  gap: clamp(0.75rem, 2vw, 2rem);
+  gap: clamp(.75rem,2vw,2rem);
 }
 
-.ContainerSobre > img {
-  flex: 0 0 clamp(140px, 38%, 540px);
-  width: clamp(140px, 38%, 540px);
+.SobreImg {
+  flex: 0 0 clamp(120px,38%,540px);
+  width: clamp(120px,38%,540px);
   height: auto;
   border-radius: 16px;
-  border: 2px solid rgba(201,161,74,0.45);
-  box-shadow: 0 0 14px rgba(201,161,74,0.12), 0 0 36px rgba(0,0,0,0.8);
+  border: 2px solid rgba(201,161,74,.45);
+  box-shadow: 0 0 14px rgba(201,161,74,.12), 0 0 36px rgba(0,0,0,.8);
   object-fit: cover;
 }
 
 .TextosSobre {
-  flex: 1 1 0;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  flex: 1 1 0; min-width: 0;
+  display: flex; flex-direction: column; gap: .75rem;
 }
 
 .NossaSobre {
-  color: #C9A14A;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin: 0;
+  color: #C9A14A; font-size: .75rem; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase; margin: 0;
 }
 
 .TraSobre {
-  margin: 0;
-  color: #fff;
-  font-size: clamp(1.1rem, 3vw, 3rem);
-  line-height: 1.1;
-  font-weight: 300;
+  margin: 0; color: #fff;
+  font-size: clamp(1rem,3vw,3rem);
+  line-height: 1.1; font-weight: 300;
 }
 
 .TraSobre strong { color: #C9A14A; font-weight: 500; }
 
 .ParaSobre {
-  margin: 0;
-  color: #cfcfcf;
-  font-size: clamp(0.78rem, 1.2vw, 1rem);
+  margin: 0; color: #cfcfcf;
+  font-size: clamp(.75rem,1.2vw,1rem);
   line-height: 1.7;
 }
 
+/* Card de estatísticas — horizontal em todas as telas */
 .QuantSobre {
-  width: min(100%, 1000px);
-  padding: 1.25rem;
+  width: min(100%,1000px);
+  padding: 1rem 1.5rem;
   border: 2px solid #C9A14A;
   border-radius: 16px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  flex-direction: row;         /* sempre horizontal */
+  align-items: center;
+  justify-content: space-evenly;
+  gap: .5rem;
+  flex-wrap: nowrap;
+  margin-top: 3.5rem;
 }
 
-.Quant {
+/* Cada item: ícone + número + label */
+.QuantItem {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  flex: 1 1 0;
   justify-content: center;
-  gap: 1.25rem;
-  width: 100%;
 }
 
-.Quant > div { display: flex; align-items: center; gap: 0.65rem; }
-
-.IconQuant { width: 38px; height: 38px; object-fit: contain; }
-
-.Number { color: #C9A14A; font-size: 1.5rem; margin: 0; }
-
-.TextosQuant {
+.QuantTexto {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.85rem;
-  width: 100%;
+  flex-direction: column;
+  gap: .1rem;
 }
 
-.Text {
-  color: #fff;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0;
-}
+.IconQuant { width: 34px; height: 34px; object-fit: contain; flex-shrink: 0; }
+.Number { color: #C9A14A; font-size: clamp(1.1rem,2.5vw,1.6rem); margin: 0; line-height: 1.1; }
+.Text   { color: #aaa; font-size: clamp(.62rem,.9vw,.8rem); text-transform: uppercase; letter-spacing: .8px; margin: 0; line-height: 1.3; }
 
-.Linha3 {
-  width: 1px;
-  min-height: 2.5rem;
-  background-color: #C9A14A;
-  opacity: 0.4;
-}
+.Linha3 { width: 1px; height: 40px; background-color: #C9A14A; opacity: .35; flex-shrink: 0; }
 
 /* ============================================================
    CONTATO
+   Desktop : form | mapa lado a lado
+   Mobile  : form em cima, mapa embaixo (via order + flex-wrap)
    ============================================================ */
 .ContatoSection {
   width: 100%;
   padding: 4rem 1rem;
   background-image: url('/FundoContato.png');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-size: cover; background-position: center;
+  display: flex; flex-direction: column; align-items: center;
 }
 
-.ContatoSection h1 {
-  margin: 0;
-  font-size: clamp(2rem, 3vw, 3.5rem);
-  font-weight: 400;
-}
-
+.ContatoSection h1 { margin: 0; font-size: clamp(2rem,3vw,3.5rem); font-weight: 400; }
 .ContatoSection h1 strong { color: #C9A14A; }
 
 .ContatoSection .SubtituloContato {
   margin: 1rem 0 2rem;
-  font-size: clamp(0.88rem, 1vw, 1.1rem);
-  font-weight: 300;
-  text-align: center;
+  font-size: clamp(.88rem,1vw,1.1rem);
+  font-weight: 300; text-align: center;
 }
 
-/* Form + mapa — lado a lado em TODAS as telas */
+/* Desktop: lado a lado. Mobile: empilhado via flex-wrap + order */
 .ContatoContent {
-  width: min(1200px, 100%);
+  width: min(1200px,100%);
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;            /* wrap: form em cima, mapa embaixo no mobile */
   align-items: flex-start;
-  gap: clamp(0.75rem, 2vw, 1.75rem);
+  gap: clamp(.75rem,2vw,1.5rem);
 }
 
 .FormContato {
-  flex: 1 1 0;
+  flex: 1 1 300px;            /* cresce, mas nunca fica menor que 300 px */
   min-width: 0;
-  padding: clamp(1rem, 2.5vw, 2rem) clamp(0.85rem, 2vw, 1.75rem);
-  background: linear-gradient(180deg, #111, #0d0d0d);
-  border: 2px solid rgba(201,161,74,0.12);
-  border-radius: 20px;
-  box-shadow: 0 0 18px rgba(201,161,74,0.07), 0 0 44px rgba(0,0,0,0.8);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  order: 1;
+  padding: clamp(.85rem,2vw,2rem) clamp(.75rem,2vw,1.75rem);
+  background: linear-gradient(180deg,#111,#0d0d0d);
+  border: 2px solid rgba(201,161,74,.12);
+  border-radius: 18px;
+  box-shadow: 0 0 18px rgba(201,161,74,.07), 0 0 44px rgba(0,0,0,.8);
+  display: flex; flex-direction: column; gap: .65rem;
 }
 
 .InfoContato {
-  flex: 1 1 0;
+  flex: 1 1 300px;
   min-width: 0;
-  padding: clamp(0.85rem, 2vw, 1.5rem);
+  order: 2;
+  padding: clamp(.75rem,2vw,1.5rem);
   background: #111;
-  border: 2px solid rgba(201,161,74,0.12);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  border: 2px solid rgba(201,161,74,.12);
+  border-radius: 18px;
+  display: flex; flex-direction: column; gap: .65rem;
 }
 
-.FormIconTop { width: 26px; height: 26px; }
+.FormIconTop { width: 24px; height: 24px; }
 
-.JuntoIcon {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
+.JuntoIcon { display: flex; gap: .65rem; align-items: center; margin-bottom: .25rem; }
 .JuntoIcon h2 {
-  margin: 0;
-  color: #fff;
-  font-size: clamp(0.78rem, 1.5vw, 1.1rem);
-  font-weight: 300;
-  letter-spacing: 1px;
+  margin: 0; color: #fff;
+  font-size: clamp(.72rem,1.4vw,1.05rem);
+  font-weight: 300; letter-spacing: 1px;
 }
 
-.InputLado {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  width: 100%;
-}
+.InputLado { display: flex; flex-wrap: wrap; gap: .55rem; width: 100%; }
 
-.TextInputTop {
-  flex: 1 1 120px;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
+.TextInputTop { flex: 1 1 120px; min-width: 0; display: flex; flex-direction: column; gap: .35rem; }
 
 .FormContato label {
   color: #C9A14A;
-  font-size: clamp(0.72rem, 1vw, 0.85rem);
-  letter-spacing: 0.8px;
+  font-size: clamp(.68rem,1vw,.82rem);
+  letter-spacing: .8px;
 }
 
 .FormContato input:not(.BotaoContato),
 .FormContato select,
 .FormContato textarea {
-  width: 100%;
-  min-height: 44px;
+  width: 100%; min-height: 42px;
   background: #1a1a1a;
-  border: 2px solid rgba(201,161,74,0.12);
-  border-radius: 12px;
-  padding: 0.65rem 0.85rem;
+  border: 2px solid rgba(201,161,74,.12);
+  border-radius: 10px;
+  padding: .6rem .8rem;
   color: #fff;
-  font-size: clamp(0.78rem, 1vw, 0.92rem);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  font-size: clamp(.72rem,1vw,.9rem);
+  transition: border-color .2s, box-shadow .2s;
 }
 
-.FormContato textarea { min-height: 70px; resize: vertical; }
+.FormContato textarea { min-height: 65px; resize: vertical; }
 
 .FormContato input:focus,
 .FormContato select:focus,
 .FormContato textarea:focus {
   border-color: #C9A14A;
-  box-shadow: 0 0 10px rgba(201,161,74,0.16);
+  box-shadow: 0 0 10px rgba(201,161,74,.16);
   outline: none;
 }
 
 .FormContato .BotaoContato {
-  width: 100%;
-  padding: 0.85rem;
-  background: #C9A14A;
-  color: #000;
-  font-weight: 700;
-  font-size: clamp(0.82rem, 1.1vw, 0.95rem);
-  border-radius: 12px;
-  border: 2px solid transparent;
-  transition: background 0.2s, transform 0.2s;
+  width: 100%; padding: .8rem;
+  background: #C9A14A; color: #000; font-weight: 700;
+  font-size: clamp(.78rem,1.1vw,.92rem);
+  border-radius: 10px; border: 2px solid transparent;
+  transition: background .2s, transform .2s;
 }
 
-.FormContato .BotaoContato:hover {
-  transform: translateY(-2px);
-  background: #ddb04d;
-}
+.FormContato .BotaoContato:hover { transform: translateY(-2px); background: #ddb04d; }
 
-.FormContato h3 {
-  margin: 0;
-  color: #666;
-  font-size: clamp(0.68rem, 0.9vw, 0.8rem);
-  text-align: center;
-  font-weight: 300;
+.FormAviso {
+  margin: 0; color: #555;
+  font-size: clamp(.62rem,.85vw,.76rem);
+  text-align: center; line-height: 1.4;
 }
 
 .Mapa {
   width: 100%;
-  height: clamp(140px, 22vw, 260px);
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(201,161,74,0.2);
-  flex-shrink: 0;
+  height: clamp(200px,28vw,300px);
+  border-radius: 12px; overflow: hidden;
+  border: 1px solid rgba(201,161,74,.2);
 }
 
 .Mapa iframe { width: 100%; height: 100%; }
 
-.RedesSociais {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.65rem;
+.JuntoIcon2 { display: flex; align-items: flex-start; gap: .6rem; }
+.JuntoIcon2 .PinIcon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+.JuntoIcon2 p {
+  margin: 0; color: #777;
+  font-size: clamp(.68rem,1vw,.86rem); line-height: 1.5;
 }
 
+.RedesSociais { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
+
 .RedesSociais a {
-  width: 50px; height: 50px;
+  width: 46px; height: 46px;
   background: #161616;
-  border: 2px solid rgba(201,161,74,0.18);
-  border-radius: 14px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.25s, border-color 0.25s;
+  border: 2px solid rgba(201,161,74,.18);
+  border-radius: 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: transform .25s, border-color .25s;
 }
 
 .RedesSociais a:hover { transform: translateY(-3px) scale(1.02); border-color: #C9A14A; }
-
-.Sociais { width: 22px; height: 22px; }
-
-.JuntoIcon2 { display: flex; align-items: flex-start; gap: 0.65rem; }
-
-.JuntoIcon2 .PinIcon { width: 26px; height: 26px; flex-shrink: 0; margin-top: 2px; }
-
-.JuntoIcon2 h3 {
-  margin: 0;
-  color: #777;
-  font-size: clamp(0.72rem, 1vw, 0.88rem);
-  line-height: 1.5;
-}
+.Sociais { width: 20px; height: 20px; }
 
 /* ============================================================
    HORÁRIOS
    ============================================================ */
 .HorarioSection {
-  width: 100%;
-  padding: 4rem 1rem 3.5rem;
+  width: 100%; padding: 4rem 1rem 3.5rem;
   background-color: #000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; flex-direction: column; align-items: center;
 }
 
-.HorarioSection .TituloHorario {
-  margin: 0;
-  font-size: clamp(2rem, 3vw, 3.5rem);
-  font-weight: 400;
-}
+.HorarioSection .TituloHorario { margin: 0; font-size: clamp(2rem,3vw,3.5rem); font-weight: 400; }
+.HorarioSection .TituloHorario strong { color: #C9A14A; }
 
 .HorarioSection .SubtituloHorario {
   margin: 1rem 0 2rem;
-  font-size: clamp(0.88rem, 1vw, 1.1rem);
-  font-weight: 300;
-  text-align: center;
+  font-size: clamp(.88rem,1vw,1.1rem);
+  font-weight: 300; text-align: center;
 }
 
 .CardsHorario {
-  width: min(100%, 1000px);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
+  width: min(100%,1000px);
+  display: flex; flex-wrap: wrap;
+  justify-content: center; gap: .75rem;
 }
 
 .CardsHorario .CardHorario {
-  flex: 1 1 110px;
-  min-width: 100px;
-  max-width: 170px;
-  padding: 1rem 0.75rem;
-  background-color: #111;
-  border-radius: 14px;
-  border: 1px solid rgba(201,161,74,0.22);
-  box-shadow: 0 0 18px rgba(201,161,74,0.07), 0 0 40px rgba(0,0,0,0.8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.65rem;
-  transition: transform 0.25s, border-color 0.25s;
+  flex: 1 1 110px; min-width: 100px; max-width: 165px;
+  padding: 1rem .75rem;
+  background-color: #111; border-radius: 14px;
+  border: 1px solid rgba(201,161,74,.22);
+  box-shadow: 0 0 18px rgba(201,161,74,.07), 0 0 40px rgba(0,0,0,.8);
+  display: flex; flex-direction: column; align-items: center; gap: .6rem;
+  transition: transform .25s, border-color .25s;
 }
 
-.CardsHorario .CardHorario:hover {
-  transform: translateY(-4px);
-  border-color: rgba(201,161,74,0.45);
-}
+.CardsHorario .CardHorario:hover { transform: translateY(-4px); border-color: rgba(201,161,74,.45); }
 
 .IconHorario { width: 34px; height: 34px; }
+.TituloCard { margin: 0; font-size: .82rem; font-weight: 300; letter-spacing: 1px; color: #fff; }
 
-.TituloCard {
-  margin: 0;
-  font-size: 0.82rem;
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: #fff;
-}
-
-.Linha4 {
-  width: 100%;
-  max-width: 100px;
-  height: 1.5px;
-  background-color: #C9A14A;
-}
+.Linha4 { width: 100%; max-width: 100px; height: 1.5px; background-color: #C9A14A; }
 
 .HorarioCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  color: #C9A14A;
-  font-size: 0.88rem;
-  text-align: center;
-  line-height: 1.3;
+  margin: 0; color: #C9A14A;
+  font-size: .88rem; text-align: center; line-height: 1.4;
 }
 
-.HorarioCard strong { color: #fff; font-size: 0.75rem; font-weight: 300; }
-
 .Aberto, .Fechado {
-  min-width: 72px;
-  padding: 0.4rem 0.6rem;
+  min-width: 72px; padding: .4rem .6rem;
   border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.4px;
+  display: inline-flex; align-items: center; justify-content: center; gap: .35rem;
+  font-size: .68rem; font-weight: 600; letter-spacing: .4px;
 }
 
 .Aberto {
-  background: linear-gradient(135deg, #c99b3b, #a97823);
-  color: #fff;
-  box-shadow: 0 0 10px rgba(201,161,74,0.2);
+  background: linear-gradient(135deg,#c99b3b,#a97823);
+  color: #fff; box-shadow: 0 0 10px rgba(201,161,74,.2);
 }
 
 .Aberto::before {
-  content: "";
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #b8ff9c;
-  flex-shrink: 0;
+  content: ""; width: 6px; height: 6px;
+  border-radius: 50%; background: #b8ff9c; flex-shrink: 0;
 }
 
 .Aberto::after { content: "ABERTO"; }
 
-.Fechado {
-  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
-  color: #d8d8d8;
-}
+.Fechado { background: linear-gradient(135deg,#2c2c2c,#1a1a1a); color: #d8d8d8; }
 
 .Fechado::before {
-  content: "";
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #ff3b3b;
-  flex-shrink: 0;
+  content: ""; width: 6px; height: 6px;
+  border-radius: 50%; background: #ff3b3b; flex-shrink: 0;
 }
 
 .Fechado::after { content: "FECHADO"; }
 
 .CardAtencao {
-  width: min(100%, 980px);
-  padding: 1.25rem 1.75rem;
-  border-radius: 20px;
-  border: 2px solid rgba(201,161,74,0.15);
-  background: linear-gradient(180deg, #111, #0b0b0b);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  width: min(100%,980px);
+  padding: 1.25rem 1.75rem; border-radius: 20px;
+  border: 2px solid rgba(201,161,74,.15);
+  background: linear-gradient(180deg,#111,#0b0b0b);
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: center; gap: 1rem; margin-top: 1.5rem;
 }
 
 .IconAtencao { width: 38px; height: 38px; }
-
 .TextAtencao { color: #C9A14A; font-size: 1rem; font-weight: 500; letter-spacing: 1px; margin: 0; }
-
-.TextosAtencao { display: flex; flex-direction: column; gap: 0.25rem; }
-
+.TextosAtencao { display: flex; flex-direction: column; gap: .25rem; }
 .FraseAtencao, .FraseAtencao2 { margin: 0; color: #d6d6d6; line-height: 1.6; }
-.FraseAtencao  { font-size: 0.88rem; font-weight: 300; }
-.FraseAtencao2 { font-size: 0.92rem; font-weight: 600; }
+.FraseAtencao  { font-size: .88rem; font-weight: 300; }
+.FraseAtencao2 { font-size: .92rem; font-weight: 600; }
 
 /* ============================================================
    FOOTER
+   Desktop : info | links | redes em linha
+   Mobile  : info (linha 1) | links + redes lado a lado (linha 2)
    ============================================================ */
 .Footer {
-  width: 100%;
-  background: #080808;
+  width: 100%; background: #080808;
   padding: 3rem 1rem 2rem;
-  border-top: 1px solid rgba(201,161,74,0.12);
+  border-top: 1px solid rgba(201,161,74,.12);
 }
 
 .FooterContainer {
-  width: min(1200px, 100%);
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
+  width: min(1200px,100%); margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;
 }
 
-.FooterInfo, .FooterLinks, .FooterContato, .FooterRedes {
-  flex: 1 1 200px;
-  min-width: 160px;
-}
+.FooterInfo  { flex: 1 1 260px; min-width: 220px; }
+.FooterLinks { flex: 1 1 160px; min-width: 130px; }
+.FooterRedes { flex: 1 1 160px; min-width: 130px; }
 
-.LogoFooter { width: 100px; height: auto; margin-bottom: 1rem; }
+.LogoFooter { width: 100px; margin-bottom: 1rem; }
 
-.NomeFooter {
-  margin: 0 0 1rem;
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-  font-weight: 300;
-}
-
+.NomeFooter { margin: 0 0 1rem; font-size: clamp(1.5rem,2.5vw,2.2rem); font-weight: 300; }
 .NomeFooter strong { color: #C9A14A; }
+.TextoFooter { color: #cfcfcf; font-size: .9rem; line-height: 1.8; }
 
-.TextoFooter, .FooterContato p { color: #cfcfcf; font-size: 0.9rem; line-height: 1.8; }
-
-.FooterLinks h3, .FooterContato h3, .FooterRedes h3 {
-  color: #C9A14A;
-  font-size: 0.88rem;
-  letter-spacing: 1.5px;
-  margin-bottom: 1rem;
+.FooterLinks h3, .FooterRedes h3 {
+  color: #C9A14A; font-size: .88rem; letter-spacing: 1.5px; margin-bottom: 1rem;
 }
 
 .FooterLinks a {
-  display: block;
-  color: #d4d4d4;
-  font-size: 0.88rem;
-  margin-bottom: 0.75rem;
-  transition: color 0.2s, transform 0.2s;
+  display: block; color: #d4d4d4; font-size: .88rem;
+  margin-bottom: .75rem; transition: color .2s, transform .2s;
 }
 
 .FooterLinks a:hover { color: #C9A14A; transform: translateX(3px); }
 
-.IconsFooter { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.IconsFooter { display: flex; flex-wrap: wrap; gap: .75rem; }
 
 .IconsFooter a {
-  width: 46px; height: 46px;
-  background: #121212;
-  border-radius: 12px;
-  border: 1px solid rgba(201,161,74,0.12);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.2s, transform 0.2s;
+  width: 46px; height: 46px; background: #121212;
+  border-radius: 12px; border: 1px solid rgba(201,161,74,.12);
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: border-color .2s, transform .2s;
 }
 
-.IconsFooter a:hover { border-color: rgba(201,161,74,0.4); transform: translateY(-2px); }
+.IconsFooter a:hover { border-color: rgba(201,161,74,.4); transform: translateY(-2px); }
 .IconsFooter img { width: 20px; height: 20px; }
 
-.LinhaFooter {
-  width: 100%;
-  height: 1px;
-  background: rgba(201,161,74,0.1);
-  margin-top: 2rem;
-}
-
-.CopyFooter {
-  margin-top: 1.5rem;
-  text-align: center;
-  color: #777;
-  font-size: 0.85rem;
-}
+.LinhaFooter { width: 100%; height: 1px; background: rgba(201,161,74,.1); margin-top: 2rem; }
+.CopyFooter  { margin-top: 1.5rem; text-align: center; color: #777; font-size: .85rem; }
 
 /* ============================================================
    BREAKPOINTS
    ============================================================ */
 
-/* Desktop médio: 4 → 2 cards */
+/* 1100 px — 4 → 2 cards de preço */
 @media (max-width: 1100px) {
-  .Cards {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 680px;
-  }
+  .Cards { grid-template-columns: repeat(2,1fr); max-width: 700px; }
 }
 
-/* Tablet / mobile — hambúrguer ativa aqui */
+/* ══════════════════════════════════════════════
+   768 px — ponto principal mobile
+   ══════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
   /* ── HEADER ── */
-  .header .headerInner {
-    padding: 0.7rem 1rem;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
+  .header .headerInner { padding: .7rem 1rem; flex-wrap: nowrap; }
+  .header .Logo { width: clamp(68px,16vw,100px); margin-right: auto; }
 
-  .header .Logo {
-    width: clamp(72px, 18vw, 110px);
-    flex-shrink: 0;
-  }
+.Icon {
+  width: 40px;
+  margin-bottom: .8rem;
+}
 
-  /* Hambúrguer: visível, empurrado para a direita */
+.QuantSobre {
+  margin-top: 2.5rem;
+}
+
   .menuToggle {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    z-index: 110;
+    align-items: center; justify-content: center;
   }
 
-  /* Nav desce como drawer abaixo do header */
+  /* Drawer */
   .headerNav {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 100%; left: 0;
     width: 100%;
     background: #000;
-    border-top: 1px solid rgba(201,161,74,0.15);
-    border-bottom: 1px solid rgba(201,161,74,0.1);
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
+    border-top: 1px solid rgba(201,161,74,.15);
+    border-bottom: 1px solid rgba(201,161,74,.08);
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    z-index: 99;
-    transition: max-height 0.35s ease, opacity 0.28s ease;
+    z-index: 150;
+    transition: max-height .35s ease, opacity .28s ease;
   }
 
-  .headerNav.open {
-    max-height: 500px;
-    opacity: 1;
-  }
+  .headerNav.open { max-height: 500px; opacity: 1; }
 
   .headerNav ul {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0.5rem 1rem 1rem;
-    width: 100%;
+    flex-direction: column; align-items: stretch;
+    gap: 0; padding: .5rem 1rem 1rem;
   }
 
-  .headerNav ul li { width: 100%; }
-
   .headerNav ul li a {
-    display: block;
-    padding: 0.75rem 0.5rem;
-    font-size: 0.95rem;
-    border-radius: 10px;
-    transition: background 0.2s, color 0.2s;
+    display: block; padding: .75rem .6rem;
+    font-size: .95rem; border-radius: 10px;
+    transition: background .2s, color .2s;
   }
 
   .headerNav ul li a:hover,
-  .headerNav ul li a:focus {
-    background: rgba(201,161,74,0.1);
-    color: #C9A14A;
-  }
+  .headerNav ul li a:focus { background: rgba(201,161,74,.1); color: #C9A14A; }
 
-  /* ── CORTES: 3 colunas compactas ── */
-  .CortesImg { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
-  .item { aspect-ratio: 1 / 1; border-radius: 10px; }
-  .overlay { padding: 0.5rem; }
+  /* ── CORTES ── */
+  .CortesImg { gap: .55rem; }
+  .item { aspect-ratio: 1/1; border-radius: 10px; }
+  .overlay { padding: .4rem; }
   .overlay p { display: none; }
+  .overlay h3 { font-size: clamp(.7rem,2vw,1rem); }
+  .BotaoCortes { width: min(100%,160px); font-size: .8rem; padding: .6rem .85rem; }
 
-  /* ── PREÇOS: 2 colunas ── */
-  .Cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    max-width: 100%;
+  /* ── PREÇOS: 2 colunas, itens empilhados (já são flex-col) ── */
+  .Cards { grid-template-columns: repeat(2,1fr); gap: .75rem; max-width: 100%; }
+  .Card  { padding: 1rem .85rem; gap: .6rem; }
+
+  /* ── SOBRE: ocultar imagem, texto full-width ── */
+  .SobreImg { display: none; }
+
+  .ContainerSobre {
+    flex-wrap: wrap;          /* permite o texto ocupar 100% */
   }
 
-  /* ── SOBRE: imagem menor, lado a lado ── */
-  .ContainerSobre { gap: 1rem; }
-  .ContainerSobre > img {
-    flex: 0 0 clamp(110px, 35%, 200px);
-    width: clamp(110px, 35%, 200px);
-    border-radius: 12px;
-  }
+.Linha2 {
+  width: 180px;
+  margin: .8rem auto 1.8rem;
+  
+}
 
-  /* ── CONTATO: lado a lado compacto ── */
-  .ContatoContent { gap: 0.75rem; }
-  .FormContato { padding: 1rem 0.85rem; gap: 0.6rem; }
-  .InfoContato { padding: 0.85rem; gap: 0.6rem; }
-  .Mapa { height: clamp(120px, 20vw, 200px); }
+  .TextosSobre { width: 100%; flex: 0 0 100%; }
+
+  .TraSobre  { font-size: clamp(1.4rem,4vw,2rem); }
+  .ParaSobre { font-size: .9rem; line-height: 1.7; }
+
+  /* Card stats — mantém horizontal, só compacta */
+  .QuantSobre { padding: .85rem 1rem; gap: .4rem; }
+  .QuantItem  { gap: .4rem; }
+  .IconQuant  { width: 28px; height: 28px; }
+  .Number     { font-size: clamp(.95rem,2.5vw,1.3rem); }
+  .Text       { font-size: clamp(.55rem,.85vw,.72rem); }
+  .Linha3     { height: 32px; }
+
+  /* ── CONTATO: form em cima, mapa embaixo ── */
+  .ContatoContent { flex-direction: column; gap: .85rem; }
+  .FormContato { flex: 0 0 auto; width: 100%; padding: 1rem .9rem; gap: .55rem; }
+  .InfoContato { flex: 0 0 auto; width: 100%; padding: .9rem; gap: .55rem; }
+  .Mapa { height: 220px; }
 
   /* ── HORÁRIOS ── */
   .CardsHorario .CardHorario {
-    flex: 1 1 calc(33% - 0.5rem);
-    max-width: 140px;
-    min-width: 88px;
-    padding: 0.85rem 0.6rem;
+    flex: 1 1 calc(33% - .5rem);
+    max-width: 140px; min-width: 86px;
+    padding: .8rem .55rem;
   }
+
+  /* ── FOOTER: info ocupa linha 1; links + redes lado a lado na linha 2 ── */
+  .FooterInfo  { flex: 0 0 100%; }
+  .FooterLinks { flex: 1 1 140px; min-width: 120px; }
+  .FooterRedes { flex: 1 1 140px; min-width: 120px; }
 }
 
-/* Mobile pequeno */
+/* 480 px — reduz mais */
 @media (max-width: 480px) {
 
-  .header .headerInner { padding: 0.6rem 0.85rem; }
-  .header .Logo { width: clamp(64px, 16vw, 90px); }
-  .menuToggle { padding: 0.48rem 0.75rem; font-size: 0.75rem; }
+  .header .headerInner { padding: .6rem .85rem; }
+  .header .Logo { width: clamp(60px,14vw,85px); }
+  .menuToggle { padding: .45rem .75rem; font-size: .75rem; }
 
-  /* CORTES: 3 colunas bem compactas */
-  .CortesImg { gap: 0.45rem; }
-  .overlay h3 { font-size: 0.72rem; }
+.Icon {
+  width: 34px;
+}
 
-  /* PREÇOS: 2 colunas menores */
-  .Card { padding: 0.9rem 0.75rem; gap: 0.55rem; }
-  .Card img { width: 42px; }
-  .Card h2 { font-size: 0.82rem; }
-  .Card h3 { font-size: 0.75rem; }
-  .Card h4 { font-size: 0.75rem; }
-  .CardPrecos2 { font-size: 1.6rem; }
-  .Card ul li { font-size: 0.72rem; gap: 0.4rem; }
-  .BotaoCard, .BotaoCard2 { font-size: 0.78rem; padding: 0.6rem; }
+  /* CORTES */
+  .CortesImg { gap: .4rem; }
+  .BotaoCortes { width: min(100%,140px); font-size: .75rem; padding: .55rem .7rem; }
 
-  /* SOBRE: proporcional */
-  .ContainerSobre > img {
-    flex: 0 0 clamp(100px, 32%, 160px);
-    width: clamp(100px, 32%, 160px);
-  }
-  .TraSobre { font-size: clamp(1rem, 4vw, 1.5rem); }
-  .ParaSobre { font-size: 0.75rem; line-height: 1.6; }
-  .NossaSobre { font-size: 0.68rem; }
+  /* PREÇOS: 2 cols compactas */
+  .Card { padding: .85rem .7rem; gap: .5rem; }
+  .Card > img { width: 36px; }
+  .CardDuasImgs img { width: 28px; }
+  .Card h2 { font-size: .78rem; }
+  .Card h3 { font-size: .72rem; }
+  .Card h4 { font-size: .72rem; }
+  .CardPrecos2 { font-size: 1.4rem; }
+  .Card ul li { font-size: .68rem; gap: .35rem; }
+  .Card ul li img { width: 12px; height: 12px; }
+  .BotaoCard, .BotaoCard2 { font-size: .74rem; padding: .55rem .45rem; }
+
+  /* SOBRE */
+  .TraSobre  { font-size: clamp(1.2rem,3.5vw,1.6rem); }
+  .ParaSobre { font-size: .82rem; }
+  .QuantSobre { padding: .75rem .8rem; }
+  .IconQuant  { width: 24px; height: 24px; }
+  .Linha3     { height: 26px; }
 
   /* CONTATO */
-  .JuntoIcon h2 { font-size: 0.72rem; }
-  .FormContato label { font-size: 0.68rem; }
+  .JuntoIcon h2 { font-size: .7rem; }
+  .FormContato label { font-size: .65rem; }
   .FormContato input:not(.BotaoContato),
   .FormContato select,
-  .FormContato textarea {
-    min-height: 38px;
-    padding: 0.5rem 0.65rem;
-    font-size: 0.75rem;
-  }
-  .FormContato .BotaoContato { font-size: 0.78rem; padding: 0.7rem; }
-  .JuntoIcon2 h3 { font-size: 0.68rem; }
-  .Mapa { height: 130px; }
+  .FormContato textarea { min-height: 38px; padding: .45rem .6rem; font-size: .75rem; }
+  .FormContato .BotaoContato { font-size: .78rem; padding: .7rem; }
+  .Mapa { height: 190px; }
   .RedesSociais a { width: 42px; height: 42px; }
   .Sociais { width: 18px; height: 18px; }
 
   /* HORÁRIOS */
-  .CardsHorario .CardHorario {
-    flex: 1 1 calc(33% - 0.45rem);
-    min-width: 80px;
-    padding: 0.7rem 0.5rem;
-  }
-  .TituloCard { font-size: 0.7rem; letter-spacing: 0.5px; }
-  .HorarioCard { font-size: 0.75rem; }
+  .CardsHorario .CardHorario { flex: 1 1 calc(33% - .4rem); min-width: 78px; padding: .7rem .45rem; }
+  .TituloCard  { font-size: .68rem; }
+  .HorarioCard { font-size: .72rem; }
   .IconHorario { width: 26px; height: 26px; }
-  .Aberto, .Fechado { font-size: 0.6rem; padding: 0.32rem 0.45rem; min-width: 60px; }
+  .Aberto, .Fechado { font-size: .58rem; padding: .3rem .42rem; min-width: 56px; }
+
+  /* FOOTER */
+  .FooterLinks, .FooterRedes { flex: 1 1 120px; }
 }
 
-/* Telas muito estreitas */
+/* 380 px */
 @media (max-width: 380px) {
+  .header .Logo { width: 56px; }
+  .menuToggle { padding: .42rem .65rem; font-size: .72rem; }
 
-  .header .Logo { width: 58px; }
+  .CortesImg { gap: .3rem; }
+  .overlay h3 { font-size: .62rem; }
+  .BotaoCortes { width: min(100%,130px); font-size: .72rem; }
 
-  .CortesImg { gap: 0.35rem; }
-  .overlay h3 { font-size: 0.62rem; }
-
-  /* PREÇOS: 1 coluna — melhor que 2 espremidos */
+  /* PREÇOS: 1 coluna */
   .Cards { grid-template-columns: 1fr; max-width: 320px; }
-  .Card { padding: 1rem; }
-  .Card img { width: 48px; }
-  .Card h2 { font-size: 1rem; }
-  .Card h3 { font-size: 0.88rem; }
-  .CardPrecos2 { font-size: 2rem; }
-  .Card ul li { font-size: 0.82rem; }
+  .Card { padding: 1rem .9rem; gap: .65rem; }
+  .Card > img { width: 44px; }
+  .Card h2 { font-size: .92rem; }
+  .Card h3 { font-size: .82rem; }
+  .CardPrecos2 { font-size: 1.8rem; }
+  .Card ul li { font-size: .78rem; }
 
-  /* SOBRE */
-  .ContainerSobre > img {
-    flex: 0 0 clamp(88px, 30%, 130px);
-    width: clamp(88px, 30%, 130px);
-  }
+  .TraSobre { font-size: clamp(1.1rem,3vw,1.4rem); }
 
-  /* HORÁRIOS */
-  .CardsHorario .CardHorario { min-width: 72px; }
-  .TituloCard { font-size: 0.62rem; }
-  .HorarioCard { font-size: 0.66rem; }
+  .Mapa { height: 170px; }
+
+  .CardsHorario .CardHorario { min-width: 70px; padding: .65rem .4rem; }
+  .TituloCard  { font-size: .6rem; }
+  .HorarioCard { font-size: .65rem; }
+
+  /* Footer: links e redes empilham quando não há espaço */
+  .FooterLinks, .FooterRedes { flex: 0 0 100%; }
 }
 
+/* 320 px */
 @media (max-width: 320px) {
-  .header .headerInner { padding: 0.5rem 0.6rem; }
-  .menuToggle { padding: 0.42rem 0.6rem; font-size: 0.7rem; }
-  .CortesImg { gap: 0.28rem; }
+  .header .headerInner { padding: .5rem .6rem; }
+  .CortesImg { gap: .25rem; }
   .Cards { grid-template-columns: 1fr; }
+  .CardsHorario .CardHorario { min-width: 62px; }
 }
