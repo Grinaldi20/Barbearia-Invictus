@@ -9,6 +9,7 @@ html, body {
   background: #000;
   color: #fff;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body { font-family: Arial, Helvetica, sans-serif; text-rendering: optimizeLegibility; }
@@ -106,7 +107,7 @@ a   { color: inherit; text-decoration: none; }
   white-space: nowrap;
   flex-shrink: 0;
   transition: background .2s;
-  margin-left: 13rem;
+  margin-left: 12rem;
 }
 
 .menuToggle:hover { background: rgba(201,161,74,.1); }
@@ -555,11 +556,12 @@ a   { color: inherit; text-decoration: none; }
 
 .FormIconTop { width: 24px; height: 24px; }
 
-.JuntoIcon { display: flex; gap: .65rem; align-items: center; margin-bottom: .25rem; }
+.JuntoIcon { display: flex;  align-items: center; margin-bottom: 1rem; }
 .JuntoIcon h2 {
   margin: 0; color: #fff;
   font-size: clamp(.72rem,1.4vw,1.05rem);
   font-weight: 300; letter-spacing: 1px;
+  padding-right: 10rem;
 }
 
 .InputLado { display: flex; flex-wrap: wrap; gap: .55rem; width: 100%; }
@@ -721,11 +723,11 @@ a   { color: inherit; text-decoration: none; }
   border: 2px solid rgba(201,161,74,.15);
   background: linear-gradient(180deg,#111,#0b0b0b);
   display: flex; flex-wrap: wrap; align-items: center;
-  justify-content: center; gap: 1rem; margin-top: 1.5rem;
+  justify-content: center; margin-top: 1.5rem;
 }
 
-.IconAtencao { width: 38px; height: 38px; }
-.TextAtencao { color: #C9A14A; font-size: 1rem; font-weight: 500; letter-spacing: 1px; margin: 0; }
+.IconAtencao { width: 35px; height: 35px;  }
+.TextAtencao { color: #C9A14A; padding-right: 12rem; font-size: 1rem; font-weight: 500; letter-spacing: 1px; margin: 0; }
 .TextosAtencao { display: flex; flex-direction: column; gap: .25rem; }
 .FraseAtencao, .FraseAtencao2 { margin: 0; color: #d6d6d6; line-height: 1.6; }
 .FraseAtencao  { font-size: .88rem; font-weight: 300; }
@@ -847,12 +849,12 @@ a   { color: inherit; text-decoration: none; }
   .headerNav ul li a:focus { background: rgba(201,161,74,.1); color: #C9A14A; }
 
   /* ── CORTES ── */
-  .CortesImg { gap: .55rem; }
+  .CortesImg { gap: .55rem;  grid-template-columns: repeat(2,1fr);}
   .item { aspect-ratio: 1/1; border-radius: 10px; }
   .overlay { padding: .4rem; }
   .overlay p { display: none; }
   .overlay h3 { font-size: 13px; color:  #C9A14A; font-weight: 300; font-family: Arial, Helvetica, sans-serif; }
-  .BotaoCortes { width: min(100%,160px); font-size: .8rem; padding: .6rem .85rem; }
+  .BotaoCortes { width: min(100%,190px); font-size: .8rem; padding: .10rem .85rem; }
 
   /* ── PREÇOS: 2 colunas, itens empilhados (já são flex-col) ── */
   .Cards { grid-template-columns: repeat(2,1fr); gap: .75rem; max-width: 100%; }
@@ -923,7 +925,7 @@ a   { color: inherit; text-decoration: none; }
 
   /* CORTES */
   .CortesImg { gap: .4rem; }
-  .BotaoCortes { width: min(100%,140px); font-size: .75rem; padding: .55rem .7rem; }
+  .BotaoCortes { width: min(100%,190px); font-size: .75rem; padding: .55rem .7rem; }
 
   /* PREÇOS: 2 cols compactas */
   .Card { padding: .85rem .7rem; gap: .5rem; }
