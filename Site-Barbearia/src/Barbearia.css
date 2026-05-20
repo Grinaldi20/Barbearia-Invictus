@@ -10,6 +10,7 @@ html, body {
   color: #fff;
   overflow-x: hidden;
   scroll-behavior: smooth;
+   font-family: Arial, Helvetica, sans-serif;
 }
 
 body { font-family: Arial, Helvetica, sans-serif; text-rendering: optimizeLegibility; }
@@ -26,92 +27,128 @@ a   { color: inherit; text-decoration: none; }
    Mobile  : [Logo ←]  ·············  [Botão MENU →]
              ↓ drawer desce ao abrir
    ============================================================ */
+/* ============================================================
+   HEADER
+============================================================ */
 .header {
   width: 100%;
   background: #000;
   position: sticky;
   top: 0;
   z-index: 200;
-  border-bottom: 1px solid rgba(201,161,74,.12);
 }
 
 .header .headerInner {
-  width: min(600px, 50%);
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10rem;
-  position: relative; 
-  padding: .7rem 1rem;
-  flex-wrap: nowrap;
-}
-/* Logo — canto esquerdo, tamanho fluido */
-.header .Logo {
-  width: clamp(70px,16vw,105px);
-  margin-right: auto;
-  flex-shrink: 0;
-  object-fit: contain;
+
+  padding: .8rem 1.5rem;
+  position: relative;
 }
 
-/* Nav desktop */
+/* LOGO */
+.header .Logo {
+  width: clamp(70px,16vw,105px);
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+.header .Logo:hover {
+  width: clamp(80px,19vw,110px);
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+
+/* NAV DESKTOP */
 .headerNav {
   display: flex;
   align-items: center;
-}
+  justify-content: center;
 
-.headerNav {
-  position: absolute;
-  top: 100%;
-  right: 1rem;
-  width: auto;
-  min-width: 190px;
-  background: #0a0a0a;
-  border: 1px solid rgba(201,161,74,.25);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.75);
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
+  flex: 1;
 }
 
 .headerNav ul {
   display: flex;
-  align-items: end;
-  gap: clamp(.5rem, 1.2vw, 1.4rem);
+  align-items: center;
+  justify-content: center;
+
+  gap: 2rem;
 }
 
 .headerNav ul li a {
   color: #fff;
-  font-size: clamp(.78rem, .9vw, .95rem);
-  padding: .4rem .2rem;
-  white-space: nowrap;
+  font-size: .95rem;
+  font-weight: 500;
   transition: color .2s;
+  transition: 0.3s;
 }
 
-.headerNav ul li a:hover,
-.headerNav ul li a:focus { color: #C9A14A; }
+.headerNav ul li a:hover {
+  transition: 0.3s;
+  color: #C9A14A;
+  font-size: 1.05rem;
+}
 
-/* Hambúrguer — oculto no desktop, aparece em ≤ 768 px */
+.headerNav ul li a strong {
+   color: #C9A14A;
+  font-size: .95rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.headerNav ul li a strong:hover {
+  transition: 0.3s;
+  font-size: 1.05rem;
+}
+
+/* BOTÃO MENU */
 .menuToggle {
-  min-width: 92px;
   display: none;
+
   background: transparent;
   border: 2px solid #C9A14A;
   border-radius: 10px;
+
   color: #C9A14A;
+
   padding: .55rem 1rem;
+
   font-size: .82rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: background .2s;
-  margin-left: 12rem;
+
+  transition: .2s;
 }
 
-.menuToggle:hover { background: rgba(201,161,74,.1); }
+.menuToggle:hover {
+  background: rgba(201,161,74,.1);
+}
 
+
+.SubtituloCortes,
+.SubtituloPrecos,
+.SubtituloSobre,
+.SubtituloContato,
+.SubtituloHorario {
+  margin-bottom: 2rem;
+}
+
+.CortesSection,
+.PrecosSection,
+.SobreSection,
+.ContatoSection,
+.HorarioSection {
+  position: relative;
+  overflow: hidden;
+}
 /* ============================================================
    HERO
    ============================================================ */
@@ -138,7 +175,7 @@ a   { color: inherit; text-decoration: none; }
 
 .InicioSection::after {
   content: "";
-  position: absolute; bottom: 0; left: 0; width: 100%; height: 180px;
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 60px;
   background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0));
   pointer-events: none;
 }
@@ -174,13 +211,18 @@ a   { color: inherit; text-decoration: none; }
   color: #000;
   font-size: .95rem;
   font-weight: 700;
+   transition: 0.3s;
   transition: background .2s, color .2s, border-color .2s;
 }
 
 .Titulo .ButtonInicio:hover {
+   width: min(100%, 300px);
+   padding: 1rem 1.5rem;
+   transition: 0.3s;
   background: transparent;
   color: #C9A14A;
   border-color: #C9A14A;
+  box-shadow: 0 0 10px rgba(201,161,74,.2), 0 0 24px rgba(0,0,0,.7);
 }
 
 /* ============================================================
@@ -193,6 +235,20 @@ a   { color: inherit; text-decoration: none; }
   flex-direction: column;
   align-items: center;
   padding: 3.5rem 1rem 4rem;
+}
+
+.CortesSection::before {
+  content: "";
+  position: absolute; top: 0; left: 0; width: 100%; height: 50px;
+  background: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+.CortesSection::after {
+  content: "";
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 60px;
+  background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
 }
 
 .CortesTitulo {
@@ -216,6 +272,7 @@ a   { color: inherit; text-decoration: none; }
   background-color: #C9A14A;
   opacity: .8;
   position: relative;
+   margin: .5rem 1.5rem;
 }
 
 
@@ -233,6 +290,12 @@ a   { color: inherit; text-decoration: none; }
   background-color: #C9A14A;
   opacity: .8;
   position: relative;
+   margin: 3rem auto  2rem;
+}
+
+.Linha2,
+.Linha5 {
+  display: none;
 }
 
 
@@ -285,22 +348,6 @@ a   { color: inherit; text-decoration: none; }
 
 .overlay p { margin: .25rem 0 0; color: #C9A14A; font-size: 16px; }
 
-/* Botão proporcional à grade de cortes */
-.BotaoCortes {
-  margin-top: 1.75rem;
-  width: min(100%, 200px);   /* proporcional, não gigante */
-  padding: .7rem 1rem;
-  border-radius: 12px;
-  border: 2px solid #C9A14A;
-  background: transparent;
-  color: #C9A14A;
-  font-size: .88rem;
-  font-weight: 700;
-  transition: background .2s, color .2s, transform .2s;
-}
-
-.BotaoCortes:hover { background-color: #C9A14A; color: #000; transform: translateY(-3px); }
-
 /* ============================================================
    PREÇOS  — 4 cols desktop / 2 cols tablet / 1 col tiny
    ============================================================ */
@@ -313,6 +360,20 @@ a   { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.PrecosSection::before {
+  content: "";
+  position: absolute; top: 0; left: 0; width: 100%; height: 50px;
+  background: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+.PrecosSection::after {
+  content: "";
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 60px;
+  background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
 }
 
 .PrecosSection h1, .Serviços { margin: 0; }
@@ -381,6 +442,7 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .BotaoCard {
+  text-align: center;
   width: 100%; max-width: 200px;
   padding: .75rem .85rem;
   border-radius: 12px;
@@ -389,10 +451,7 @@ a   { color: inherit; text-decoration: none; }
   color: #000; font-size: .88rem; font-weight: 700;
   transition: background .2s, color .2s, transform .2s;
   margin-top: auto;
-}
-
-.BotaoCard:hover {
-  background-color: #000; color: #C9A14A; transform: translateY(-3px);
+  text-transform: uppercase;
 }
 
 /* ============================================================
@@ -407,6 +466,21 @@ a   { color: inherit; text-decoration: none; }
   display: flex; flex-direction: column; align-items: center;
 }
 
+.SobreSection::before {
+  content: "";
+  position: absolute; top: 0; left: 0; width: 100%; height: 50px;
+  background: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+.SobreSection::after {
+  content: "";
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 50px;
+  background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+
 .Icon {
   width: clamp(38px, 4vw, 60px);
   height: auto;
@@ -417,7 +491,7 @@ a   { color: inherit; text-decoration: none; }
 .SobreSection h1 strong { color: #C9A14A; }
 
 .SobreSection .SubtituloSobre {
-  margin: 1rem 0 1rem;
+  margin: 1rem 0 2rem;
   font-size: clamp(.88rem,1.1vw,1.1rem);
   font-weight: 300; text-align: center;
 }
@@ -438,6 +512,13 @@ a   { color: inherit; text-decoration: none; }
   border: 2px solid rgba(201,161,74,.45);
   box-shadow: 0 0 14px rgba(201,161,74,.12), 0 0 36px rgba(0,0,0,.8);
   object-fit: cover;
+  transition: 0.3s;
+}
+
+.SobreImg:hover{
+  transform: scale(1.01);
+  transition: 0.3s;
+   box-shadow: 0 0 10px rgba(201,161,74,.2), 0 0 24px rgba(0,0,0,.7);
 }
 
 .TextosSobre {
@@ -477,6 +558,13 @@ a   { color: inherit; text-decoration: none; }
   gap: .5rem;
   flex-wrap: nowrap;
   margin-top: 3.5rem;
+  transition: 0.3s;
+}
+
+.QuantSobre:hover{
+  transform: scale(1.01);
+  transition: 0.3s;
+   box-shadow: 0 0 10px rgba(201,161,74,.2), 0 0 24px rgba(0,0,0,.7);
 }
 
 /* Cada item: ícone + número + label */
@@ -512,6 +600,21 @@ a   { color: inherit; text-decoration: none; }
   background-size: cover; background-position: center;
   display: flex; flex-direction: column; align-items: center;
 }
+
+.ContatoSection::before {
+  content: "";
+  position: absolute; top: 0; left: 0; width: 100%; height: 50px;
+  background: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+.ContatoSection::after {
+  content: "";
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 60px;
+  background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
 
 .ContatoSection h1 { margin: 0; font-size: clamp(2rem,3vw,3.5rem); font-weight: 400; }
 .ContatoSection h1 strong { color: #C9A14A; }
@@ -561,7 +664,7 @@ a   { color: inherit; text-decoration: none; }
   margin: 0; color: #fff;
   font-size: clamp(.72rem,1.4vw,1.05rem);
   font-weight: 300; letter-spacing: 1px;
-  padding-right: 10rem;
+  padding-right: 15rem;
 }
 
 .InputLado { display: flex; flex-wrap: wrap; gap: .55rem; width: 100%; }
@@ -587,7 +690,7 @@ a   { color: inherit; text-decoration: none; }
   transition: border-color .2s, box-shadow .2s;
 }
 
-.FormContato textarea { min-height: 65px; resize: vertical; }
+.FormContato textarea { min-height: 65px; resize: vertical;  resize: none; }
 
 .FormContato input:focus,
 .FormContato select:focus,
@@ -800,8 +903,99 @@ a   { color: inherit; text-decoration: none; }
 @media (max-width: 768px) {
 
   /* ── HEADER ── */
-  .header .headerInner { padding: .7rem 1rem; flex-wrap: nowrap; }
-  .header .Logo { width: clamp(68px,16vw,100px); margin-right: start; }
+  .header .headerInner {
+    padding: .7rem 1rem;
+  }
+
+  /* ESCONDE NAV DESKTOP */
+  .headerNav {
+    position: absolute;
+display: flex;
+flex-direction: column;
+align-items: center;
+    top: 100%;
+    right: 0.1rem;
+
+    width: 170px;
+
+    background: #0a0a0a;
+
+    border: 1px solid rgba(201,161,74,.25);
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 32px rgba(0,0,0,.75);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition: max-height .35s ease, opacity .3s ease;
+
+    z-index: 150;
+  }
+
+  .headerNav.open {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .headerNav ul {
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+
+    gap: .2rem;
+
+    padding: .8rem;
+  }
+
+  .headerNav ul li {
+    width: 100%;
+  }
+
+  .headerNav ul li a {
+    display: block;
+
+    width: 100%;
+
+    text-align: right;
+
+    padding: .85rem 1rem;
+
+    border-radius: 10px;
+
+    font-size: .95rem;
+
+    transition: .2s;
+  }
+
+  .headerNav ul li a:hover {
+    background: rgba(201,161,74,.1);
+    color: #C9A14A;
+  }
+
+  /* BOTÃO MOBILE */
+  .menuToggle {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+
+    right: 1rem;
+    top: 50%;
+
+    transform: translateY(-50%);
+  }
+
+    .header .Logo {
+    display: none;
+  }
 
 .Icon {
   width: 40px;
@@ -812,41 +1006,6 @@ a   { color: inherit; text-decoration: none; }
   margin-top: 2.5rem;
 }
 
-  .menuToggle {
-    display: inline-flex;
-    align-items: end; justify-content: center;
-  }
-
-  /* Drawer */
-  .headerNav {
-    position: absolute;
-    top: 100%; left:50%;
-    width: 100%;
-    background: #000;
-    border-top: 1px solid rgba(201,161,74,.15);
-    border-bottom: 1px solid rgba(201,161,74,.08);
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    z-index: 150;
-    transition: max-height .35s ease, opacity .28s ease;
-  }
-
-  .headerNav.open { max-height: 500px; opacity: 1; }
-
-  .headerNav ul {
-    flex-direction: column; align-items: stretch;
-    gap: 0; padding: .5rem 1rem 1rem;
-  }
-
-  .headerNav ul li a {
-    display: block; padding: .75rem .6rem;
-    font-size: .95rem; border-radius: 10px;
-    transition: background .2s, color .2s;
-  }
-
-  .headerNav ul li a:hover,
-  .headerNav ul li a:focus { background: rgba(201,161,74,.1); color: #C9A14A; }
 
   /* ── CORTES ── */
   .CortesImg { gap: .55rem;  grid-template-columns: repeat(2,1fr);}
@@ -873,6 +1032,10 @@ a   { color: inherit; text-decoration: none; }
   
 }
 
+.Linha2,
+.Linha5 {
+  display: block;
+}
 
 .Linha5 {
   width: 180px;
@@ -907,11 +1070,21 @@ a   { color: inherit; text-decoration: none; }
   }
 
   /* ── FOOTER: info ocupa linha 1; links + redes lado a lado na linha 2 ── */
-  .FooterInfo  { flex: 0 0 100%; }
-  .FooterLinks { flex: 1 1 140px; min-width: 120px; }
-  .FooterRedes { flex: 1 1 140px; min-width: 120px; }
-}
+  .FooterInfo {
+    width: 100%;
 
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .LogoFooter {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+}
 /* 480 px — reduz mais */
 @media (max-width: 480px) {
 

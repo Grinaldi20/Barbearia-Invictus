@@ -24,9 +24,11 @@ function App() {
       
       <div className="headerInner">
 
+        <img className="Logo" src={Logo1} alt="Invictus Barbearia" />
+
         <nav className={`headerNav ${menuOpen ? 'open' : ''}`}>
           <ul>
-            <li><a href="#Inicio"   onClick={closeMenu}>INICIO</a></li>
+            <li><a href="#Inicio"   onClick={closeMenu}><strong>INICIO</strong></a></li>
             <li><a href="#Cortes"   onClick={closeMenu}>CORTES</a></li>
             <li><a href="#Precos"   onClick={closeMenu}>PREÇOS</a></li>
             <li><a href="#Horarios" onClick={closeMenu}>HORÁRIOS</a></li>
@@ -58,7 +60,7 @@ function App() {
             <h3 className="FraseInicio">Estilo, atitude e confiança em cada corte</h3>
             <img src="/coroa.png" alt="Coroa" />
           </div>
-          <button className="ButtonInicio">AGENDAR AGORA</button>
+          <a href="#Contato" className="ButtonInicio">AGENDAR AGORA</a>
         </div>
       </section>
 
@@ -87,7 +89,7 @@ function App() {
           ))}
         </div>
 
-        <button className="BotaoCortes">VER MAIS ESTILOS</button>
+       
       </section>
 
       {/* ── PREÇOS ── */}
@@ -111,7 +113,7 @@ function App() {
               <li><img src="/correto1.png" alt="" />Toalha Quente</li>
               <li><img src="/correto1.png" alt="" />Pomada Inclusa</li>
             </ul>
-            <button className="BotaoCard">Agendar</button>
+            <a href="#Contato" className="BotaoCard">Agendar</a>
           </div>
 
           <div className="Card">
@@ -128,7 +130,7 @@ function App() {
               <li><img src="/correto1.png" alt="" />Pomada Inclusa</li>
               <li><img src="/correto1.png" alt="" />Design da Sobrancelha</li>
             </ul>
-            <button className="BotaoCard">Agendar</button>
+            <a href="#Contato" className="BotaoCard">Agendar</a>
           </div>
 
           <div className="Card">
@@ -145,7 +147,7 @@ function App() {
               <li><img src="/correto1.png" alt="" />Barba na Navalha</li>
               <li><img src="/correto1.png" alt="" />Design da Barba</li>
             </ul>
-            <button className="BotaoCard">Agendar</button>
+            <a href="#Contato" className="BotaoCard">Agendar</a>
           </div>
 
           <div className="Card">
@@ -165,7 +167,7 @@ function App() {
               <li><img src="/correto1.png" alt="" />Toalha Quente</li>
               <li><img src="/correto1.png" alt="" />Pomada Inclusa</li>
             </ul>
-            <button className="BotaoCard">Agendar</button>
+            <a href="#Contato" className="BotaoCard">Agendar</a>
           </div>
 
         </div>
