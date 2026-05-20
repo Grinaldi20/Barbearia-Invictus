@@ -888,13 +888,13 @@ a   { color: inherit; text-decoration: none; }
     padding: .7rem 1rem;
   }
 
-  /* ESCONDE NAV DESKTOP */
+
   .headerNav {
     position: absolute;
-display: flex;
-flex-direction: column;
-align-items: center;
-    top: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 350%;
     right: 0.1rem;
     width: 170px;
     background: #0a0a0a;
@@ -947,7 +947,10 @@ align-items: center;
     justify-content: center;
     position: absolute;
     right: 1rem;
-    top: 50%;
+    font-size: 15px;
+    top: 200%;
+    width: 100px;
+    height: 50px;
     transform: translateY(-50%);
   }
 
