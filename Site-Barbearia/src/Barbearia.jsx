@@ -15,11 +15,7 @@ function App() {
 
   return (
     <>
-    {/*
-      HEADER
-      [Logo — esquerda] .............. [Nav links desktop | Botão mobile]
-      O botão hambúrguer está FORA do <nav> para não sumir com ele.
-    */}
+    {/*HEADER*/}
     <header className="header">
       
       <div className="headerInner">
@@ -180,10 +176,6 @@ function App() {
         <h2 className="SubtituloSobre">Mais que uma barbearia, uma experiência</h2>
         <div className="Linha5"></div>
 
-        {/*
-          Desktop: imagem + texto lado a lado
-          Mobile:  imagem some (display:none via CSS), só texto
-        */}
         <div className="ContainerSobre">
           <img className="SobreImg" src={Salao} alt="Salão da Invictus Barbearia" />
           <div className="TextosSobre">
@@ -201,7 +193,6 @@ function App() {
           </div>
         </div>
 
-        {/* Card de estatísticas — horizontal e compacto no mobile */}
         <div className="QuantSobre">
           <div className="QuantItem">
             <img className="IconQuant" src="/Pessoas.png" alt="" />
@@ -237,10 +228,6 @@ function App() {
         <h2 className="SubtituloContato">Entre em contato com a nossa equipe de profissionais.</h2>
         <div className="Linha2"></div>
 
-        {/*
-          Desktop: form | mapa lado a lado
-          Mobile:  form em cima, mapa embaixo (flex-wrap: wrap + order)
-        */}
         <div className="ContatoContent">
 
           <form className="FormContato" onSubmit={e => e.preventDefault()}>
@@ -369,7 +356,7 @@ function App() {
           <p className="TextoFooter">Estilo, tradição e excelência em cada detalhe. Transformando cortes em experiências.</p>
         </div>
 
-        {/* Navegação + Redes ficam lado a lado no mobile */}
+
         <div className="FooterLinks">
           <h3>NAVEGAÇÃO</h3>
           <a href="#Inicio">Início</a>

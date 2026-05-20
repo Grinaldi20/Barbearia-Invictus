@@ -23,12 +23,6 @@ a   { color: inherit; text-decoration: none; }
 
 /* ============================================================
    HEADER
-   Desktop : [Logo ←]  ·············  [Links nav]
-   Mobile  : [Logo ←]  ·············  [Botão MENU →]
-             ↓ drawer desce ao abrir
-   ============================================================ */
-/* ============================================================
-   HEADER
 ============================================================ */
 .header {
   width: 100%;
@@ -42,16 +36,13 @@ a   { color: inherit; text-decoration: none; }
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: .8rem 1.5rem;
   position: relative;
 }
 
-/* LOGO */
 .header .Logo {
   width: clamp(70px,16vw,105px);
   object-fit: contain;
@@ -66,13 +57,10 @@ a   { color: inherit; text-decoration: none; }
   transition: 0.3s;
 }
 
-
-/* NAV DESKTOP */
 .headerNav {
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex: 1;
 }
 
@@ -80,7 +68,6 @@ a   { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 2rem;
 }
 
@@ -113,18 +100,13 @@ a   { color: inherit; text-decoration: none; }
 /* BOTÃO MENU */
 .menuToggle {
   display: none;
-
   background: transparent;
   border: 2px solid #C9A14A;
   border-radius: 10px;
-
   color: #C9A14A;
-
   padding: .55rem 1rem;
-
   font-size: .82rem;
   font-weight: 700;
-
   transition: .2s;
 }
 
@@ -150,7 +132,7 @@ a   { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 /* ============================================================
-   HERO
+   INICIO
    ============================================================ */
 .InicioSection {
   position: relative;
@@ -226,7 +208,7 @@ a   { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   CORTES  — grade 3 colunas em todas as telas
+   CORTES  
    ============================================================ */
 .CortesSection {
   width: 100%;
@@ -349,7 +331,7 @@ a   { color: inherit; text-decoration: none; }
 .overlay p { margin: .25rem 0 0; color: #C9A14A; font-size: 16px; }
 
 /* ============================================================
-   PREÇOS  — 4 cols desktop / 2 cols tablet / 1 col tiny
+   PREÇOS  
    ============================================================ */
 .PrecosSection {
   width: 100%;
@@ -401,7 +383,7 @@ a   { color: inherit; text-decoration: none; }
   box-shadow: 0 0 10px rgba(201,161,74,.2), 0 0 28px rgba(0,0,0,.7);
   transition: transform .35s, box-shadow .35s;
   display: flex;
-  flex-direction: column;   /* itens empilhados verticalmente */
+  flex-direction: column;   
   align-items: center;
   gap: .7rem;
 }
@@ -456,8 +438,6 @@ a   { color: inherit; text-decoration: none; }
 
 /* ============================================================
    SOBRE
-   Desktop : imagem | texto lado a lado
-   Mobile  : imagem some, só texto; card stats horizontal e compacto
    ============================================================ */
 .SobreSection {
   width: 100%;
@@ -545,14 +525,14 @@ a   { color: inherit; text-decoration: none; }
   line-height: 1.7;
 }
 
-/* Card de estatísticas — horizontal em todas as telas */
+
 .QuantSobre {
   width: min(100%,1000px);
   padding: 1rem 1.5rem;
   border: 2px solid #C9A14A;
   border-radius: 16px;
   display: flex;
-  flex-direction: row;         /* sempre horizontal */
+  flex-direction: row;        
   align-items: center;
   justify-content: space-evenly;
   gap: .5rem;
@@ -567,7 +547,6 @@ a   { color: inherit; text-decoration: none; }
    box-shadow: 0 0 10px rgba(201,161,74,.2), 0 0 24px rgba(0,0,0,.7);
 }
 
-/* Cada item: ícone + número + label */
 .QuantItem {
   display: flex;
   align-items: center;
@@ -590,8 +569,6 @@ a   { color: inherit; text-decoration: none; }
 
 /* ============================================================
    CONTATO
-   Desktop : form | mapa lado a lado
-   Mobile  : form em cima, mapa embaixo (via order + flex-wrap)
    ============================================================ */
 .ContatoSection {
   width: 100%;
@@ -625,17 +602,17 @@ a   { color: inherit; text-decoration: none; }
   font-weight: 300; text-align: center;
 }
 
-/* Desktop: lado a lado. Mobile: empilhado via flex-wrap + order */
+
 .ContatoContent {
   width: min(1200px,100%);
   display: flex;
-  flex-wrap: wrap;            /* wrap: form em cima, mapa embaixo no mobile */
+  flex-wrap: wrap;          
   align-items: flex-start;
   gap: clamp(.75rem,2vw,1.5rem);
 }
 
 .FormContato {
-  flex: 1 1 300px;            /* cresce, mas nunca fica menor que 300 px */
+  flex: 1 1 300px;          
   min-width: 0;
   order: 1;
   padding: clamp(.85rem,2vw,2rem) clamp(.75rem,2vw,1.75rem);
@@ -667,9 +644,18 @@ a   { color: inherit; text-decoration: none; }
   padding-right: 15rem;
 }
 
-.InputLado { display: flex; flex-wrap: wrap; gap: .55rem; width: 100%; }
+.InputLado { display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  width: 100%; 
+}
 
-.TextInputTop { flex: 1 1 120px; min-width: 0; display: flex; flex-direction: column; gap: .35rem; }
+.TextInputTop { 
+  flex: 1 1 120px; 
+  min-width: 0; display: 
+  flex; flex-direction: 
+  column; gap: .35rem; 
+}
 
 .FormContato label {
   color: #C9A14A;
@@ -838,8 +824,6 @@ a   { color: inherit; text-decoration: none; }
 
 /* ============================================================
    FOOTER
-   Desktop : info | links | redes em linha
-   Mobile  : info (linha 1) | links + redes lado a lado (linha 2)
    ============================================================ */
 .Footer {
   width: 100%; background: #080808;
@@ -892,14 +876,11 @@ a   { color: inherit; text-decoration: none; }
    BREAKPOINTS
    ============================================================ */
 
-/* 1100 px — 4 → 2 cards de preço */
+
 @media (max-width: 1100px) {
   .Cards { grid-template-columns: repeat(2,1fr); max-width: 700px; }
 }
 
-/* ══════════════════════════════════════════════
-   768 px — ponto principal mobile
-   ══════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
   /* ── HEADER ── */
@@ -915,25 +896,15 @@ flex-direction: column;
 align-items: center;
     top: 100%;
     right: 0.1rem;
-
     width: 170px;
-
     background: #0a0a0a;
-
     border: 1px solid rgba(201,161,74,.25);
-
     border-radius: 12px;
-
     box-shadow: 0 8px 32px rgba(0,0,0,.75);
-
     max-height: 0;
-
     overflow: hidden;
-
     opacity: 0;
-
     transition: max-height .35s ease, opacity .3s ease;
-
     z-index: 150;
   }
 
@@ -945,11 +916,8 @@ align-items: center;
   .headerNav ul {
     display: flex;
     flex-direction: column;
-
     align-items: start;
-
     gap: .2rem;
-
     padding: .8rem;
   }
 
@@ -959,17 +927,11 @@ align-items: center;
 
   .headerNav ul li a {
     display: block;
-
     width: 100%;
-
     text-align: right;
-
     padding: .85rem 1rem;
-
     border-radius: 10px;
-
     font-size: .95rem;
-
     transition: .2s;
   }
 
@@ -978,18 +940,14 @@ align-items: center;
     color: #C9A14A;
   }
 
-  /* BOTÃO MOBILE */
+
   .menuToggle {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     position: absolute;
-
     right: 1rem;
     top: 50%;
-
     transform: translateY(-50%);
   }
 
@@ -1015,15 +973,15 @@ align-items: center;
   .overlay h3 { font-size: 13px; color:  #C9A14A; font-weight: 300; font-family: Arial, Helvetica, sans-serif; }
   .BotaoCortes { width: min(100%,190px); font-size: .8rem; padding: .10rem .85rem; }
 
-  /* ── PREÇOS: 2 colunas, itens empilhados (já são flex-col) ── */
+  /* ── PREÇOS */
   .Cards { grid-template-columns: repeat(2,1fr); gap: .75rem; max-width: 100%; }
   .Card  { padding: 1rem .85rem; gap: .6rem; }
 
-  /* ── SOBRE: ocultar imagem, texto full-width ── */
+  /* ── SOBRE*/
   .SobreImg { display: none; }
 
   .ContainerSobre {
-    flex-wrap: wrap;          /* permite o texto ocupar 100% */
+    flex-wrap: wrap;        
   }
 
 .Linha2 {
@@ -1048,7 +1006,6 @@ align-items: center;
   .TraSobre  { font-size: clamp(1.4rem,4vw,2rem); }
   .ParaSobre { font-size: .9rem; line-height: 1.7; }
 
-  /* Card stats — mantém horizontal, só compacta */
   .QuantSobre { padding: .85rem 1rem; gap: .4rem; }
   .QuantItem  { gap: .4rem; }
   .IconQuant  { width: 28px; height: 28px; }
@@ -1056,7 +1013,7 @@ align-items: center;
   .Text       { font-size: clamp(.55rem,.85vw,.72rem); }
   .Linha3     { height: 32px; }
 
-  /* ── CONTATO: form em cima, mapa embaixo ── */
+  /* ── CONTATO*/
   .ContatoContent { flex-direction: column; gap: .85rem; }
   .FormContato { flex: 0 0 auto; width: 100%; padding: 1rem .9rem; gap: .55rem; }
   .InfoContato { flex: 0 0 auto; width: 100%; padding: .9rem; gap: .55rem; }
@@ -1069,7 +1026,7 @@ align-items: center;
     padding: .8rem .55rem;
   }
 
-  /* ── FOOTER: info ocupa linha 1; links + redes lado a lado na linha 2 ── */
+  /* ── FOOTER  */
   .FooterInfo {
     width: 100%;
 
@@ -1085,7 +1042,9 @@ align-items: center;
   }
 
 }
-/* 480 px — reduz mais */
+
+
+
 @media (max-width: 480px) {
 
   .header .headerInner { padding: .6rem .40rem; }
@@ -1100,7 +1059,7 @@ align-items: center;
   .CortesImg { gap: .4rem; }
   .BotaoCortes { width: min(100%,190px); font-size: .75rem; padding: .55rem .7rem; }
 
-  /* PREÇOS: 2 cols compactas */
+  /* PREÇOS*/
   .Card { padding: .85rem .7rem; gap: .5rem; }
   .Card > img { width: 36px; }
   .CardDuasImgs img { width: 28px; }
@@ -1141,7 +1100,6 @@ align-items: center;
   .FooterLinks, .FooterRedes { flex: 1 1 120px; }
 }
 
-/* 380 px */
 @media (max-width: 380px) {
   .header .Logo { width: 56px; }
   .menuToggle { padding: .42rem .65rem; font-size: .72rem; }
@@ -1150,7 +1108,7 @@ align-items: center;
   .overlay h3 { font-size: 16px; }
   .BotaoCortes { width: min(100%,130px); font-size: .72rem; }
 
-  /* PREÇOS: 1 coluna */
+  /* PREÇOS */
   .Cards { grid-template-columns: 1fr; max-width: 320px; }
   .Card { padding: 1rem .9rem; gap: .65rem; }
   .Card > img { width: 44px; }
@@ -1167,11 +1125,11 @@ align-items: center;
   .TituloCard  { font-size: .6rem; }
   .HorarioCard { font-size: .65rem; }
 
-  /* Footer: links e redes empilham quando não há espaço */
+  /* Footer*/
   .FooterLinks, .FooterRedes { flex: 0 0 100%; }
 }
 
-/* 320 px */
+
 @media (max-width: 320px) {
   .header .headerInner { padding: .5rem .6rem; }
   .CortesImg { gap: .25rem; }
