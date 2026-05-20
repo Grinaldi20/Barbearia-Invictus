@@ -1019,7 +1019,9 @@ a   { color: inherit; text-decoration: none; }
   /* ── CONTATO*/
   .ContatoContent { flex-direction: column; gap: .85rem; }
   .FormContato { flex: 0 0 auto; width: 100%; padding: 1rem .9rem; gap: .55rem; }
+  .JuntoIcon h2 { padding-left: 1rem; white-space: nowrap;}
   .InfoContato { flex: 0 0 auto; width: 100%; padding: .9rem; gap: .55rem; }
+  
   .Mapa { height: 220px; }
 
   /* ── HORÁRIOS ── */
