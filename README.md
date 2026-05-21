@@ -1,4 +1,4 @@
-# Barbearia Invictus ✂️
+# Barbearia Invictus 
 
 Landing page moderna e responsiva desenvolvida para barbearias, com foco em apresentação visual, experiência do usuário e captação de clientes.
 
