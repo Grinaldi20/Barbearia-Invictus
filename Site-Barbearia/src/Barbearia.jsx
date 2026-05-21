@@ -64,7 +64,7 @@ function App() {
       <section id="Cortes" className="CortesSection">
         <h1 className="CortesTitulo">NOSSOS <span>CORTES</span></h1>
         <h2 className="SubtituloCortes">Estilo, personalidade e acabamento premium.</h2>
-        <div className="Linha5"></div>
+        <div className="Linha2"></div>
 
         <div className="CortesImg">
           {[
@@ -174,7 +174,7 @@ function App() {
         <img className="Icon" src="/coroa.png" alt="Coroa" />
         <h1><strong>S</strong>OBRE</h1>
         <h2 className="SubtituloSobre">Mais que uma barbearia, uma experiência</h2>
-        <div className="Linha5"></div>
+        <div className="Linha2"></div>
 
         <div className="ContainerSobre">
           <img className="SobreImg" src={Salao} alt="Salão da Invictus Barbearia" />

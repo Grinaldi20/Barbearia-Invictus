@@ -434,7 +434,17 @@ a   { color: inherit; text-decoration: none; }
   transition: background .2s, color .2s, transform .2s;
   margin-top: auto;
   text-transform: uppercase;
+    transition: 0.3s;
 }
+
+.BotaoCard:hover{
+  background: transparent;
+  color: #C9A14A;
+  transition: 0.3s;
+  transform: scaleY(1.1);
+}
+ 
+
 
 /* ============================================================
    SOBRE
@@ -960,7 +970,7 @@ a   { color: inherit; text-decoration: none; }
 
 .Icon {
   width: 40px;
-  margin-bottom: .8rem;
+  margin-bottom: 0rem;
 }
 
 .QuantSobre {
@@ -993,16 +1003,10 @@ a   { color: inherit; text-decoration: none; }
   
 }
 
-.Linha2,
-.Linha5 {
+.Linha2{
   display: block;
 }
 
-.Linha5 {
-  width: 180px;
-  margin: -0.5rem auto 2rem;
-  
-}
 
   .TextosSobre { width: 100%; flex: 0 0 100%; }
 
