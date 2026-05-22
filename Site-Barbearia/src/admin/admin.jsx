@@ -9,7 +9,7 @@ function Admin() {
   async function buscarAgendamentos() {
     try {
       setLoading(true)
-      const resposta = await fetch('https://barbearia-invictus-vfqr.onrender.com//agendamentos')
+      const resposta = await fetch('https://barbearia-invictus-vfqr.onrender.com/agendamentos')
       const dados = await resposta.json()
       setAgendamentos(dados)
     } catch (error) {
@@ -22,7 +22,7 @@ function Admin() {
   async function deletarAgendamento(id) {
     try {
       setDeletando(id)
-      await fetch(`https://barbearia-invictus-vfqr.onrender.com//agendamentos/${id}`, {
+      await fetch(`https://barbearia-invictus-vfqr.onrender.com/agendamentos/${id}`, {
         method: 'DELETE',
       })
       buscarAgendamentos()
