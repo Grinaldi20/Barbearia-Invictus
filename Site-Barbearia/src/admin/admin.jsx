@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import './Admin.css'
+import './admin.css'
 
-function Admin() {
+function admin() {
   const [agendamentos, setAgendamentos] = useState([])
   const [loading, setLoading] = useState(true)
   const [deletando, setDeletando] = useState(null)
@@ -253,4 +253,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default admin

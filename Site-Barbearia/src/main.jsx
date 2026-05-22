@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './global.css'
 
 import App from './Barbearia.jsx'
-import Admin from './admin/admin.jsx'
+import admin from './admin/admin.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
