@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './Admin.css'
+import './admin.css'
 
 function Admin() {
   const [agendamentos, setAgendamentos] = useState([])
