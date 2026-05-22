@@ -1,0 +1,700 @@
+/* ============================================================
+   RESET LOCAL
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ============================================================
+   LAYOUT PRINCIPAL — sidebar + conteúdo
+   ============================================================ */
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+.admin-sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #111111;
+  border-right: 1px solid rgba(201,161,74,.15);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+}
+
+/* Logo da sidebar */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: 1.5rem 1.25rem 1.25rem;
+  border-bottom: 1px solid rgba(201,161,74,.12);
+}
+
+.sidebar-logo-icon {
+  font-size: 1.4rem;
+  color: #C9A14A;
+}
+
+.sidebar-logo-text {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #C9A14A;
+}
+
+/* Navegação da sidebar */
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  padding: 1.25rem .85rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .72rem .9rem;
+  border-radius: 10px;
+  color: #888;
+  font-size: .88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+
+.sidebar-link:hover {
+  background: rgba(201,161,74,.08);
+  color: #C9A14A;
+}
+
+.sidebar-link.active {
+  background: rgba(201,161,74,.12);
+  color: #C9A14A;
+  border-left: 3px solid #C9A14A;
+  padding-left: calc(.9rem - 3px);
+}
+
+.sidebar-link-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.sidebar-footer {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid rgba(201,161,74,.1);
+}
+
+.sidebar-version {
+  font-size: .75rem;
+  color: #444;
+  letter-spacing: 1px;
+}
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL
+   ============================================================ */
+.admin-main {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ── Header ── */
+.admin-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.admin-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .5px;
+}
+
+.admin-subtitle {
+  margin: .35rem 0 0;
+  font-size: .88rem;
+  color: #666;
+}
+
+.btn-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem 1.1rem;
+  background: rgba(201,161,74,.1);
+  border: 1px solid rgba(201,161,74,.3);
+  border-radius: 10px;
+  color: #C9A14A;
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.btn-refresh:hover {
+  background: rgba(201,161,74,.2);
+  transform: translateY(-1px);
+}
+
+.refresh-icon {
+  font-size: 1rem;
+  display: inline-block;
+  transition: transform .4s;
+}
+
+.btn-refresh:hover .refresh-icon {
+  transform: rotate(180deg);
+}
+
+/* ── Stat cards ── */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #161616;
+  border: 1px solid rgba(201,161,74,.12);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color .2s, transform .2s;
+}
+
+.stat-card:hover {
+  border-color: rgba(201,161,74,.3);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #C9A14A;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: .78rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Seção de agendamentos ── */
+.admin-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.section-title-bar {
+  width: 4px;
+  height: 1.1rem;
+  background: #C9A14A;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.section-badge {
+  background: rgba(201,161,74,.1);
+  color: #C9A14A;
+  border: 1px solid rgba(201,161,74,.2);
+  border-radius: 20px;
+  padding: .3rem .85rem;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+/* ============================================================
+   ESTADO: LOADING
+   ============================================================ */
+.estado-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 4rem 2rem;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+}
+
+.spinner-ring {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(201,161,74,.15);
+  border-top-color: #C9A14A;
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.estado-texto {
+  margin: 0;
+  color: #555;
+  font-size: .95rem;
+}
+
+/* ============================================================
+   ESTADO: VAZIO
+   ============================================================ */
+.estado-vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .85rem;
+  padding: 4rem 2rem;
+  background: #161616;
+  border: 1px dashed rgba(201,161,74,.2);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.estado-vazio-icon {
+  font-size: 3rem;
+  opacity: .5;
+}
+
+.estado-vazio-titulo {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #aaa;
+}
+
+.estado-vazio-desc {
+  margin: 0;
+  font-size: .88rem;
+  color: #555;
+  max-width: 320px;
+}
+
+.btn-refresh-vazio {
+  margin-top: .5rem;
+  padding: .65rem 1.5rem;
+  background: rgba(201,161,74,.1);
+  border: 1px solid rgba(201,161,74,.3);
+  border-radius: 10px;
+  color: #C9A14A;
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.btn-refresh-vazio:hover { background: rgba(201,161,74,.2); }
+
+/* ============================================================
+   TABELA — visível em desktop/tablet (≥ 700 px)
+   ============================================================ */
+.tabela-wrapper {
+  background: #161616;
+  border: 1px solid rgba(201,161,74,.1);
+  border-radius: 14px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.tabela-agendamentos {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.tabela-agendamentos thead tr {
+  background: rgba(201,161,74,.06);
+  border-bottom: 1px solid rgba(201,161,74,.12);
+}
+
+.tabela-agendamentos th {
+  padding: .9rem 1.1rem;
+  text-align: left;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #C9A14A;
+  white-space: nowrap;
+}
+
+.tabela-agendamentos tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  transition: background .18s;
+}
+
+.tabela-agendamentos tbody tr:last-child { border-bottom: none; }
+
+.tabela-agendamentos tbody tr:hover {
+  background: rgba(255,255,255,.03);
+}
+
+.tabela-agendamentos tbody tr.linha-deletando {
+  opacity: .45;
+  pointer-events: none;
+}
+
+.tabela-agendamentos td {
+  padding: .95rem 1.1rem;
+  font-size: .88rem;
+  color: #ccc;
+  vertical-align: middle;
+}
+
+/* Célula cliente */
+.cliente-cell {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.cliente-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C9A14A, #a97823);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .88rem;
+  font-weight: 700;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.cliente-nome {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Badge de serviço */
+.servico-badge {
+  background: rgba(201,161,74,.1);
+  color: #C9A14A;
+  border: 1px solid rgba(201,161,74,.2);
+  border-radius: 6px;
+  padding: .25rem .65rem;
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.data-cell, .horario-cell, .telefone-cell {
+  white-space: nowrap;
+  color: #aaa;
+  font-size: .85rem;
+}
+
+/* Botão excluir na tabela */
+.btn-excluir-tabela {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem .95rem;
+  background: rgba(220,38,38,.1);
+  border: 1px solid rgba(220,38,38,.3);
+  border-radius: 8px;
+  color: #f87171;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .2s, border-color .2s, transform .15s;
+}
+
+.btn-excluir-tabela:hover:not(:disabled) {
+  background: rgba(220,38,38,.22);
+  border-color: rgba(220,38,38,.5);
+  transform: translateY(-1px);
+}
+
+.btn-excluir-tabela:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.btn-loading {
+  display: inline-block;
+  animation: spin .6s linear infinite;
+}
+
+/* ============================================================
+   CARDS MOBILE — visíveis apenas em mobile (< 700 px)
+   ============================================================ */
+.lista-cards-mobile {
+  display: none;          /* oculto no desktop, ativado por media query */
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-agendamento {
+  background: #161616;
+  border: 1px solid rgba(201,161,74,.12);
+  border-radius: 14px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  transition: border-color .2s, transform .2s;
+}
+
+.card-agendamento:hover {
+  border-color: rgba(201,161,74,.25);
+}
+
+.card-agendamento.card-deletando {
+  opacity: .45;
+  pointer-events: none;
+}
+
+/* Topo do card: avatar + nome + serviço */
+.card-header-info {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+}
+
+.card-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C9A14A, #a97823);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.card-nome-servico {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.card-nome {
+  font-size: .97rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.card-servico-badge {
+  background: rgba(201,161,74,.1);
+  color: #C9A14A;
+  border: 1px solid rgba(201,161,74,.2);
+  border-radius: 6px;
+  padding: .18rem .55rem;
+  font-size: .75rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+/* Detalhes do card */
+.card-detalhes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .6rem;
+  background: rgba(255,255,255,.025);
+  border-radius: 10px;
+  padding: .85rem;
+}
+
+.card-detalhe-item {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+
+.detalhe-icon { font-size: .9rem; }
+
+.detalhe-label {
+  font-size: .68rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+.detalhe-valor {
+  font-size: .88rem;
+  color: #ddd;
+  font-weight: 500;
+}
+
+/* Botão excluir do card */
+.btn-excluir-card {
+  width: 100%;
+  padding: .8rem;
+  background: rgba(220,38,38,.08);
+  border: 1px solid rgba(220,38,38,.25);
+  border-radius: 10px;
+  color: #f87171;
+  font-size: .88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.btn-excluir-card:hover:not(:disabled) {
+  background: rgba(220,38,38,.18);
+  border-color: rgba(220,38,38,.45);
+}
+
+.btn-excluir-card:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   BREAKPOINTS
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .admin-sidebar { width: 190px; }
+  .admin-main { padding: 1.5rem 1.5rem 2.5rem; }
+  .admin-stats { grid-template-columns: repeat(3,1fr); gap: .75rem; }
+}
+
+/* Mobile — esconde sidebar e tabela; mostra cards */
+@media (max-width: 768px) {
+
+  .admin-wrapper { flex-direction: column; }
+
+  /* Sidebar vira barra superior compacta */
+  .admin-sidebar {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    border-right: none;
+    border-bottom: 1px solid rgba(201,161,74,.15);
+    padding: .65rem 1rem;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+
+  .sidebar-logo { padding: 0; border-bottom: none; flex-shrink: 0; }
+  .sidebar-logo-text { font-size: .85rem; }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex: 1;
+    gap: .35rem;
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  .sidebar-link {
+    flex-shrink: 0;
+    padding: .5rem .75rem;
+    font-size: .78rem;
+    border-radius: 8px;
+  }
+
+  .sidebar-link.active { border-left: none; border-bottom: 2px solid #C9A14A; padding-left: .75rem; }
+
+  .sidebar-footer { display: none; }
+
+  .admin-main { padding: 1.25rem 1rem 2.5rem; gap: 1.25rem; }
+
+  .admin-stats { grid-template-columns: repeat(3,1fr); gap: .6rem; }
+
+  .stat-card { padding: .85rem .75rem; gap: .65rem; }
+  .stat-icon { font-size: 1.25rem; }
+  .stat-value { font-size: 1.35rem; }
+  .stat-label { font-size: .68rem; }
+
+  /* Esconde tabela, mostra cards */
+  .tabela-wrapper { display: none; }
+  .lista-cards-mobile { display: flex; }
+
+  .admin-header { padding-bottom: 1rem; }
+  .admin-title  { font-size: 1.35rem; }
+}
+
+@media (max-width: 480px) {
+  .admin-stats { grid-template-columns: repeat(3,1fr); gap: .5rem; }
+  .stat-card { padding: .75rem .6rem; border-radius: 10px; }
+  .stat-icon { font-size: 1rem; }
+  .stat-value { font-size: 1.1rem; }
+  .stat-label { font-size: .62rem; letter-spacing: .5px; }
+
+  .card-detalhes { grid-template-columns: 1fr 1fr; gap: .5rem; padding: .75rem; }
+  .card-agendamento { padding: .95rem; }
+}
+
+@media (max-width: 380px) {
+  .admin-stats { grid-template-columns: 1fr; }
+  .card-detalhes { grid-template-columns: 1fr; }
+}
