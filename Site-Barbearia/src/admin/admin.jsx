@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './admin.css'
+import './Admin.css'
 
 function Admin() {
   const [agendamentos, setAgendamentos] = useState([])
@@ -20,18 +20,31 @@ function Admin() {
   }
 
   async function deletarAgendamento(id) {
-    try {
-      setDeletando(id)
-      await fetch(`https://barbearia-invictus-vfqr.onrender.com/agendamentos/${id}`, {
+  try {
+    setDeletando(id)
+
+    const resposta = await fetch(
+      `https://barbearia-invictus-vfqr.onrender.com/agendamentos/${id}`,
+      {
         method: 'DELETE',
-      })
-      buscarAgendamentos()
-    } catch (error) {
-      console.log('Erro ao deletar agendamento:', error)
-    } finally {
-      setDeletando(null)
+      }
+    )
+
+    if (!resposta.ok) {
+      throw new Error('Erro ao deletar')
     }
+
+    // REMOVE DIRETO DO STATE
+    setAgendamentos((prev) =>
+      prev.filter((agendamento) => agendamento.id !== id)
+    )
+
+  } catch (error) {
+    console.log('Erro ao deletar agendamento:', error)
+  } finally {
+    setDeletando(null)
   }
+}
 
   useEffect(() => {
     buscarAgendamentos()
