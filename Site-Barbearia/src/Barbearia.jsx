@@ -34,7 +34,7 @@ const handleSubmit = async (e) => {
 
   try {
 
-    const resposta = await fetch('http://localhost:3000/agendamentos', {
+    const resposta = await fetch('https://barbearia-invictus-vfqr.onrender.com/agendamentos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
