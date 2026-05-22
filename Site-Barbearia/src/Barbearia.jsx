@@ -11,7 +11,61 @@ import Corte6 from './assets/Cortes/Corte6.png'
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+const [formData, setFormData] = useState({
+  nome: '',
+  telefone: '',
+  servico: '',
+  data: '',
+  horario: ''
+})
+
   const closeMenu = () => setMenuOpen(false)
+
+  const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
+  })
+}
+
+const handleSubmit = async (e) => {
+  e.preventDefault()
+
+  try {
+
+    const resposta = await fetch('http://localhost:3000/agendamentos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+
+    const dados = await resposta.json()
+
+    alert(dados.mensagem)
+
+    if (resposta.ok) {
+
+      setFormData({
+        nome: '',
+        telefone: '',
+        servico: '',
+        data: '',
+        horario: ''
+      })
+
+    }
+
+  } catch (error) {
+
+    console.log(error)
+
+    alert('Erro ao enviar agendamento')
+
+  }
+}
 
   return (
     <>
@@ -230,7 +284,7 @@ function App() {
 
         <div className="ContatoContent">
 
-          <form className="FormContato" onSubmit={e => e.preventDefault()}>
+        <form className="FormContato" onSubmit={handleSubmit}>
             <div className="JuntoIcon">
               <img className="FormIconTop" src="/Calendario.png" alt="Calendário" />
               <h2>AGENDAR UM HORÁRIO</h2>
@@ -239,30 +293,65 @@ function App() {
             <div className="InputLado">
               <div className="TextInputTop">
                 <label htmlFor="nome">Nome Completo</label>
-                <input id="nome" type="text" placeholder="Digite seu nome" required />
+            <input
+              id="nome"
+              name="nome"
+              type="text"
+              placeholder="Digite seu nome"
+              value={formData.nome}
+              onChange={handleChange}
+              required
+              />
               </div>
               <div className="TextInputTop">
-                <label htmlFor="email">E-mail</label>
-                <input id="email" type="email" placeholder="Digite seu email" required />
-              </div>
+          <label htmlFor="whatsapp">WhatsApp</label>
+               <input
+                 id="whatsapp"
+                 name="telefone"
+                 type="tel"
+                 placeholder="(00) 00000-0000"
+                 value={formData.telefone}
+                 onChange={handleChange}
+                 required
+               />
+            </div>
             </div>
 
             <div className="InputLado">
               <div className="TextInputTop">
-                <label htmlFor="whatsapp">WhatsApp</label>
-                <input id="whatsapp" type="tel" placeholder="(00) 00000-0000" required />
+              <label htmlFor="servico">Serviço</label>
+                <input
+                   id="servico"
+                   name="servico"
+                   type="text"
+                   placeholder="Escolha o serviço"
+                   value={formData.servico}
+                   onChange={handleChange}
+                   required
+                 />
               </div>
               <div className="TextInputTop">
-                <label htmlFor="servico">Serviço</label>
-                <input id="servico" type="text" placeholder="Escolha o serviço" required />
+                 <label htmlFor="data">Dia desejado</label>
+                <input
+                   id="data"
+                   name="data"
+                   className="DataInput"
+                   type="date"
+                   value={formData.data}
+                   onChange={handleChange}
+                   required
+                 />
               </div>
             </div>
 
-            <label htmlFor="data">Dia desejado</label>
-            <input id="data" className="DataInput" type="date" required />
-
             <label htmlFor="horario">Horário Desejado</label>
-            <select id="horario" defaultValue="">
+                 <select
+                   id="horario"
+                   name="horario"
+                   value={formData.horario}
+                   onChange={handleChange}
+                   required
+                 >
               <option value="" disabled>Horário Desejado</option>
               {['09:00','10:00','11:00','12:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'].map(h => (
                 <option key={h} value={h}>{h}</option>
