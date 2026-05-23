@@ -34,10 +34,7 @@ function Admin() {
       throw new Error('Erro ao deletar')
     }
 
-    // REMOVE DIRETO DO STATE
-    setAgendamentos((prev) =>
-      prev.filter((agendamento) => agendamento.id !== id)
-    )
+    window.location.reload()
 
   } catch (error) {
     console.log('Erro ao deletar agendamento:', error)
