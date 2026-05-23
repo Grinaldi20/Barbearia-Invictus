@@ -16,10 +16,17 @@ import Login from './login/login.jsx'
 function RotaPrivada({ children }) {
 
   const auth = localStorage.getItem('auth')
+  const expiration = localStorage.getItem('expiration')
 
-  return auth === 'true'
-    ? children
-    : <Navigate to="/login" />
+  if (!auth || Date.now() > expiration) {
+
+    localStorage.removeItem('auth')
+    localStorage.removeItem('expiration')
+
+    return <Navigate to="/login" />
+  }
+
+  return children
 }
 
 createRoot(document.getElementById('root')).render(
