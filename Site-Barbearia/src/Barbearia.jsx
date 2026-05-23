@@ -8,6 +8,7 @@ import Corte3 from './assets/Cortes/Corte3.png'
 import Corte4 from './assets/Cortes/Corte4.png'
 import Corte5 from './assets/Cortes/Corte5.png'
 import Corte6 from './assets/Cortes/Corte6.png'
+import { toast } from 'sonner'
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -44,7 +45,11 @@ const handleSubmit = async (e) => {
 
     const dados = await resposta.json()
 
-    alert(dados.mensagem)
+   if (resposta.ok) {
+  toast.success(dados.mensagem)
+} else {
+  toast.error(dados.mensagem)
+}
 
     if (resposta.ok) {
 
@@ -62,7 +67,7 @@ const handleSubmit = async (e) => {
 
     console.log(error)
 
-    alert('Erro ao enviar agendamento')
+    toast.error('Erro ao enviar agendamento')
 
   }
 }

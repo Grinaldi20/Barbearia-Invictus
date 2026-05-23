@@ -6,7 +6,7 @@ import {
   Route,
   Navigate
 } from 'react-router-dom'
-
+import { Toaster } from 'sonner'
 import './global.css'
 
 import App from './Barbearia.jsx'
@@ -33,23 +33,29 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
 
-      <Routes>
+  <Toaster
+    position="top-right"
+    richColors
+    theme="dark"
+  />
 
-        <Route path="/" element={<App />} />
+  <Routes>
 
-        <Route path="/login" element={<Login />} />
+    <Route path="/" element={<App />} />
 
-        <Route
-          path="/admin"
-          element={
-            <RotaPrivada>
-              <Admin />
-            </RotaPrivada>
-          }
-        />
+    <Route path="/login" element={<Login />} />
 
-      </Routes>
+    <Route
+      path="/admin"
+      element={
+        <RotaPrivada>
+          <Admin />
+        </RotaPrivada>
+      }
+    />
 
-    </BrowserRouter>
+  </Routes>
+
+</BrowserRouter>
   </StrictMode>,
 )

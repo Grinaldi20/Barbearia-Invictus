@@ -33,34 +33,29 @@ function Login() {
 
   return (
     <div className="login-root">
-      {/* Fundo com efeito de textura/grain */}
+   
       <div className="login-bg">
         <div className="login-bg-glow" />
         <div className="login-bg-lines" />
       </div>
 
       <div className="login-wrapper">
-        {/* Card principal */}
+    
         <div className="login-card">
 
-          {/* Linha decorativa topo */}
+        
           <div className="login-card-topbar" />
 
-          {/* Header */}
+      
           <div className="login-header">
-            {/* Logo / ícone da barbearia */}
             <div className="login-logo">
               <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="login-logo-svg">
-                {/* Tesoura estilizada */}
+             
                 <circle cx="32" cy="32" r="30" stroke="#C9A14A" strokeWidth="1.2" strokeOpacity="0.4"/>
                 <circle cx="32" cy="32" r="24" stroke="#C9A14A" strokeWidth="0.6" strokeOpacity="0.2"/>
-                {/* Lâmina 1 */}
                 <path d="M20 18 Q24 30 28 38 Q30 42 28 46 Q26 50 22 49 Q18 48 18 44 Q18 40 22 40 Q25 40 26 42" stroke="#C9A14A" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                {/* Lâmina 2 */}
                 <path d="M44 18 Q40 30 36 38 Q34 42 36 46 Q38 50 42 49 Q46 48 46 44 Q46 40 42 40 Q39 40 38 42" stroke="#C9A14A" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                {/* Ponto de cruzamento */}
                 <circle cx="32" cy="29" r="3" fill="#C9A14A" fillOpacity="0.9"/>
-                {/* Cabo */}
                 <path d="M29 18 L35 18" stroke="#C9A14A" strokeWidth="2.5" strokeLinecap="round"/>
               </svg>
             </div>
@@ -76,17 +71,17 @@ function Login() {
             </p>
           </div>
 
-          {/* Divisor */}
+     
           <div className="login-divider">
             <span className="login-divider-line" />
             <span className="login-divider-diamond" />
             <span className="login-divider-line" />
           </div>
 
-          {/* Formulário */}
+       
           <form className="login-form" onSubmit={entrar} noValidate>
 
-            {/* Campo Usuário */}
+      
             <div className={`login-field ${focusUsuario ? 'login-field--focus' : ''} ${usuario ? 'login-field--filled' : ''}`}>
               <label className="login-label">Usuário</label>
               <div className="login-input-wrap">
@@ -110,7 +105,7 @@ function Login() {
               </div>
             </div>
 
-            {/* Campo Senha */}
+         
             <div className={`login-field ${focusSenha ? 'login-field--focus' : ''} ${senha ? 'login-field--filled' : ''}`}>
               <label className="login-label">Senha</label>
               <div className="login-input-wrap">
@@ -163,7 +158,6 @@ function Login() {
               {erro}
             </div>
 
-            {/* Botão de acesso */}
             <button
               type="submit"
               className={`login-btn ${carregando ? 'login-btn--loading' : ''}`}
@@ -184,16 +178,15 @@ function Login() {
 
           </form>
 
-          {/* Rodapé do card */}
+        
           <div className="login-footer">
             <span className="login-footer-dot" />
-            <span className="login-footer-text">Acesso seguro &amp; criptografado</span>
+            <span className="login-footer-text">Acesso seguro</span>
             <span className="login-footer-dot" />
           </div>
 
         </div>
 
-        {/* Copyright */}
         <p className="login-copyright">© {new Date().getFullYear()} Barbearia. Todos os direitos reservados.</p>
       </div>
     </div>
