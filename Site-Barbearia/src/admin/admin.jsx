@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './admin.css'
 
-function admin() {
+function Admin() {
   const [agendamentos, setAgendamentos] = useState([])
   const [loading, setLoading] = useState(true)
   const [deletando, setDeletando] = useState(null)
@@ -60,11 +60,10 @@ function admin() {
           <span className="sidebar-logo-text">INVICTUS</span>
         </div>
         <nav className="sidebar-nav">
-          <a href="#" className="sidebar-link active">
+          <button type="button" className="sidebar-link active">
             <span className="sidebar-link-icon">📋</span>
             Agendamentos
-          </a>
-        
+          </button>
         </nav>
         <div className="sidebar-footer">
           <span className="sidebar-version">v1.0.0</span>
@@ -81,7 +80,7 @@ function admin() {
             <p className="admin-subtitle">Gerencie todos os agendamentos da barbearia</p>
           </div>
           <div className="admin-header-right">
-            <button className="btn-refresh" onClick={buscarAgendamentos} title="Atualizar">
+            <button type="button" className="btn-refresh" onClick={buscarAgendamentos} title="Atualizar">
               <span className="refresh-icon">↻</span>
               Atualizar
             </button>
@@ -143,7 +142,7 @@ function admin() {
               <div className="estado-vazio-icon">📭</div>
               <h3 className="estado-vazio-titulo">Nenhum agendamento encontrado</h3>
               <p className="estado-vazio-desc">Quando novos agendamentos chegarem, eles aparecerão aqui.</p>
-              <button className="btn-refresh-vazio" onClick={buscarAgendamentos}>
+              <button type="button" className="btn-refresh-vazio" onClick={buscarAgendamentos}>
                 Verificar novamente
               </button>
             </div>
@@ -182,6 +181,7 @@ function admin() {
                         <td><span className="telefone-cell">📞 {item.telefone}</span></td>
                         <td>
                           <button
+                            type="button"
                             className="btn-excluir-tabela"
                             onClick={() => deletarAgendamento(item.id)}
                             disabled={deletando === item.id}
@@ -235,6 +235,7 @@ function admin() {
                     </div>
 
                     <button
+                      type="button"
                       className="btn-excluir-card"
                       onClick={() => deletarAgendamento(item.id)}
                       disabled={deletando === item.id}
@@ -253,4 +254,4 @@ function admin() {
   )
 }
 
-export default admin
+export default Admin
