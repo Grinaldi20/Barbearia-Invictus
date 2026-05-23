@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import './admin.css'
+import { useNavigate } from 'react-router-dom'
 
 function Admin() {
   const [agendamentos, setAgendamentos] = useState([])
   const [loading, setLoading] = useState(true)
   const [deletando, setDeletando] = useState(null)
+  const navigate = useNavigate()
 
   async function buscarAgendamentos() {
     try {
@@ -18,6 +20,13 @@ function Admin() {
       setLoading(false)
     }
   }
+
+  function sair() {
+
+  localStorage.removeItem('auth')
+
+  navigate('/login')
+}
 
   async function deletarAgendamento(id) {
   try {
@@ -63,8 +72,16 @@ function Admin() {
           </button>
         </nav>
         <div className="sidebar-footer">
-          <span className="sidebar-version">v1.0.0</span>
-        </div>
+
+          <button
+            type="button"
+            className="btn-sair"
+            onClick={sair}
+         >
+    Sair
+  </button>
+
+</div>
       </aside>
 
       {/* ── CONTEÚDO PRINCIPAL ── */}
