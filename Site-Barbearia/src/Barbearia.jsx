@@ -129,7 +129,7 @@ const handleSubmit = async (e) => {
       {/* ── Sobre ── */}
        <section id="Sobre" className="SobreSection">
         <img className="Icon" src="/coroa.png" alt="Coroa" />
-        <h1><strong>S</strong>OBRE</h1>
+        <h1 translate="no"><strong translate="no">S</strong>OBRE</h1>
         <h2 className="SubtituloSobre">Mais que uma barbearia, uma experiência</h2>
         <div className="Linha2"></div>
 
@@ -340,7 +340,7 @@ const handleSubmit = async (e) => {
         <form className="FormContato" onSubmit={handleSubmit}>
             <div className="JuntoIcon">
               <img className="FormIconTop" src="/Calendario.png" alt="Calendário" />
-              <h2>AGENDAR UM HORÁRIO</h2>
+              <h2 translate="no">AGENDAR UM HORÁRIO</h2>
             </div>
 
             <div className="InputLado">
