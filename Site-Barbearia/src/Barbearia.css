@@ -706,6 +706,58 @@ a   { color: inherit; text-decoration: none; }
 
 .FormContato .BotaoContato:hover { transform: translateY(-2px); background: #ddb04d; }
 
+.FormContato .BotaoContato:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #C9A14A;
+  transform: none;
+  transition: none;
+}
+
+.FormContato .BotaoContato:disabled:hover {
+  transform: none;
+  background: #C9A14A;
+}
+
+.FormAlert {
+  width: 100%;
+  margin: 1rem 0 0;
+  padding: .9rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(201,161,74,.2);
+  background: rgba(201,161,74,.12);
+  color: #fff;
+  font-size: .92rem;
+  line-height: 1.5;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  box-shadow: inset 0 0 0 1px rgba(201,161,74,.1), 0 0 14px rgba(0,0,0,.2);
+}
+
+.FormAlert::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .9;
+}
+
+.FormAlert.success {
+  background: rgba(201,161,74,.18);
+  border-color: rgba(201,161,74,.45);
+  color: #fff;
+}
+
+.FormAlert.error {
+  background: rgba(255,95,87,.14);
+  border-color: rgba(255,95,87,.45);
+  color: #ffd7d0;
+}
+
 .FormAviso {
   margin: 0; color: #555;
   font-size: clamp(.62rem,.85vw,.76rem);

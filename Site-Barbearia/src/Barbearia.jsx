@@ -17,8 +17,11 @@ const [formData, setFormData] = useState({
   telefone: '',
   servico: '',
   data: '',
-  horario: ''
+  horario: '',
+  obs: ''
 })
+const [notice, setNotice] = useState({ message: '', type: '' })
+const [isSubmitting, setIsSubmitting] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -32,6 +35,10 @@ const [formData, setFormData] = useState({
 const handleSubmit = async (e) => {
   e.preventDefault()
 
+  if (isSubmitting) return
+
+  setIsSubmitting(true)
+
   try {
 
     const resposta = await fetch('https://barbearia-invictus-vfqr.onrender.com/agendamentos', {
@@ -44,7 +51,8 @@ const handleSubmit = async (e) => {
 
     const dados = await resposta.json()
 
-    alert(dados.mensagem)
+    setNotice({ message: dados.mensagem, type: resposta.ok ? 'success' : 'error' })
+    setTimeout(() => setNotice({ message: '', type: '' }), 6000)
 
     if (resposta.ok) {
 
@@ -53,7 +61,8 @@ const handleSubmit = async (e) => {
         telefone: '',
         servico: '',
         data: '',
-        horario: ''
+        horario: '',
+        obs: ''
       })
 
     }
@@ -62,8 +71,11 @@ const handleSubmit = async (e) => {
 
     console.log(error)
 
-    alert('Erro ao enviar agendamento')
+    setNotice({ message: 'Erro ao enviar agendamento', type: 'error' })
+    setTimeout(() => setNotice({ message: '', type: '' }), 6000)
 
+  } finally {
+    setIsSubmitting(false)
   }
 }
 
@@ -79,10 +91,10 @@ const handleSubmit = async (e) => {
         <nav className={`headerNav ${menuOpen ? 'open' : ''}`}>
           <ul>
             <li><a href="#Inicio"   onClick={closeMenu}><strong>INICIO</strong></a></li>
+            <li><a href="#Sobre"   onClick={closeMenu}>SOBRE</a></li>
             <li><a href="#Cortes"   onClick={closeMenu}>CORTES</a></li>
-            <li><a href="#Precos"   onClick={closeMenu}>PREÇOS</a></li>
-            <li><a href="#Horarios" onClick={closeMenu}>HORÁRIOS</a></li>
-            <li><a href="#Sobre"    onClick={closeMenu}>SOBRE</a></li>
+            <li><a href="#Precos" onClick={closeMenu}>PREÇOS</a></li>
+            <li><a href="#Horarios"    onClick={closeMenu}>HORÁRIOS</a></li>
             <li><a href="#Contato"  onClick={closeMenu}>CONTATO</a></li>
           </ul>
         </nav>
@@ -114,8 +126,60 @@ const handleSubmit = async (e) => {
         </div>
       </section>
 
-      {/* ── CORTES ── */}
-      <section id="Cortes" className="CortesSection">
+      {/* ── Sobre ── */}
+       <section id="Sobre" className="SobreSection">
+        <img className="Icon" src="/coroa.png" alt="Coroa" />
+        <h1><strong>S</strong>OBRE</h1>
+        <h2 className="SubtituloSobre">Mais que uma barbearia, uma experiência</h2>
+        <div className="Linha2"></div>
+
+        <div className="ContainerSobre">
+          <img className="SobreImg" src={Salao} alt="Salão da Invictus Barbearia" />
+          <div className="TextosSobre">
+            <h3 className="NossaSobre">Nossa História</h3>
+            <h3 className="TraSobre">TRADIÇÃO, ESTILO E<br /><strong>ATITUDE</strong></h3>
+            <p className="ParaSobre">
+              Mais do que uma barbearia, criamos um espaço pensado para quem valoriza estilo,
+              cuidado e experiência. Nossa missão começou com a ideia de transformar cada
+              atendimento em um momento único, unindo tradição, modernidade e atenção aos detalhes.
+            </p>
+            <p className="ParaSobre">
+              Aqui, cada corte e cada barba são feitos com dedicação, técnica e personalidade,
+              porque acreditamos que confiança também faz parte do visual.
+            </p>
+          </div>
+        </div>
+
+        <div className="QuantSobre">
+          <div className="QuantItem">
+            <img className="IconQuant" src="/Pessoas.png" alt="" />
+            <div className="QuantTexto">
+              <h2 className="Number">+2900</h2>
+              <p className="Text">Clientes Satisfeitos</p>
+            </div>
+          </div>
+          <div className="Linha3"></div>
+          <div className="QuantItem">
+            <img className="IconQuant" src="/trofeu.png" alt="" />
+            <div className="QuantTexto">
+              <h2 className="Number">+4</h2>
+              <p className="Text">Anos de Tradição</p>
+            </div>
+          </div>
+          <div className="Linha3"></div>
+          <div className="QuantItem">
+            <img className="IconQuant" src="/tesoura.png" alt="" />
+            <div className="QuantTexto">
+              <h2 className="Number">+1000</h2>
+              <p className="Text">Cortes Realizados</p>
+            </div>
+          </div>
+        </div>
+      </section>
+     
+
+      {/* ── Cortes ── */}
+       <section id="Cortes" className="CortesSection">
         <h1 className="CortesTitulo">NOSSOS <span>CORTES</span></h1>
         <h2 className="SubtituloCortes">Estilo, personalidade e acabamento premium.</h2>
         <div className="Linha2"></div>
@@ -142,7 +206,7 @@ const handleSubmit = async (e) => {
        
       </section>
 
-      {/* ── PREÇOS ── */}
+      {/* ── Preçoss ── */}
       <section id="Precos" className="PrecosSection">
         <h1>NOSSOS <strong className="Serviços">SERVIÇOS</strong></h1>
         <h2 className="SubtituloPrecos">Estilo por um preço que vale a experiência.</h2>
@@ -222,60 +286,49 @@ const handleSubmit = async (e) => {
 
         </div>
       </section>
+     
 
-      {/* ── SOBRE ── */}
-      <section id="Sobre" className="SobreSection">
-        <img className="Icon" src="/coroa.png" alt="Coroa" />
-        <h1><strong>S</strong>OBRE</h1>
-        <h2 className="SubtituloSobre">Mais que uma barbearia, uma experiência</h2>
+      {/* ── Horarios ── */}
+       <section id="Horarios" className="HorarioSection">
+        <div className="TextIcon">
+          <h1 className="TituloHorario">NOSSOS <strong>HORÁRIOS</strong></h1>
+        </div>
+        <h2 className="SubtituloHorario">Escolha o melhor dia e horário e venha viver a experiência Invictus.</h2>
         <div className="Linha2"></div>
 
-        <div className="ContainerSobre">
-          <img className="SobreImg" src={Salao} alt="Salão da Invictus Barbearia" />
-          <div className="TextosSobre">
-            <h3 className="NossaSobre">Nossa História</h3>
-            <h3 className="TraSobre">TRADIÇÃO, ESTILO E<br /><strong>ATITUDE</strong></h3>
-            <p className="ParaSobre">
-              Mais do que uma barbearia, criamos um espaço pensado para quem valoriza estilo,
-              cuidado e experiência. Nossa missão começou com a ideia de transformar cada
-              atendimento em um momento único, unindo tradição, modernidade e atenção aos detalhes.
-            </p>
-            <p className="ParaSobre">
-              Aqui, cada corte e cada barba são feitos com dedicação, técnica e personalidade,
-              porque acreditamos que confiança também faz parte do visual.
-            </p>
-          </div>
+        <div className="CardsHorario">
+          {[
+            { dia: 'SEGUNDA', horario: '9:00 às 20:00', aberto: true  },
+            { dia: 'TERÇA',   horario: '9:00 às 20:00', aberto: true  },
+            { dia: 'QUARTA',  horario: '9:00 às 20:00', aberto: true  },
+            { dia: 'QUINTA',  horario: '9:00 às 20:00', aberto: true  },
+            { dia: 'SEXTA',   horario: '9:00 às 20:00', aberto: true  },
+            { dia: 'SÁBADO',  horario: '9:00 às 17:00', aberto: true  },
+            { dia: 'DOMINGO', horario: null,             aberto: false },
+          ].map(({ dia, horario, aberto }) => (
+            <div className="CardHorario" key={dia}>
+              <img className="IconHorario" src="/Calendario.png" alt="Calendário" />
+              <h2 className="TituloCard">{dia}</h2>
+              <div className="Linha4"></div>
+              {horario && <p className="HorarioCard">{horario}</p>}
+              <div className={aberto ? 'Aberto' : 'Fechado'}></div>
+            </div>
+          ))}
         </div>
 
-        <div className="QuantSobre">
-          <div className="QuantItem">
-            <img className="IconQuant" src="/Pessoas.png" alt="" />
-            <div className="QuantTexto">
-              <h2 className="Number">+2900</h2>
-              <p className="Text">Clientes Satisfeitos</p>
-            </div>
-          </div>
-          <div className="Linha3"></div>
-          <div className="QuantItem">
-            <img className="IconQuant" src="/trofeu.png" alt="" />
-            <div className="QuantTexto">
-              <h2 className="Number">+4</h2>
-              <p className="Text">Anos de Tradição</p>
-            </div>
-          </div>
-          <div className="Linha3"></div>
-          <div className="QuantItem">
-            <img className="IconQuant" src="/tesoura.png" alt="" />
-            <div className="QuantTexto">
-              <h2 className="Number">+1000</h2>
-              <p className="Text">Cortes Realizados</p>
-            </div>
+        <div className="CardAtencao">
+          <img className="IconAtencao" src="/relogio.png" alt="Relógio" />
+          <h2 className="TextAtencao">ATENÇÃO</h2>
+          <div className="TextosAtencao">
+            <p className="FraseAtencao">Os horários podem sofrer alterações em feriados e datas comemorativas.</p>
+            <p className="FraseAtencao2">Entre em contato para confirmar.</p>
           </div>
         </div>
       </section>
+    
 
-      {/* ── CONTATO ── */}
-      <section id="Contato" className="ContatoSection">
+      {/* ── Contato ── */}
+        <section id="Contato" className="ContatoSection">
         <div className="TextIcon">
           <h1><strong>FALE</strong> CONOSCO</h1>
         </div>
@@ -359,9 +412,23 @@ const handleSubmit = async (e) => {
             </select>
 
             <label htmlFor="obs">Observações (Opcional)</label>
-            <textarea id="obs" placeholder="Mensagem (Opcional)"></textarea>
+            <textarea
+              id="obs"
+              name="obs"
+              placeholder="Mensagem (Opcional)"
+              value={formData.obs}
+              onChange={handleChange}
+            ></textarea>
 
-            <button className="BotaoContato" type="submit">Enviar Mensagem</button>
+            {notice.message && (
+              <div className={`FormAlert ${notice.type}`}>
+                {notice.message}
+              </div>
+            )}
+
+            <button className="BotaoContato" type="submit" disabled={isSubmitting}>
+              {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+            </button>
             <p className="FormAviso">Seus dados estão protegidos e serão usados apenas para contato.</p>
           </form>
 
@@ -395,44 +462,7 @@ const handleSubmit = async (e) => {
 
         </div>
       </section>
-
-      {/* ── HORÁRIOS ── */}
-      <section id="Horarios" className="HorarioSection">
-        <div className="TextIcon">
-          <h1 className="TituloHorario">NOSSOS <strong>HORÁRIOS</strong></h1>
-        </div>
-        <h2 className="SubtituloHorario">Escolha o melhor dia e horário e venha viver a experiência Invictus.</h2>
-        <div className="Linha2"></div>
-
-        <div className="CardsHorario">
-          {[
-            { dia: 'SEGUNDA', horario: '9:00 às 20:00', aberto: true  },
-            { dia: 'TERÇA',   horario: '9:00 às 20:00', aberto: true  },
-            { dia: 'QUARTA',  horario: '9:00 às 20:00', aberto: true  },
-            { dia: 'QUINTA',  horario: '9:00 às 20:00', aberto: true  },
-            { dia: 'SEXTA',   horario: '9:00 às 20:00', aberto: true  },
-            { dia: 'SÁBADO',  horario: '9:00 às 17:00', aberto: true  },
-            { dia: 'DOMINGO', horario: null,             aberto: false },
-          ].map(({ dia, horario, aberto }) => (
-            <div className="CardHorario" key={dia}>
-              <img className="IconHorario" src="/Calendario.png" alt="Calendário" />
-              <h2 className="TituloCard">{dia}</h2>
-              <div className="Linha4"></div>
-              {horario && <p className="HorarioCard">{horario}</p>}
-              <div className={aberto ? 'Aberto' : 'Fechado'}></div>
-            </div>
-          ))}
-        </div>
-
-        <div className="CardAtencao">
-          <img className="IconAtencao" src="/relogio.png" alt="Relógio" />
-          <h2 className="TextAtencao">ATENÇÃO</h2>
-          <div className="TextosAtencao">
-            <p className="FraseAtencao">Os horários podem sofrer alterações em feriados e datas comemorativas.</p>
-            <p className="FraseAtencao2">Entre em contato para confirmar.</p>
-          </div>
-        </div>
-      </section>
+     
 
     </main>
 
@@ -449,11 +479,11 @@ const handleSubmit = async (e) => {
         <div className="FooterLinks">
           <h3>NAVEGAÇÃO</h3>
           <a href="#Inicio">Início</a>
-          <a href="#Cortes">Cortes</a>
-          <a href="#Precos">Preços</a>
-          <a href="#Sobre">Sobre</a>
-          <a href="#Contato">Contato</a>
-          <a href="#Horarios">Horários</a>
+          <a href="#Cortes">Sobre</a>
+          <a href="#Precos">Cortes</a>
+          <a href="#Sobre">Preços</a>
+          <a href="#Contato">Horários</a>
+          <a href="#Horarios">Contato</a>
         </div>
 
         <div className="FooterRedes">
