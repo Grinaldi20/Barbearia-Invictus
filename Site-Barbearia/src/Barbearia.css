@@ -234,13 +234,10 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .CortesTitulo {
-  margin: 0;
-  font-size: clamp(2rem,3vw,3.5rem);
-  font-weight: 300;
-  letter-spacing: 4px;
+ margin: 0; font-size: clamp(2rem,3vw,3.5rem); font-weight: 400;
 }
 
-.CortesTitulo span { color: #C9A14A; }
+.CortesTitulo strong { color: #C9A14A; }
 
 .SubtituloCortes {
   font-size: clamp(.88rem,1.1vw,1.1rem);

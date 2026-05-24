@@ -180,7 +180,7 @@ const handleSubmit = async (e) => {
 
       {/* ── Cortes ── */}
        <section id="Cortes" className="CortesSection">
-        <h1 className="CortesTitulo">NOSSOS <span>CORTES</span></h1>
+        <h1 className="CortesTitulo">NOSSOS <strong>CORTES</strong></h1>
         <h2 className="SubtituloCortes">Estilo, personalidade e acabamento premium.</h2>
         <div className="Linha2"></div>
 
@@ -372,7 +372,7 @@ const handleSubmit = async (e) => {
 
             <div className="InputLado">
               <div className="TextInputTop">
-              <label htmlFor="servico">Serviço</label>
+              <label htmlFor="servico" translate="no">Serviço</label>
                 <input
                    id="servico"
                    name="servico"
@@ -384,7 +384,7 @@ const handleSubmit = async (e) => {
                  />
               </div>
               <div className="TextInputTop">
-                 <label htmlFor="data">Dia desejado</label>
+                 <label htmlFor="data" translate="no">Dia desejado</label>
                 <input
                    id="data"
                    name="data"
@@ -397,7 +397,7 @@ const handleSubmit = async (e) => {
               </div>
             </div>
 
-            <label htmlFor="horario">Horário Desejado</label>
+            <label htmlFor="horario" translate="no">Horário Desejado</label>
                  <select
                    id="horario"
                    name="horario"
