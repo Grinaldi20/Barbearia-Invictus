@@ -116,8 +116,8 @@ const handleSubmit = async (e) => {
       {/* ── INICIO ── */}
       <section id="Inicio" className="InicioSection">
         <div className="Titulo">
-          <h1 className="Invictus">INVICTUS</h1>
-          <h1 className="Barbearia">BARBEARIA</h1>
+          <h1 className="Invictus">GARAGEM</h1>
+          <h1 className="Barbearia">CORTES</h1>
           <div className="TextCoroa">
             <h3 className="FraseInicio">Estilo, atitude e confiança em cada corte</h3>
             <img src="/coroa.png" alt="Coroa" />
@@ -470,8 +470,8 @@ const handleSubmit = async (e) => {
       <div className="FooterContainer">
 
         <div className="FooterInfo">
-          <img className="LogoFooter" src="/Logo1.png" alt="Invictus Barbearia" />
-          <h2 className="NomeFooter">INVICTUS <strong>BARBEARIA</strong></h2>
+          <img className="LogoFooter" src="/Logo1.png" alt="Garagem Cortes" />
+          <h2 className="NomeFooter">GARAGEM <strong>CORTES</strong></h2>
           <p className="TextoFooter">Estilo, tradição e excelência em cada detalhe. Transformando cortes em experiências.</p>
         </div>
 
@@ -503,7 +503,7 @@ const handleSubmit = async (e) => {
 
       </div>
       <div className="LinhaFooter"></div>
-      <div className="CopyFooter">© 2026 Invictus Barbearia — Todos os direitos reservados.</div>
+      <div className="CopyFooter">© 2026 Garagem Cortes — Todos os direitos reservados.</div>
     </footer>
     </>
   )
