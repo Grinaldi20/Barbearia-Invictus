@@ -38,7 +38,8 @@ O objetivo deste projeto foi criar uma landing page profissional para barbearias
 
 ## 📸 Preview do projeto
 
-<img src="./src/assets/preview.png" alt="Preview do projeto" />
+<img width="1348" height="630" alt="image" src="https://github.com/user-attachments/assets/afe393bb-2a0d-44e6-a1d6-d298370c3dd7" />
+
 
 ---
 
